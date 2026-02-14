@@ -20,11 +20,12 @@ interface IssueListProps {
   onZoom: (findingId: string, nodeId: string) => void;
   onFix: (findingId: string, nodeId: string, fixPayload: any) => void;
   resolvedMap: Record<string, "resolved" | "auto-fixed">;
-  onToggleResolved: (findingId: string) => void;
+  onToggleResolved: (findingId: string, nodeId: string, wasAutoFixed: boolean) => void;
   selectedFindingId: string | null;
+  onUndoFix: (findingId: string, nodeId: string) => void;
 }
 
-export default function IssueList({ findings, onZoom, onFix, resolvedMap, onToggleResolved, selectedFindingId }: IssueListProps) {
+export default function IssueList({ findings, onZoom, onFix, resolvedMap, onToggleResolved, selectedFindingId, onUndoFix }: IssueListProps) {
   // Map rule IDs to friendly category names
   const categoryNames: Record<string, string> = {
     "tokens.colors": "Colors",
@@ -224,7 +225,7 @@ export default function IssueList({ findings, onZoom, onFix, resolvedMap, onTogg
                     onZoom={onZoom}
                     onFix={onFix}
                     resolvedType={resolvedMap[finding.id]}
-                    onToggleResolved={() => onToggleResolved(finding.id)}
+                    onToggleResolved={() => onToggleResolved(finding.id, finding.nodeId, resolvedMap[finding.id] === "auto-fixed")}
                     isSelected={selectedFindingId === finding.id}
                   />
                 ))}

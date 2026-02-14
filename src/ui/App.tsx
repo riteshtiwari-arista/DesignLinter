@@ -135,6 +135,29 @@ export default function App() {
           }
           break;
 
+        case "EXTRACTION_STARTED":
+          alert("Extracting design system palette...");
+          break;
+
+        case "EXTRACTION_COMPLETE":
+          // Always log to console
+          console.log("========================================");
+          console.log("DESIGN SYSTEM PALETTE JSON");
+          console.log("========================================");
+          console.log(msg.data);
+          console.log("========================================");
+          console.log("Copy the JSON above and save it as:");
+          console.log("src/palettes/geiger-design-system.json");
+          console.log("========================================");
+
+          // Try to copy to clipboard (may not work in plugin context)
+          navigator.clipboard.writeText(msg.data).then(() => {
+            alert(`Palette extracted successfully!\n\nPaint Styles: ${msg.summary.paintStyles}\nText Styles: ${msg.summary.textStyles}\nEffect Styles: ${msg.summary.effectStyles}\nVariables: ${msg.summary.variables}\n\nJSON copied to clipboard AND logged to console.\n\nSave it as:\nsrc/palettes/geiger-design-system.json`);
+          }).catch(() => {
+            alert(`Palette extracted successfully!\n\nPaint Styles: ${msg.summary.paintStyles}\nText Styles: ${msg.summary.textStyles}\nEffect Styles: ${msg.summary.effectStyles}\nVariables: ${msg.summary.variables}\n\nJSON logged to console (clipboard failed).\n\nOpen console (Cmd+Option+I) and copy the JSON.\nSave it as:\nsrc/palettes/geiger-design-system.json`);
+          });
+          break;
+
         case "ERROR":
           alert(`Error: ${msg.message}`);
           setScanning(false);
@@ -178,7 +201,16 @@ export default function App() {
     parent.postMessage({ pluginMessage: { type: "APPLY_FIX", findingId, nodeId, fixPayload } }, "*");
   };
 
-  const handleToggleResolved = (findingId: string) => {
+  const handleUndoFix = (findingId: string, nodeId: string) => {
+    parent.postMessage({ pluginMessage: { type: "UNDO_FIX", findingId, nodeId } }, "*");
+  };
+
+  const handleToggleResolved = (findingId: string, nodeId: string, wasAutoFixed: boolean) => {
+    // If it was auto-fixed, undo the fix in Figma
+    if (wasAutoFixed) {
+      handleUndoFix(findingId, nodeId);
+    }
+
     setResolvedMap(prev => {
       const newMap = { ...prev };
       if (newMap[findingId]) {
@@ -403,6 +435,7 @@ export default function App() {
                   resolvedMap={resolvedMap}
                   onToggleResolved={handleToggleResolved}
                   selectedFindingId={selectedFindingId}
+                  onUndoFix={handleUndoFix}
                 />
               </div>
               <div style={{ padding: "18px", borderTop: "1px solid var(--border-color)", background: "white", display: "flex", gap: "8px" }}>

@@ -79,8 +79,16 @@ figma.ui.onmessage = async (msg) => {
         await applyFix(msg.findingId, msg.nodeId, msg.fixPayload);
         break;
 
+      case "UNDO_FIX":
+        await undoFix(msg.findingId, msg.nodeId);
+        break;
+
       case "NOTIFY":
         figma.notify(msg.message);
+        break;
+
+      case "EXTRACT_PALETTE":
+        await extractPalette();
         break;
 
       case "CLOSE":
@@ -209,34 +217,61 @@ async function zoomToNode(nodeId: string) {
   }
 }
 
+// Store original values before applying fixes (for undo)
+const originalValues = new Map<string, any>();
+
 async function applyFix(findingId: string, nodeId: string, fixPayload: FixPayload) {
   const node = await figma.getNodeByIdAsync(nodeId);
   if (!node) {
     throw new Error("Node not found");
   }
 
+  // Store original value for undo
+  let originalValue: any = null;
+
   switch (fixPayload.type) {
     case "bind-variable":
+      // Store original paint before binding variable
+      if (fixPayload.property === "fills" && "fills" in node) {
+        originalValue = { type: "fills", value: JSON.parse(JSON.stringify(node.fills)) };
+      } else if (fixPayload.property === "strokes" && "strokes" in node) {
+        originalValue = { type: "strokes", value: JSON.parse(JSON.stringify(node.strokes)) };
+      }
       await applyVariableBinding(node as SceneNode, fixPayload);
       break;
 
     case "apply-paint-style":
+      // Store original fillStyleId or strokeStyleId
+      if (fixPayload.property === "fills" && "fillStyleId" in node) {
+        originalValue = { type: "fillStyleId", value: node.fillStyleId };
+      } else if (fixPayload.property === "strokes" && "strokeStyleId" in node) {
+        originalValue = { type: "strokeStyleId", value: node.strokeStyleId };
+      }
       await applyPaintStyle(node as SceneNode, fixPayload);
       break;
 
     case "apply-text-style":
+      originalValue = { type: "textStyleId", value: (node as TextNode).textStyleId };
       await applyTextStyle(node as TextNode, fixPayload);
       break;
 
     case "update-spacing":
+      originalValue = { type: "itemSpacing", value: (node as FrameNode).itemSpacing };
       await updateSpacing(node as FrameNode, fixPayload);
       break;
 
     case "update-padding":
+      originalValue = { type: "padding", value: {
+        left: (node as FrameNode).paddingLeft,
+        right: (node as FrameNode).paddingRight,
+        top: (node as FrameNode).paddingTop,
+        bottom: (node as FrameNode).paddingBottom
+      }};
       await updatePadding(node as FrameNode, fixPayload);
       break;
 
     case "update-border-radius":
+      originalValue = { type: "cornerRadius", value: (node as any).cornerRadius };
       await updateBorderRadius(node as SceneNode, fixPayload);
       break;
 
@@ -245,8 +280,85 @@ async function applyFix(findingId: string, nodeId: string, fixPayload: FixPayloa
       break;
   }
 
+  // Store original value for undo
+  if (originalValue) {
+    originalValues.set(findingId, originalValue);
+  }
+
   figma.ui.postMessage({ type: "FIX_APPLIED", findingId, nodeId });
   figma.notify("Fix applied successfully");
+}
+
+async function undoFix(findingId: string, nodeId: string) {
+  const node = await figma.getNodeByIdAsync(nodeId);
+  if (!node) {
+    throw new Error("Node not found");
+  }
+
+  const originalValue = originalValues.get(findingId);
+  if (!originalValue) {
+    console.warn(`No original value stored for finding ${findingId}`);
+    figma.notify("Cannot undo - original value not found");
+    return;
+  }
+
+  // Restore original value
+  switch (originalValue.type) {
+    case "fills":
+      if ("fills" in node) {
+        node.fills = originalValue.value;
+      }
+      break;
+
+    case "strokes":
+      if ("strokes" in node) {
+        node.strokes = originalValue.value;
+      }
+      break;
+
+    case "fillStyleId":
+      if ("fillStyleId" in node) {
+        node.fillStyleId = originalValue.value;
+      }
+      break;
+
+    case "strokeStyleId":
+      if ("strokeStyleId" in node) {
+        node.strokeStyleId = originalValue.value;
+      }
+      break;
+
+    case "textStyleId":
+      (node as TextNode).textStyleId = originalValue.value;
+      break;
+
+    case "itemSpacing":
+      if ("itemSpacing" in node) {
+        (node as FrameNode).itemSpacing = originalValue.value;
+      }
+      break;
+
+    case "padding":
+      if ("paddingLeft" in node) {
+        const frame = node as FrameNode;
+        frame.paddingLeft = originalValue.value.left;
+        frame.paddingRight = originalValue.value.right;
+        frame.paddingTop = originalValue.value.top;
+        frame.paddingBottom = originalValue.value.bottom;
+      }
+      break;
+
+    case "cornerRadius":
+      if ("cornerRadius" in node) {
+        (node as any).cornerRadius = originalValue.value;
+      }
+      break;
+  }
+
+  // Remove from storage
+  originalValues.delete(findingId);
+
+  figma.notify("Fix undone");
 }
 
 async function applyVariableBinding(node: SceneNode, payload: FixPayload) {
@@ -271,12 +383,26 @@ async function applyVariableBinding(node: SceneNode, payload: FixPayload) {
 }
 
 async function applyPaintStyle(node: SceneNode, payload: FixPayload) {
-  if (!payload.styleId || !payload.property) return;
+  if (!payload.styleKey || !payload.property) {
+    throw new Error(`Missing styleKey or property. You may need to re-extract your palette with the latest version.`);
+  }
+
+  console.log(`Importing paint style by key: ${payload.styleKey}`);
+
+  // Import the style from the library
+  const style = await figma.importStyleByKeyAsync(payload.styleKey);
+  if (!style) {
+    throw new Error(`Failed to import paint style: ${payload.styleName}`);
+  }
+
+  console.log(`Successfully imported style: ${style.name} (ID: ${style.id})`);
 
   if (payload.property === "fills" && "fillStyleId" in node) {
-    node.fillStyleId = payload.styleId;
+    console.log(`Applying to fillStyleId`);
+    node.fillStyleId = style.id;
   } else if (payload.property === "strokes" && "strokeStyleId" in node) {
-    node.strokeStyleId = payload.styleId;
+    console.log(`Applying to strokeStyleId`);
+    node.strokeStyleId = style.id;
   }
 }
 
@@ -363,4 +489,174 @@ async function updateBorderRadius(node: SceneNode, payload: FixPayload) {
   }
 
   node.cornerRadius = payload.value;
+}
+
+async function extractPalette() {
+  try {
+    figma.ui.postMessage({ type: "EXTRACTION_STARTED" });
+
+    const palette: any = {
+      metadata: {
+        extractedAt: new Date().toISOString(),
+        version: "1.0.0",
+        fileName: figma.root.name
+      },
+      paintStyles: [],
+      textStyles: [],
+      effectStyles: [],
+      variables: {
+        collections: []
+      }
+    };
+
+    // Extract Paint Styles
+    const paintStyles = await figma.getLocalPaintStylesAsync();
+    for (const style of paintStyles) {
+      const resolvedColors: Array<{ r: number; g: number; b: number; a: number }> = [];
+
+      for (const paint of style.paints) {
+        if (paint.type === "SOLID" && "color" in paint) {
+          resolvedColors.push({
+            r: paint.color.r,
+            g: paint.color.g,
+            b: paint.color.b,
+            a: paint.opacity ?? 1
+          });
+        }
+      }
+
+      palette.paintStyles.push({
+        id: style.id,
+        key: style.key,
+        name: style.name,
+        paints: JSON.parse(JSON.stringify(style.paints)),
+        resolvedColors
+      });
+    }
+
+    // Extract Text Styles
+    const textStyles = await figma.getLocalTextStylesAsync();
+    for (const style of textStyles) {
+      palette.textStyles.push({
+        id: style.id,
+        name: style.name,
+        fontFamily: style.fontName.family,
+        fontSize: style.fontSize as number,
+        fontWeight: 400,
+        lineHeight: style.lineHeight as any,
+        letterSpacing: style.letterSpacing as any
+      });
+    }
+
+    // Extract Effect Styles
+    const effectStyles = await figma.getLocalEffectStylesAsync();
+    for (const style of effectStyles) {
+      palette.effectStyles.push({
+        id: style.id,
+        name: style.name,
+        effects: JSON.parse(JSON.stringify(style.effects))
+      });
+    }
+
+    // Extract Variables
+    const collections = figma.variables.getLocalVariableCollections();
+    for (const collection of collections) {
+      const variables = figma.variables.getLocalVariables().filter(
+        v => v.variableCollectionId === collection.id
+      );
+
+      const collectionData: any = {
+        id: collection.id,
+        name: collection.name,
+        modes: collection.modes.map(m => ({ modeId: m.modeId, name: m.name })),
+        variables: []
+      };
+
+      for (const variable of variables) {
+        const varData: any = {
+          id: variable.id,
+          name: variable.name,
+          resolvedType: variable.resolvedType,
+          valuesByMode: JSON.parse(JSON.stringify(variable.valuesByMode)),
+          resolvedValues: {}
+        };
+
+        // For color variables, resolve aliases
+        if (variable.resolvedType === "COLOR") {
+          for (const modeId in variable.valuesByMode) {
+            const value = variable.valuesByMode[modeId];
+
+            if (typeof value === 'object' && 'r' in value && 'g' in value && 'b' in value) {
+              varData.resolvedValues[modeId] = {
+                r: value.r,
+                g: value.g,
+                b: value.b,
+                a: value.a
+              };
+            } else if (typeof value === 'object' && 'type' in value && value.type === 'VARIABLE_ALIAS') {
+              const resolved = resolveAliasSync(value, modeId);
+              if (resolved) {
+                varData.resolvedValues[modeId] = resolved;
+              }
+            }
+          }
+        }
+
+        collectionData.variables.push(varData);
+      }
+
+      palette.variables.collections.push(collectionData);
+    }
+
+    const json = JSON.stringify(palette, null, 2);
+
+    figma.ui.postMessage({
+      type: "EXTRACTION_COMPLETE",
+      data: json,
+      summary: {
+        paintStyles: palette.paintStyles.length,
+        textStyles: palette.textStyles.length,
+        effectStyles: palette.effectStyles.length,
+        variables: palette.variables.collections.reduce((sum: number, c: any) => sum + c.variables.length, 0)
+      }
+    });
+
+    figma.notify(`Extracted ${palette.paintStyles.length} paint styles, ${palette.textStyles.length} text styles, ${palette.effectStyles.length} effect styles, and ${palette.variables.collections.length} variable collections.`);
+  } catch (error) {
+    figma.ui.postMessage({
+      type: "ERROR",
+      message: error instanceof Error ? error.message : "Extraction failed"
+    });
+  }
+}
+
+function resolveAliasSync(value: any, modeId: string, visited = new Set<string>()): any {
+  if (!value || typeof value !== 'object' || value.type !== 'VARIABLE_ALIAS') {
+    return null;
+  }
+
+  const aliasId = value.id;
+  if (visited.has(aliasId)) return null;
+  visited.add(aliasId);
+
+  const aliasVar = figma.variables.getVariableById(aliasId);
+  if (!aliasVar) return null;
+
+  const aliasValue = aliasVar.valuesByMode[modeId];
+  if (!aliasValue) return null;
+
+  if (typeof aliasValue === 'object' && 'r' in aliasValue && 'g' in aliasValue && 'b' in aliasValue) {
+    return {
+      r: aliasValue.r,
+      g: aliasValue.g,
+      b: aliasValue.b,
+      a: aliasValue.a
+    };
+  }
+
+  if (typeof aliasValue === 'object' && aliasValue.type === 'VARIABLE_ALIAS') {
+    return resolveAliasSync(aliasValue, modeId, visited);
+  }
+
+  return null;
 }

@@ -1,6 +1,6 @@
 import type { Finding, Severity, Settings } from "../types";
 import { getPageName } from "../scanner";
-import { matchColor, importVariableByKey, type DSVarRef } from "../dsCatalog";
+import { matchColor, matchPaintStyle, importVariableByKey, getCatalog, type DSVarRef, type DSStyleRef } from "../dsCatalog";
 
 function rgbaEqual(a: RGBA, b: RGBA): boolean {
   return (
@@ -40,8 +40,8 @@ export async function checkColorTokens(
   // Reset lookup counter for debugging
   (globalThis as any).__colorLookupCount = 0;
 
-  // Get local paint styles
-  const paintStyles: PaintStyle[] = figma.getLocalPaintStyles();
+  // Get catalog to check against library paint styles
+  const catalog = getCatalog();
 
   console.log(`=== Starting Color Check (${nodes.length} nodes) ===`);
   let checkedFills = 0;
@@ -63,37 +63,46 @@ export async function checkColorTokens(
 
         if (fill.type !== "SOLID") continue;
 
-        // A) Check for explicit variable binding (CONFIRMED)
+        // A) Check for explicit variable binding
         const nodeBoundVars = "boundVariables" in node ? (node as any).boundVariables : null;
         const fillColorAlias = nodeBoundVars?.fills?.[i];
         if (fillColorAlias) continue; // Explicitly bound - skip
 
-        // B) Check if using fill style
+        // B) Check if using paint style (any style = compliant)
         const fillStyleId = "fillStyleId" in node ? node.fillStyleId : null;
-        if (fillStyleId && typeof fillStyleId === "string") {
-          const style = paintStyles.find(s => s.id === fillStyleId);
-          if (style) {
-            // Check if the style itself uses a variable
-            const styleColorAliases = style.boundVariables?.paints;
-            if (styleColorAliases && Array.isArray(styleColorAliases) && styleColorAliases.length > 0) {
-              continue; // Style is variable-driven - skip
-            }
-            continue; // Using DS fill style - skip
-          }
+
+        if (checkedFills <= 5) {
+          console.log(`[PAINT STYLE CHECK] Node "${node.name}"`);
+          console.log(`  fillStyleId:`, fillStyleId);
+          console.log(`  isMixed:`, fillStyleId === figma.mixed);
+          console.log(`  isEmpty:`, fillStyleId === "");
+          console.log(`  Will skip:`, !!(fillStyleId && fillStyleId !== figma.mixed && fillStyleId !== ""));
         }
 
-        // C) Check catalog for value match (MATCHES_DS)
+        if (fillStyleId && fillStyleId !== figma.mixed && fillStyleId !== "") {
+          if (checkedFills <= 5) {
+            console.log(`  -> SKIPPED (has paint style)`);
+          }
+          continue; // Using paint style - skip
+        }
+
+        // C) Check catalog for value match (variables or paint styles)
         const fillColor: RGBA = Object.assign({}, fill.color, { a: fill.opacity ?? 1 });
         checkedFills++;
-        const matches = matchColor(fillColor);
 
-        if (matches && matches.length > 0) {
+        // First try variables
+        const varMatches = matchColor(fillColor);
+
+        // Then try paint styles
+        const styleMatches = matchPaintStyle(fillColor);
+
+        if (varMatches && varMatches.length > 0) {
           // Value matches a DS variable - import it lazily
           foundMatches++;
-          const varRef = matches[0];
+          const varRef = varMatches[0];
 
           if (checkedFills <= 3) {
-            console.log(`Fill ${checkedFills}: Found match for ${node.name} -> ${varRef.variableName}`);
+            console.log(`Fill ${checkedFills}: Found variable match for ${node.name} -> ${varRef.variableName}`);
           }
 
           const variable = await importVariableByKey(varRef.variableKey);
@@ -136,6 +145,33 @@ export async function checkColorTokens(
               fixPayload: { libraryName: varRef.libraryName }
             });
           }
+        } else if (styleMatches && styleMatches.length > 0) {
+          // Value matches a DS paint style - suggest using the style
+          const styleRef = styleMatches[0];
+
+          if (checkedFills <= 3) {
+            console.log(`Fill ${checkedFills}: Found paint style match for ${node.name} -> ${styleRef.styleName}`);
+          }
+
+          findings.push({
+            id: `${node.id}-fill-color`,
+            principle: "Clarity",
+            severity,
+            ruleId: "tokens.colors.fill",
+            nodeId: node.id,
+            nodeName: node.name,
+            pageName: getPageName(node),
+            message: "Fill color matches DS paint style but style not applied",
+            howToFix: `Apply paint style: ${styleRef.styleName}`,
+            canAutoFix: true,
+            fixPayload: {
+              type: "apply-paint-style",
+              styleKey: styleRef.styleKey,
+              property: "fills",
+              styleName: styleRef.styleName,
+              libraryName: styleRef.libraryName
+            }
+          });
         } else {
           // NOT_DS - no match found
           findings.push({
@@ -166,33 +202,30 @@ export async function checkColorTokens(
 
         if (stroke.type !== "SOLID") continue;
 
-        // A) Check for explicit variable binding (CONFIRMED)
+        // A) Check for explicit variable binding
         const nodeBoundVars = "boundVariables" in node ? (node as any).boundVariables : null;
         const strokeColorAlias = nodeBoundVars?.strokes?.[i];
         if (strokeColorAlias) continue; // Explicitly bound - skip
 
-        // B) Check if using stroke style
+        // B) Check if using paint style (any style = compliant)
         const strokeStyleId = "strokeStyleId" in node ? node.strokeStyleId : null;
-        if (strokeStyleId && typeof strokeStyleId === "string") {
-          const style = paintStyles.find(s => s.id === strokeStyleId);
-          if (style) {
-            // Check if the style itself uses a variable
-            const styleColorAliases = style.boundVariables?.paints;
-            if (styleColorAliases && Array.isArray(styleColorAliases) && styleColorAliases.length > 0) {
-              continue; // Style is variable-driven - skip
-            }
-            continue; // Using DS stroke style - skip
-          }
+        if (strokeStyleId && strokeStyleId !== figma.mixed && strokeStyleId !== "") {
+          continue; // Using paint style - skip
         }
 
-        // C) Check catalog for value match (MATCHES_DS)
+        // C) Check catalog for value match (variables or paint styles)
         const strokeColor: RGBA = Object.assign({}, stroke.color, { a: stroke.opacity ?? 1 });
-        const matches = matchColor(strokeColor);
 
-        if (matches && matches.length > 0) {
+        // First try variables
+        const varMatches = matchColor(strokeColor);
+
+        // Then try paint styles
+        const styleMatches = matchPaintStyle(strokeColor);
+
+        if (varMatches && varMatches.length > 0) {
           // Value matches a DS variable - import it lazily
           foundMatches++;
-          const varRef = matches[0];
+          const varRef = varMatches[0];
           const variable = await importVariableByKey(varRef.variableKey);
 
           if (variable) {
@@ -226,6 +259,29 @@ export async function checkColorTokens(
               fixPayload: { libraryName: varRef.libraryName }
             });
           }
+        } else if (styleMatches && styleMatches.length > 0) {
+          // Value matches a DS paint style - suggest using the style
+          const styleRef = styleMatches[0];
+
+          findings.push({
+            id: `${node.id}-stroke-color`,
+            principle: "Clarity",
+            severity,
+            ruleId: "tokens.colors.stroke",
+            nodeId: node.id,
+            nodeName: node.name,
+            pageName: getPageName(node),
+            message: "Stroke color matches DS paint style but style not applied",
+            howToFix: `Apply paint style: ${styleRef.styleName}`,
+            canAutoFix: true,
+            fixPayload: {
+              type: "apply-paint-style",
+              styleKey: styleRef.styleKey,
+              property: "strokes",
+              styleName: styleRef.styleName,
+              libraryName: styleRef.libraryName
+            }
+          });
         } else {
           // NOT_DS - no match found
           findings.push({

@@ -1,5 +1,7 @@
-// Design System Variable Catalog
-// Loads and indexes all variables from enabled team libraries
+// Design System Catalog
+// Loads design system resources from bundled palettes
+
+import { getPaletteForLibrary, type DSPalette } from "../palettes";
 
 export type DSVarRef = {
   collectionKey: string;
@@ -10,15 +12,34 @@ export type DSVarRef = {
   libraryName?: string;
 };
 
+export type DSStyleRef = {
+  styleId: string;
+  styleKey: string;
+  styleName: string;
+  libraryName?: string;
+};
+
 export type DSCatalog = {
   loadedAt: number;
   selectedLibraryKey?: string;
+
+  // Variables
   collectionsByKey: Map<string, any>;
   variablesByKey: Map<string, any>;
   colorsByRgba: Map<string, DSVarRef[]>;
   numbersByValue: Map<string, DSVarRef[]>;
   stringsByValue: Map<string, DSVarRef[]>;
   booleansByValue: Map<string, DSVarRef[]>;
+
+  // Paint Styles
+  paintStylesByRgba: Map<string, DSStyleRef[]>;
+  paintStyleNames: Set<string>;
+
+  // Text Styles
+  textStyleNames: Set<string>;
+
+  // Effect Styles
+  effectStyleNames: Set<string>;
 };
 
 let DS_CATALOG: DSCatalog | null = null;
@@ -142,184 +163,165 @@ export async function loadDSCatalog(
     numbersByValue: new Map(),
     stringsByValue: new Map(),
     booleansByValue: new Map(),
+    paintStylesByRgba: new Map(),
+    paintStyleNames: new Set(),
+    textStyleNames: new Set(),
+    effectStyleNames: new Set(),
   };
 
   try {
-    // Get all library variable collections
-    const allCollections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
+    // Load from bundled palette instead of team library
+    const palette = getPaletteForLibrary(selectedLibraryKey);
 
-    // Debug: Show all library names
-    console.log("All available libraries:");
-    const uniqueLibraries = new Set(allCollections.map(col => col.libraryName));
-    uniqueLibraries.forEach(lib => console.log(`  - "${lib}"`));
-
-    // Filter collections based on selected library (if any)
-    const collections = selectedLibraryKey
-      ? allCollections.filter(col => {
-          const matches = col.libraryName === selectedLibraryKey;
-          if (!matches) {
-            console.log(`Skipping collection "${col.name}" from library "${col.libraryName}" (looking for "${selectedLibraryKey}")`);
-          }
-          return matches;
-        })
-      : allCollections;
-
-    console.log(`Found ${allCollections.length} total collections, using ${collections.length} based on selection`);
-    progressCallback?.(`Found ${collections.length} library collections`);
-
-    if (collections.length === 0) {
-      console.warn("No library collections found!");
-      console.warn("Make sure you have enabled a Design System library in Assets → Team Libraries");
+    if (!palette) {
+      console.warn(`No bundled palette found for library "${selectedLibraryKey}"`);
+      console.warn(`Available palettes: ${Object.keys(require('../palettes').PALETTES).join(', ')}`);
+      console.warn(`Please extract the palette from your DS file - see EXTRACT_PALETTE.md`);
+      progressCallback?.("No palette found for selected library");
+      DS_CATALOG = catalog;
+      return catalog;
     }
 
-    // PASS 1: Import all variables from all collections first
-    console.log("=== PASS 1: Importing all variables ===");
-    const allVariableMetadata: Array<{ varMeta: any, collection: any }> = [];
-    let totalVarKeys = 0;
+    console.log(`=== Loading from Bundled Palette ===`);
+    console.log(`  Library: ${selectedLibraryKey}`);
+    console.log(`  Extracted: ${palette.metadata.extractedAt}`);
+    console.log(`  Version: ${palette.metadata.version}`);
 
-    for (const collection of collections) {
-      catalog.collectionsByKey.set(collection.key, collection);
+    // Index Paint Styles
+    console.log(`\n=== Indexing Paint Styles ===`);
+    progressCallback?.("Loading paint styles...");
 
-      try {
-        const libraryVarMetadata = await figma.teamLibrary.getVariablesInLibraryCollectionAsync(collection.key);
-        console.log(`  Collection: ${collection.name} - ${libraryVarMetadata.length} variables`);
-        totalVarKeys += libraryVarMetadata.length;
+    for (const style of palette.paintStyles) {
+      catalog.paintStyleNames.add(style.name);
 
-        // Import all variables to populate the cache
-        for (const varMeta of libraryVarMetadata) {
-          try {
-            const variable = await figma.variables.importVariableByKeyAsync(varMeta.key);
-            importedVariables.set(varMeta.key, variable);
-            variableCache.set(variable.id, variable);
-            variableCache.set(varMeta.key, variable);
-            catalog.variablesByKey.set(varMeta.key, varMeta);
+      // Index by resolved colors
+      if (style.resolvedColors) {
+        for (const color of style.resolvedColors) {
+          const key = normalizeRgba(color);
 
-            // Store for second pass
-            allVariableMetadata.push({ varMeta, collection });
-          } catch (err) {
-            console.warn(`    Could not import variable "${varMeta.name}":`, err);
+          if (!catalog.paintStylesByRgba.has(key)) {
+            catalog.paintStylesByRgba.set(key, []);
           }
-        }
-      } catch (err) {
-        console.warn(`Could not load variables for collection ${collection.name}:`, err);
-      }
-    }
 
-    console.log(`Imported ${variableCache.size} variables into cache`);
-
-    // PASS 2: Now resolve and index all variables
-    console.log("=== PASS 2: Resolving and indexing ===");
-    let collectionIndex = 0;
-    let currentCollectionName = "";
-
-    for (const { varMeta, collection } of allVariableMetadata) {
-      // Track which collection we're processing for progress updates
-      if (collection.name !== currentCollectionName) {
-        collectionIndex++;
-        currentCollectionName = collection.name;
-        console.log(`  Processing collection: ${collection.name}`);
-        progressCallback?.(`Processing collection ${collectionIndex}/${collections.length}: ${collection.name}`);
-      }
-
-      const variable = variableCache.get(varMeta.key);
-      if (!variable) continue;
-
-      const varRef: DSVarRef = {
-        collectionKey: collection.key,
-        collectionName: collection.name,
-        variableKey: varMeta.key,
-        variableName: varMeta.name,
-        resolvedType: varMeta.resolvedType,
-        libraryName: (collection as any).libraryName || collection.name
-      };
-
-      // Index by resolved values
-      if (varMeta.resolvedType === "COLOR") {
-        let indexed = false;
-        const uniqueColors = new Set<string>();
-
-        // Collect all unique RGBA values across all modes
-        for (const modeId in variable.valuesByMode) {
-          // Use recursive resolver for both concrete and alias values
-          const rgba = await resolveColorVariableToRGBA(variable.id, modeId);
-
-          if (rgba) {
-            const key = normalizeRgba(rgba);
-            uniqueColors.add(key);
-          }
-        }
-
-        // Index each unique color only once
-        for (const key of uniqueColors) {
-          if (!catalog.colorsByRgba.has(key)) {
-            catalog.colorsByRgba.set(key, []);
-          }
-          catalog.colorsByRgba.get(key)!.push(varRef);
-          indexed = true;
-
-          // Log indexing for debugging (first few)
-          if (catalog.colorsByRgba.size <= 10) {
-            const parts = key.match(/rgba\((\d+),(\d+),(\d+),/);
-            if (parts) {
-              const valueType = isAlias(variable.valuesByMode[Object.keys(variable.valuesByMode)[0]]) ? "alias" : "concrete";
-              console.log(`    [INDEX] ${valueType} "${varMeta.name}" -> ${key}`);
-            }
-          }
-        }
-
-        if (!indexed) {
-          console.warn(`    Could not resolve color "${varMeta.name}"`);
-        }
-      } else if (varMeta.resolvedType === "FLOAT") {
-        for (const modeId in variable.valuesByMode) {
-          const value = variable.valuesByMode[modeId];
-          if (typeof value === 'number') {
-            const key = normalizeNumber(value);
-
-            if (!catalog.numbersByValue.has(key)) {
-              catalog.numbersByValue.set(key, []);
-            }
-            catalog.numbersByValue.get(key)!.push(varRef);
-          }
-        }
-      } else if (varMeta.resolvedType === "STRING") {
-        for (const modeId in variable.valuesByMode) {
-          const value = variable.valuesByMode[modeId];
-          if (typeof value === 'string') {
-            if (!catalog.stringsByValue.has(value)) {
-              catalog.stringsByValue.set(value, []);
-            }
-            catalog.stringsByValue.get(value)!.push(varRef);
-          }
-        }
-      } else if (varMeta.resolvedType === "BOOLEAN") {
-        for (const modeId in variable.valuesByMode) {
-          const value = String(variable.valuesByMode[modeId]);
-
-          if (!catalog.booleansByValue.has(value)) {
-            catalog.booleansByValue.set(value, []);
-          }
-          catalog.booleansByValue.get(value)!.push(varRef);
+          catalog.paintStylesByRgba.get(key)!.push({
+            styleId: style.id,
+            styleKey: style.key,
+            styleName: style.name,
+            libraryName: selectedLibraryKey
+          });
         }
       }
     }
 
-    console.log(`=== Catalog Summary ===`);
-    console.log(`  Total collections: ${catalog.collectionsByKey.size}`);
-    console.log(`  Total variable keys found: ${totalVarKeys}`);
-    console.log(`  Total variables: ${catalog.variablesByKey.size}`);
-    console.log(`  Color lookup keys: ${catalog.colorsByRgba.size}`);
-    console.log(`  Number lookup keys: ${catalog.numbersByValue.size}`);
-    console.log(`  String lookup keys: ${catalog.stringsByValue.size}`);
-    console.log(`  Boolean lookup keys: ${catalog.booleansByValue.size}`);
+    console.log(`  Indexed ${palette.paintStyles.length} paint styles`);
+    console.log(`  Color lookup keys: ${catalog.paintStylesByRgba.size}`);
 
-    // Show sample of what's indexed
-    if (catalog.colorsByRgba.size > 0) {
-      const sampleKeys = Array.from(catalog.colorsByRgba.keys()).slice(0, 3);
-      console.log(`  Sample color keys:`, sampleKeys);
+    // Index Text Styles
+    console.log(`\n=== Indexing Text Styles ===`);
+    for (const style of palette.textStyles) {
+      catalog.textStyleNames.add(style.name);
+    }
+    console.log(`  Indexed ${palette.textStyles.length} text styles`);
+
+    // Index Effect Styles
+    console.log(`\n=== Indexing Effect Styles ===`);
+    for (const style of palette.effectStyles) {
+      catalog.effectStyleNames.add(style.name);
+    }
+    console.log(`  Indexed ${palette.effectStyles.length} effect styles`);
+
+    // Index Variables
+    console.log(`\n=== Indexing Variables ===`);
+    progressCallback?.("Loading variables...");
+
+    let totalVars = 0;
+
+    for (const collection of palette.variables.collections) {
+      catalog.collectionsByKey.set(collection.id, collection);
+      console.log(`  Collection: ${collection.name} - ${collection.variables.length} variables`);
+
+      for (const variable of collection.variables) {
+        totalVars++;
+        catalog.variablesByKey.set(variable.id, variable);
+
+        const varRef: DSVarRef = {
+          collectionKey: collection.id,
+          collectionName: collection.name,
+          variableKey: variable.id,
+          variableName: variable.name,
+          resolvedType: variable.resolvedType as any,
+          libraryName: selectedLibraryKey
+        };
+
+        // Index by resolved values
+        if (variable.resolvedType === "COLOR" && variable.resolvedValues) {
+          const uniqueColors = new Set<string>();
+
+          // Collect all unique resolved RGBA values
+          for (const modeId in variable.resolvedValues) {
+            const rgba = variable.resolvedValues[modeId];
+            if (rgba && typeof rgba === 'object' && 'r' in rgba) {
+              const key = normalizeRgba(rgba);
+              uniqueColors.add(key);
+            }
+          }
+
+          // Index each unique color
+          for (const key of uniqueColors) {
+            if (!catalog.colorsByRgba.has(key)) {
+              catalog.colorsByRgba.set(key, []);
+            }
+            catalog.colorsByRgba.get(key)!.push(varRef);
+          }
+        } else if (variable.resolvedType === "FLOAT") {
+          for (const modeId in variable.valuesByMode) {
+            const value = variable.valuesByMode[modeId];
+            if (typeof value === 'number') {
+              const key = normalizeNumber(value);
+
+              if (!catalog.numbersByValue.has(key)) {
+                catalog.numbersByValue.set(key, []);
+              }
+              catalog.numbersByValue.get(key)!.push(varRef);
+            }
+          }
+        } else if (variable.resolvedType === "STRING") {
+          for (const modeId in variable.valuesByMode) {
+            const value = variable.valuesByMode[modeId];
+            if (typeof value === 'string') {
+              if (!catalog.stringsByValue.has(value)) {
+                catalog.stringsByValue.set(value, []);
+              }
+              catalog.stringsByValue.get(value)!.push(varRef);
+            }
+          }
+        } else if (variable.resolvedType === "BOOLEAN") {
+          for (const modeId in variable.valuesByMode) {
+            const value = String(variable.valuesByMode[modeId]);
+
+            if (!catalog.booleansByValue.has(value)) {
+              catalog.booleansByValue.set(value, []);
+            }
+            catalog.booleansByValue.get(value)!.push(varRef);
+          }
+        }
+      }
     }
 
-    progressCallback?.(`Catalog ready: ${catalog.colorsByRgba.size} colors indexed`);
+    console.log(`  Indexed ${totalVars} variables from ${palette.variables.collections.length} collections`);
+
+    console.log(`\n=== Catalog Summary ===`);
+    console.log(`  Paint Styles: ${palette.paintStyles.length} (${catalog.paintStylesByRgba.size} color keys)`);
+    console.log(`  Text Styles: ${palette.textStyles.length}`);
+    console.log(`  Effect Styles: ${palette.effectStyles.length}`);
+    console.log(`  Variable Collections: ${palette.variables.collections.length}`);
+    console.log(`  Total Variables: ${totalVars}`);
+    console.log(`  Color Variables: ${catalog.colorsByRgba.size} lookup keys`);
+    console.log(`  Number Variables: ${catalog.numbersByValue.size} lookup keys`);
+    console.log(`  String Variables: ${catalog.stringsByValue.size} lookup keys`);
+    console.log(`  Boolean Variables: ${catalog.booleansByValue.size} lookup keys`);
+
+    progressCallback?.(`Catalog ready: ${palette.paintStyles.length} styles, ${totalVars} variables indexed`);
 
   } catch (error) {
     console.error("Failed to load DS catalog:", error);
@@ -379,6 +381,15 @@ export function matchNumber(value: number): DSVarRef[] | null {
 
   const key = normalizeNumber(value);
   return catalog.numbersByValue.get(key) || null;
+}
+
+// Match a color value to DS paint styles
+export function matchPaintStyle(color: RGBA): DSStyleRef[] | null {
+  const catalog = getCatalog();
+  if (!catalog) return null;
+
+  const key = normalizeRgba(color);
+  return catalog.paintStylesByRgba.get(key) || null;
 }
 
 // Lazy import a variable by key (only when needed)

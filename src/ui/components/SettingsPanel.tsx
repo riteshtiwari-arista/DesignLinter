@@ -163,6 +163,25 @@ export default function SettingsPanel({
           />
         </Field>
       </Section>
+
+      <Section title="Design System Palette Extraction">
+        <Field label="Extract Resources">
+          <div style={{ marginBottom: "8px", fontSize: "12px", color: "var(--text-secondary)" }}>
+            Run this in your Design System source file to extract all paint styles, text styles, effect styles, and variables. The JSON will be copied to clipboard.
+          </div>
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              parent.postMessage({ pluginMessage: { type: "EXTRACT_PALETTE" } }, "*");
+            }}
+          >
+            Extract Palette JSON
+          </button>
+          <div style={{ marginTop: "8px", fontSize: "11px", color: "var(--text-secondary)" }}>
+            After extraction, save the JSON as src/palettes/[library-name].json and rebuild the plugin.
+          </div>
+        </Field>
+      </Section>
     </div>
   );
 }

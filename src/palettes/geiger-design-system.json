@@ -1,0 +1,4539 @@
+{
+  "metadata": {
+    "extractedAt": "2026-02-14T11:21:38.146Z",
+    "version": "1.0.0",
+    "fileName": "Geiger Design System"
+  },
+  "paintStyles": [
+    {
+      "id": "S:cd11b9437f0374892717036f1131f4e4d11e5112,",
+      "key": "cd11b9437f0374892717036f1131f4e4d11e5112",
+      "name": "Core/Black - 000000",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:e76c4e3bc2f7b2729ee3a42bd2131c3c584be25e,",
+      "key": "e76c4e3bc2f7b2729ee3a42bd2131c3c584be25e",
+      "name": "Core/Base 8 - 262629",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.14901961386203766,
+            "g": 0.14901961386203766,
+            "b": 0.16078431904315948
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.14901961386203766,
+          "g": 0.14901961386203766,
+          "b": 0.16078431904315948,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a2b02714a2c0308faee75009e51c589dfb23aee9,",
+      "key": "a2b02714a2c0308faee75009e51c589dfb23aee9",
+      "name": "Core/Base 7 - 58585B",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3450980484485626,
+            "g": 0.3450980484485626,
+            "b": 0.35686275362968445
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3450980484485626,
+          "g": 0.3450980484485626,
+          "b": 0.35686275362968445,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:84989a4d5453bfd40fb9dedfebff8fb172b820a3,",
+      "key": "84989a4d5453bfd40fb9dedfebff8fb172b820a3",
+      "name": "Core/Base 6 - 75757A",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.4588235318660736,
+            "g": 0.4588235318660736,
+            "b": 0.47843137383461
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.4588235318660736,
+          "g": 0.4588235318660736,
+          "b": 0.47843137383461,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:389be9af60bf09a4fac25d909574c9569bdac53c,",
+      "key": "389be9af60bf09a4fac25d909574c9569bdac53c",
+      "name": "Core/Base 5 - BBBBBE",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7333333492279053,
+            "g": 0.7333333492279053,
+            "b": 0.7450980544090271
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7333333492279053,
+          "g": 0.7333333492279053,
+          "b": 0.7450980544090271,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:169f33be428c50106a1ef40b7c42344320b46da8,",
+      "key": "169f33be428c50106a1ef40b7c42344320b46da8",
+      "name": "Core/Base 4 - D9D9DC",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8509804010391235,
+            "g": 0.8509804010391235,
+            "b": 0.8627451062202454
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8509804010391235,
+          "g": 0.8509804010391235,
+          "b": 0.8627451062202454,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7b1332bab2c1ba5b6cbbd6009bb58d72a469ebe0,",
+      "key": "7b1332bab2c1ba5b6cbbd6009bb58d72a469ebe0",
+      "name": "Core/Base 3 - E8E8EB",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9098039269447327,
+            "g": 0.9098039269447327,
+            "b": 0.9215686321258545
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9098039269447327,
+          "g": 0.9098039269447327,
+          "b": 0.9215686321258545,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:b5cab38de7a2acd196b2350584199c4e8ff4f3f3,",
+      "key": "b5cab38de7a2acd196b2350584199c4e8ff4f3f3",
+      "name": "Core/Base 2 - F5F5F8",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9607843160629272,
+            "b": 0.9725490212440491
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9607843160629272,
+          "g": 0.9607843160629272,
+          "b": 0.9725490212440491,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4b5b9f03a6489e2dcc0d56c2f0ee92e5cd6e6427,",
+      "key": "4b5b9f03a6489e2dcc0d56c2f0ee92e5cd6e6427",
+      "name": "Core/Base 1 - FAFAFD",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9803921580314636,
+            "g": 0.9803921580314636,
+            "b": 0.9921568632125854
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9803921580314636,
+          "g": 0.9803921580314636,
+          "b": 0.9921568632125854,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a31b845d5395fbe764959b2c7bb6031e387a9102,",
+      "key": "a31b845d5395fbe764959b2c7bb6031e387a9102",
+      "name": "Core/White - FFFFFF",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:2bd159300d3ced21ad3a3bd710e256ebed14a8be,",
+      "key": "2bd159300d3ced21ad3a3bd710e256ebed14a8be",
+      "name": "Core/Blue 10 - 16325B",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.08627451211214066,
+            "g": 0.19607843458652496,
+            "b": 0.35686275362968445
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.08627451211214066,
+          "g": 0.19607843458652496,
+          "b": 0.35686275362968445,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:20862a342daf397df51f031a85115dd1a2e568dd,",
+      "key": "20862a342daf397df51f031a85115dd1a2e568dd",
+      "name": "Core/Blue 9 - 20467F",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.27450981736183167,
+            "b": 0.49803921580314636
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.125490203499794,
+          "g": 0.27450981736183167,
+          "b": 0.49803921580314636,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:de0aa04d06cabf76fdfa9cae9b4d51cc0d1e4d39,",
+      "key": "de0aa04d06cabf76fdfa9cae9b4d51cc0d1e4d39",
+      "name": "Core/Blue 8 - 27569B",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.15294118225574493,
+            "g": 0.33725491166114807,
+            "b": 0.6078431606292725
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.15294118225574493,
+          "g": 0.33725491166114807,
+          "b": 0.6078431606292725,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:55d6841f04f1fa0e5046f8305b96b0f618fa5ec1,",
+      "key": "55d6841f04f1fa0e5046f8305b96b0f618fa5ec1",
+      "name": "Core/Blue 7 - 2F65B3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.18431372940540314,
+            "g": 0.3960784375667572,
+            "b": 0.7019608020782471
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.18431372940540314,
+          "g": 0.3960784375667572,
+          "b": 0.7019608020782471,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4582ba67c3ecccf5e480fc295ecbc5af7eadd0a2,",
+      "key": "4582ba67c3ecccf5e480fc295ecbc5af7eadd0a2",
+      "name": "Core/Blue 6 - 3875CC",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.21960784494876862,
+            "g": 0.4588235318660736,
+            "b": 0.800000011920929
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.21960784494876862,
+          "g": 0.4588235318660736,
+          "b": 0.800000011920929,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:8d29b73085864af0ee352ed210345b46c1d7fd0d,",
+      "key": "8d29b73085864af0ee352ed210345b46c1d7fd0d",
+      "name": "Core/Blue 5 - 5588D8",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3333333432674408,
+            "g": 0.5333333611488342,
+            "b": 0.8470588326454163
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3333333432674408,
+          "g": 0.5333333611488342,
+          "b": 0.8470588326454163,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:f4767d812a6891d5bd7a18d0802bb7c69394b63f,",
+      "key": "f4767d812a6891d5bd7a18d0802bb7c69394b63f",
+      "name": "Core/Blue 4 - 83A8E2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5137255191802979,
+            "g": 0.658823549747467,
+            "b": 0.886274516582489
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5137255191802979,
+          "g": 0.658823549747467,
+          "b": 0.886274516582489,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:541c7ccf81610cf3c46750eacb16882df7b9f104,",
+      "key": "541c7ccf81610cf3c46750eacb16882df7b9f104",
+      "name": "Core/Blue 3 - A9C2EA",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6627451181411743,
+            "g": 0.7607843279838562,
+            "b": 0.9176470637321472
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6627451181411743,
+          "g": 0.7607843279838562,
+          "b": 0.9176470637321472,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:8fad4a539a306c20e317f3a2c02d7e4f977bd89e,",
+      "key": "8fad4a539a306c20e317f3a2c02d7e4f977bd89e",
+      "name": "Core/Blue 2 - CCDAF2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.800000011920929,
+            "g": 0.8549019694328308,
+            "b": 0.9490196108818054
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.800000011920929,
+          "g": 0.8549019694328308,
+          "b": 0.9490196108818054,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9bc1ee22be12f6717a1c74638118fe02a9e9dd9f,",
+      "key": "9bc1ee22be12f6717a1c74638118fe02a9e9dd9f",
+      "name": "Core/Blue 1 - E7EDF7",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9058823585510254,
+            "g": 0.929411768913269,
+            "b": 0.9686274528503418
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9058823585510254,
+          "g": 0.929411768913269,
+          "b": 0.9686274528503418,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:55e100ba506646b1c380ef2d044a7454f9a3ed30,",
+      "key": "55e100ba506646b1c380ef2d044a7454f9a3ed30",
+      "name": "Core/Green 10 - 0A4B00",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.03921568766236305,
+            "g": 0.29411765933036804,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.03921568766236305,
+          "g": 0.29411765933036804,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9e1133aa974fe48588645bc6c1fb467bb75a3da0,",
+      "key": "9e1133aa974fe48588645bc6c1fb467bb75a3da0",
+      "name": "Core/Green 9 - 0F6901",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.05882352963089943,
+            "g": 0.4117647111415863,
+            "b": 0.003921568859368563
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.05882352963089943,
+          "g": 0.4117647111415863,
+          "b": 0.003921568859368563,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:eb24c8a410f94f76591014ae29a707b93cd7a9f0,",
+      "key": "eb24c8a410f94f76591014ae29a707b93cd7a9f0",
+      "name": "Core/Green 8 - 138000",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.07450980693101883,
+            "g": 0.501960813999176,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.07450980693101883,
+          "g": 0.501960813999176,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0654971f98ee93a8f0989638ad6af06950073032,",
+      "key": "0654971f98ee93a8f0989638ad6af06950073032",
+      "name": "Core/Green 7 - 129200",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.07058823853731155,
+            "g": 0.572549045085907,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.07058823853731155,
+          "g": 0.572549045085907,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7b2c9dbafc0cddbbd6d6ecdaa7358de77a658a16,",
+      "key": "7b2c9dbafc0cddbbd6d6ecdaa7358de77a658a16",
+      "name": "Core/Green 6 - 15A301",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.08235294371843338,
+            "g": 0.6392157077789307,
+            "b": 0.003921568859368563
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.08235294371843338,
+          "g": 0.6392157077789307,
+          "b": 0.003921568859368563,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:6bef94331da5701902ca754e3de9329e90bc4e24,",
+      "key": "6bef94331da5701902ca754e3de9329e90bc4e24",
+      "name": "Core/Green 5 - 55BC46",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3333333432674408,
+            "g": 0.7372549176216125,
+            "b": 0.27450981736183167
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3333333432674408,
+          "g": 0.7372549176216125,
+          "b": 0.27450981736183167,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0d92bed8c104682e1eca59a4c3ddd0d254c35ae2,",
+      "key": "0d92bed8c104682e1eca59a4c3ddd0d254c35ae2",
+      "name": "Core/Green 4 - 84CE79",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5176470875740051,
+            "g": 0.8078431487083435,
+            "b": 0.4745098054409027
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5176470875740051,
+          "g": 0.8078431487083435,
+          "b": 0.4745098054409027,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4400270ecab140340570e169f7f41a5e2be9c4fc,",
+      "key": "4400270ecab140340570e169f7f41a5e2be9c4fc",
+      "name": "Core/Green 3 - AADEA2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6666666865348816,
+            "g": 0.8705882430076599,
+            "b": 0.6352941393852234
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6666666865348816,
+          "g": 0.8705882430076599,
+          "b": 0.6352941393852234,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:87c6e647766da70fde2bdac8970cb92d383a441c,",
+      "key": "87c6e647766da70fde2bdac8970cb92d383a441c",
+      "name": "Core/Green 2 - C8E9C4",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7843137383460999,
+            "g": 0.9137254953384399,
+            "b": 0.7686274647712708
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7843137383460999,
+          "g": 0.9137254953384399,
+          "b": 0.7686274647712708,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:443bf618c79a0a22b5ac1d25e3ecf027b94e09e7,",
+      "key": "443bf618c79a0a22b5ac1d25e3ecf027b94e09e7",
+      "name": "Core/Green 1 - EAF7E8",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9176470637321472,
+            "g": 0.9686274528503418,
+            "b": 0.9098039269447327
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9176470637321472,
+          "g": 0.9686274528503418,
+          "b": 0.9098039269447327,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:227425fdd7a37c9c1c1dedd7cd346e2d6348a619,",
+      "key": "227425fdd7a37c9c1c1dedd7cd346e2d6348a619",
+      "name": "Core/Yellow 10 - 725700",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.4470588266849518,
+            "g": 0.34117648005485535,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.4470588266849518,
+          "g": 0.34117648005485535,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:ffd37ff8ada7ceb833401251b49ebefcf32f3510,",
+      "key": "ffd37ff8ada7ceb833401251b49ebefcf32f3510",
+      "name": "Core/Yellow 9 - 8C6B00",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5490196347236633,
+            "g": 0.41960784792900085,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5490196347236633,
+          "g": 0.41960784792900085,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:ee851a68ef9b4d575cbcdf99dc82f7fb428994c3,",
+      "key": "ee851a68ef9b4d575cbcdf99dc82f7fb428994c3",
+      "name": "Core/Yellow 8 - B18800",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6941176652908325,
+            "g": 0.5333333611488342,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6941176652908325,
+          "g": 0.5333333611488342,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:6ccd79ca1cab42dc72a33a17d808ac2fe3728375,",
+      "key": "6ccd79ca1cab42dc72a33a17d808ac2fe3728375",
+      "name": "Core/Yellow 7 - D8A500",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0.6470588445663452,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8470588326454163,
+          "g": 0.6470588445663452,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:e474518956c18973e328149c3cdc503bf879d0e2,",
+      "key": "e474518956c18973e328149c3cdc503bf879d0e2",
+      "name": "Core/Yellow 6 - EFB700",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9372549057006836,
+            "g": 0.7176470756530762,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9372549057006836,
+          "g": 0.7176470756530762,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:8d8334b85109bbc6e50c964d9f7a709110facf08,",
+      "key": "8d8334b85109bbc6e50c964d9f7a709110facf08",
+      "name": "Core/Yellow 5 - F2C739",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9490196108818054,
+            "g": 0.7803921699523926,
+            "b": 0.2235294133424759
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9490196108818054,
+          "g": 0.7803921699523926,
+          "b": 0.2235294133424759,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a137a46e8a0594c8842c53d816aed9115330c15f,",
+      "key": "a137a46e8a0594c8842c53d816aed9115330c15f",
+      "name": "Core/Yellow 4 - F5D46B",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.8313725590705872,
+            "b": 0.41960784792900085
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9607843160629272,
+          "g": 0.8313725590705872,
+          "b": 0.41960784792900085,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:55df1521212541baa6ea316c73ba985cbd6b89ab,",
+      "key": "55df1521212541baa6ea316c73ba985cbd6b89ab",
+      "name": "Core/Yellow 3 - F8E195",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9725490212440491,
+            "g": 0.8823529481887817,
+            "b": 0.5843137502670288
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9725490212440491,
+          "g": 0.8823529481887817,
+          "b": 0.5843137502670288,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9813a1bb978aae89278cb0f2c9d0180d79df210c,",
+      "key": "9813a1bb978aae89278cb0f2c9d0180d79df210c",
+      "name": "Core/Yellow 2 - FAECBB",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9803921580314636,
+            "g": 0.9254902005195618,
+            "b": 0.7333333492279053
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9803921580314636,
+          "g": 0.9254902005195618,
+          "b": 0.7333333492279053,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7e88987603fd8670f6d71c385572f24f6e4c0641,",
+      "key": "7e88987603fd8670f6d71c385572f24f6e4c0641",
+      "name": "Core/Yellow 1 - FCF5DF",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9882352948188782,
+            "g": 0.9607843160629272,
+            "b": 0.8745098114013672
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9882352948188782,
+          "g": 0.9607843160629272,
+          "b": 0.8745098114013672,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:24af23ea6ec56a2a283c40d6bb060ad26d62aaf8,",
+      "key": "24af23ea6ec56a2a283c40d6bb060ad26d62aaf8",
+      "name": "Core/Red 10 - 710000",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.4431372582912445,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.4431372582912445,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:420514dfb201b07b30d8a3937daa3f32c936bd66,",
+      "key": "420514dfb201b07b30d8a3937daa3f32c936bd66",
+      "name": "Core/Red 9 - 9C0000",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6117647290229797,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6117647290229797,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:5be4f37c0bf614c06c9467f177862e108a94c131,",
+      "key": "5be4f37c0bf614c06c9467f177862e108a94c131",
+      "name": "Core/Red 8 - BE0000",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7450980544090271,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7450980544090271,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:221c746fb590fe5e042ac777746b250da981b129,",
+      "key": "221c746fb590fe5e042ac777746b250da981b129",
+      "name": "Core/Red 7 - D80000",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8470588326454163,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:6b817b374f89c155a13d32ea29b4016ef2cf7c1a,",
+      "key": "6b817b374f89c155a13d32ea29b4016ef2cf7c1a",
+      "name": "Core/Red 6 - EB1414",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9215686321258545,
+            "g": 0.0784313753247261,
+            "b": 0.0784313753247261
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9215686321258545,
+          "g": 0.0784313753247261,
+          "b": 0.0784313753247261,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:592efa16e51955b0c05f6ec7d3b1347319073157,",
+      "key": "592efa16e51955b0c05f6ec7d3b1347319073157",
+      "name": "Core/Red 5 - FF5656",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.33725491166114807,
+            "b": 0.33725491166114807
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.33725491166114807,
+          "b": 0.33725491166114807,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:cb3b682176d35b183cc049830073b371c01bbed4,",
+      "key": "cb3b682176d35b183cc049830073b371c01bbed4",
+      "name": "Core/Red 4 - FE8181",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9960784316062927,
+            "g": 0.5058823823928833,
+            "b": 0.5058823823928833
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9960784316062927,
+          "g": 0.5058823823928833,
+          "b": 0.5058823823928833,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:02d9f358f3bfaa6536916e8c017911b616c54bcb,",
+      "key": "02d9f358f3bfaa6536916e8c017911b616c54bcb",
+      "name": "Core/Red 3 - FFAAAA",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.6666666865348816,
+            "b": 0.6666666865348816
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.6666666865348816,
+          "b": 0.6666666865348816,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:49b68b9b6121010da6568c198d423908c1cce505,",
+      "key": "49b68b9b6121010da6568c198d423908c1cce505",
+      "name": "Core/Red 2 - FEC9C9",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9960784316062927,
+            "g": 0.7882353067398071,
+            "b": 0.7882353067398071
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9960784316062927,
+          "g": 0.7882353067398071,
+          "b": 0.7882353067398071,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:5bfc4032fc09725ddd7e9891dfe14ccb7da33d9a,",
+      "key": "5bfc4032fc09725ddd7e9891dfe14ccb7da33d9a",
+      "name": "Core/Red 1 - FFE7E7",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.9058823585510254,
+            "b": 0.9058823585510254
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.9058823585510254,
+          "b": 0.9058823585510254,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:fa2ec13900250ff1c318f5eedff0314592c4220b,",
+      "key": "fa2ec13900250ff1c318f5eedff0314592c4220b",
+      "name": "Core/Cyan 10 - 166970",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.08627451211214066,
+            "g": 0.4117647111415863,
+            "b": 0.43921568989753723
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.08627451211214066,
+          "g": 0.4117647111415863,
+          "b": 0.43921568989753723,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0024786bc8d39cfebf627cd42f7d5000e1772017,",
+      "key": "0024786bc8d39cfebf627cd42f7d5000e1772017",
+      "name": "Core/Cyan 9 - 217A82",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.12941177189350128,
+            "g": 0.47843137383461,
+            "b": 0.5098039507865906
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.12941177189350128,
+          "g": 0.47843137383461,
+          "b": 0.5098039507865906,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:8f86c616ad9d16c63a93d68d15b52fad94a47c45,",
+      "key": "8f86c616ad9d16c63a93d68d15b52fad94a47c45",
+      "name": "Core/Cyan 8 - 2C97A1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.1725490242242813,
+            "g": 0.5921568870544434,
+            "b": 0.6313725709915161
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.1725490242242813,
+          "g": 0.5921568870544434,
+          "b": 0.6313725709915161,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:3aaa168db93b787daeeb82eea6a55a7c38862ecc,",
+      "key": "3aaa168db93b787daeeb82eea6a55a7c38862ecc",
+      "name": "Core/Cyan 7 - 32AFBA",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.19607843458652496,
+            "g": 0.686274528503418,
+            "b": 0.729411780834198
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.19607843458652496,
+          "g": 0.686274528503418,
+          "b": 0.729411780834198,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:2d9270f706413bad01852c9eeb8474ff582c9cf4,",
+      "key": "2d9270f706413bad01852c9eeb8474ff582c9cf4",
+      "name": "Core/Cyan 6 - 39BFCC",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.2235294133424759,
+            "g": 0.7490196228027344,
+            "b": 0.800000011920929
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.2235294133424759,
+          "g": 0.7490196228027344,
+          "b": 0.800000011920929,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7e38905505d957f4aeea36b9f690d3072ee704bc,",
+      "key": "7e38905505d957f4aeea36b9f690d3072ee704bc",
+      "name": "Core/Cyan 5 - 77D8E3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.46666666865348816,
+            "g": 0.8470588326454163,
+            "b": 0.8901960849761963
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.46666666865348816,
+          "g": 0.8470588326454163,
+          "b": 0.8901960849761963,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:3c776c37c31525c27f79cb13ce2b1ae9f3064d3a,",
+      "key": "3c776c37c31525c27f79cb13ce2b1ae9f3064d3a",
+      "name": "Core/Cyan 4 - 99E4EC",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.601012647151947,
+            "g": 0.8940447568893433,
+            "b": 0.9266039133071899
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.601012647151947,
+          "g": 0.8940447568893433,
+          "b": 0.9266039133071899,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:b6e70de2ee6e5eaa6d1017ef19cc19956d4d1339,",
+      "key": "b6e70de2ee6e5eaa6d1017ef19cc19956d4d1339",
+      "name": "Core/Cyan 3 - AFE5EB",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.686274528503418,
+            "g": 0.8980392217636108,
+            "b": 0.9215686321258545
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.686274528503418,
+          "g": 0.8980392217636108,
+          "b": 0.9215686321258545,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a705932936761aae21e182f44c4dd24f2ddd0adc,",
+      "key": "a705932936761aae21e182f44c4dd24f2ddd0adc",
+      "name": "Core/Cyan 2 - D1EFF4",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8196078538894653,
+            "g": 0.9372549057006836,
+            "b": 0.95686274766922
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8196078538894653,
+          "g": 0.9372549057006836,
+          "b": 0.95686274766922,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4c141f4fa2281244b002386748a81accfc186b36,",
+      "key": "4c141f4fa2281244b002386748a81accfc186b36",
+      "name": "Core/Cyan 1 - E3F6F8",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8901960849761963,
+            "g": 0.9647058844566345,
+            "b": 0.9725490212440491
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8901960849761963,
+          "g": 0.9647058844566345,
+          "b": 0.9725490212440491,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:b133723715be0e8dfbfb6c12bb67b6d7a1592b9b,",
+      "key": "b133723715be0e8dfbfb6c12bb67b6d7a1592b9b",
+      "name": "Core/Purple 10 - 411266",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.2549019753932953,
+            "g": 0.07058823853731155,
+            "b": 0.4000000059604645
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.2549019753932953,
+          "g": 0.07058823853731155,
+          "b": 0.4000000059604645,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a6044f8dcb276f58086dc95e1e6ada7779ae7c51,",
+      "key": "a6044f8dcb276f58086dc95e1e6ada7779ae7c51",
+      "name": "Core/Purple 9 - 5C2483",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3607843220233917,
+            "g": 0.1411764770746231,
+            "b": 0.5137255191802979
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3607843220233917,
+          "g": 0.1411764770746231,
+          "b": 0.5137255191802979,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a5b78679fbbaa733a50718130fd4d062b5bb7f80,",
+      "key": "a5b78679fbbaa733a50718130fd4d062b5bb7f80",
+      "name": "Core/Purple 8 - 632291",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3886012136936188,
+            "g": 0.13228458166122437,
+            "b": 0.56724613904953
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3886012136936188,
+          "g": 0.13228458166122437,
+          "b": 0.56724613904953,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:64c99f704a727c565dad0246c65b1abbe7426da6,",
+      "key": "64c99f704a727c565dad0246c65b1abbe7426da6",
+      "name": "Core/Purple 7 - 792EAD",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.4745098054409027,
+            "g": 0.18039216101169586,
+            "b": 0.6784313917160034
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.4745098054409027,
+          "g": 0.18039216101169586,
+          "b": 0.6784313917160034,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:6620e8b30a23302750ccfe9241efa3ababb0364c,",
+      "key": "6620e8b30a23302750ccfe9241efa3ababb0364c",
+      "name": "Core/Purple 6 - 8E38CC",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5568627715110779,
+            "g": 0.21960784494876862,
+            "b": 0.800000011920929
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5568627715110779,
+          "g": 0.21960784494876862,
+          "b": 0.800000011920929,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:5d6b3636b7d543ed108e543ed299f3669ed08a98,",
+      "key": "5d6b3636b7d543ed108e543ed299f3669ed08a98",
+      "name": "Core/Purple 5 - B16DE1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6939035058021545,
+            "g": 0.42591938376426697,
+            "b": 0.880717396736145
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6939035058021545,
+          "g": 0.42591938376426697,
+          "b": 0.880717396736145,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:ec015a26cdb7d32d8e4bbc2eb089e82c7da1d3d1,",
+      "key": "ec015a26cdb7d32d8e4bbc2eb089e82c7da1d3d1",
+      "name": "Core/Purple 4 - C299EC",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7622950077056885,
+            "g": 0.6000000238418579,
+            "b": 0.9254902005195618
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7622950077056885,
+          "g": 0.6000000238418579,
+          "b": 0.9254902005195618,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:dd310f6ffb61cba4c55ce834ff8357d50533b09f,",
+      "key": "dd310f6ffb61cba4c55ce834ff8357d50533b09f",
+      "name": "Core/Purple 3 - D8BCEE",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0.7372549176216125,
+            "b": 0.9333333373069763
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8470588326454163,
+          "g": 0.7372549176216125,
+          "b": 0.9333333373069763,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a647ae11bca9c90892a774d51ff9997e7955d361,",
+      "key": "a647ae11bca9c90892a774d51ff9997e7955d361",
+      "name": "Core/Purple 2 - E3D1F4",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.891656756401062,
+            "g": 0.8196078538894653,
+            "b": 0.95686274766922
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.891656756401062,
+          "g": 0.8196078538894653,
+          "b": 0.95686274766922,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7e10c6091b70b9d735da963bf1006788cc64757c,",
+      "key": "7e10c6091b70b9d735da963bf1006788cc64757c",
+      "name": "Core/Purple 1 - F2E8F9",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9490196108818054,
+            "g": 0.9098039269447327,
+            "b": 0.9764705896377563
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9490196108818054,
+          "g": 0.9098039269447327,
+          "b": 0.9764705896377563,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:1600282aac06bc3cbdfb007cc4810935baae665c,",
+      "key": "1600282aac06bc3cbdfb007cc4810935baae665c",
+      "name": "Main Data Vis/Foxy 1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.686274528503418,
+            "b": 0.47843137383461
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.686274528503418,
+          "b": 0.47843137383461,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:11dce1e0f28ef379e695866d1bc41472710df292,",
+      "key": "11dce1e0f28ef379e695866d1bc41472710df292",
+      "name": "Main Data Vis/Foxy 2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8492549657821655,
+            "g": 0.35714513063430786,
+            "b": 0.17819607257843018
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8492549657821655,
+          "g": 0.35714513063430786,
+          "b": 0.17819607257843018,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9ee569f123f3f5b182c6350ba604fd5418160c96,",
+      "key": "9ee569f123f3f5b182c6350ba604fd5418160c96",
+      "name": "Main Data Vis/Foxy 3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5803921818733215,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5803921818733215,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:1d117af46463e012262fc48b57241cc2c4c22b36,",
+      "key": "1d117af46463e012262fc48b57241cc2c4c22b36",
+      "name": "Main Data Vis/Canary 1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.8465060591697693,
+            "b": 0.48000001907348633
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.8465060591697693,
+          "b": 0.48000001907348633,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:e97d29ed899a18738d5da8ce92291c2063232f98,",
+      "key": "e97d29ed899a18738d5da8ce92291c2063232f98",
+      "name": "Main Data Vis/Canary 2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8588235378265381,
+            "g": 0.6666666865348816,
+            "b": 0.2078431397676468
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8588235378265381,
+          "g": 0.6666666865348816,
+          "b": 0.2078431397676468,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:899a7ce7934477a193d489e08c23533f5ad752a5,",
+      "key": "899a7ce7934477a193d489e08c23533f5ad752a5",
+      "name": "Main Data Vis/Canary 3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5568627715110779,
+            "g": 0.40784314274787903,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5568627715110779,
+          "g": 0.40784314274787903,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7aeb54887a9c129c8c8a6f881a6b4266f79bbc90,",
+      "key": "7aeb54887a9c129c8c8a6f881a6b4266f79bbc90",
+      "name": "Main Data Vis/Sci-Fi 1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5960784554481506,
+            "g": 0.9098039269447327,
+            "b": 0.9058823585510254
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5960784554481506,
+          "g": 0.9098039269447327,
+          "b": 0.9058823585510254,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0017e5c1ac3aa33b357d0d791c19b5a65928d921,",
+      "key": "0017e5c1ac3aa33b357d0d791c19b5a65928d921",
+      "name": "Main Data Vis/Sci-Fi 2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.10980392247438431,
+            "g": 0.6784313917160034,
+            "b": 0.6745098233222961
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.10980392247438431,
+          "g": 0.6784313917160034,
+          "b": 0.6745098233222961,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:80e9b3372e0ac4bc5f83a7b3a84656c618ee6876,",
+      "key": "80e9b3372e0ac4bc5f83a7b3a84656c618ee6876",
+      "name": "Main Data Vis/Sci-Fi 3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.4000000059604645,
+            "b": 0.4000000059604645
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.4000000059604645,
+          "b": 0.4000000059604645,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:62672d6acca0aba962ac4564287458389b4a9e5a,",
+      "key": "62672d6acca0aba962ac4564287458389b4a9e5a",
+      "name": "Main Data Vis/Sharkey 1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5529412031173706,
+            "g": 0.7254902124404907,
+            "b": 0.9647058844566345
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5529412031173706,
+          "g": 0.7254902124404907,
+          "b": 0.9647058844566345,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:f1a8d7f7f9bc271960dc9d1d84bdbc022dda1a99,",
+      "key": "f1a8d7f7f9bc271960dc9d1d84bdbc022dda1a99",
+      "name": "Main Data Vis/Sharkey 2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.28999996185302734,
+            "g": 0.5047224760055542,
+            "b": 0.8747059106826782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.28999996185302734,
+          "g": 0.5047224760055542,
+          "b": 0.8747059106826782,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:90c37ab7d946cc84f355d8dd3175cf013a681771,",
+      "key": "90c37ab7d946cc84f355d8dd3175cf013a681771",
+      "name": "Main Data Vis/Sharkey 3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.21176470816135406,
+            "b": 0.5921568870544434
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.21176470816135406,
+          "b": 0.5921568870544434,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:e5e76860be3636e64a8093694300d0fee079937b,",
+      "key": "e5e76860be3636e64a8093694300d0fee079937b",
+      "name": "Main Data Vis/Plum 1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9066667556762695,
+            "g": 0.7200000286102295,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9066667556762695,
+          "g": 0.7200000286102295,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:2670c2e826d6533c4f79f1f9323d6d5e0a13e966,",
+      "key": "2670c2e826d6533c4f79f1f9323d6d5e0a13e966",
+      "name": "Main Data Vis/Plum 2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7529411911964417,
+            "g": 0.4313725531101227,
+            "b": 0.7529411911964417
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7529411911964417,
+          "g": 0.4313725531101227,
+          "b": 0.7529411911964417,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9d99d7daeb15b7ef751630d7071d90e6fc85a6bb,",
+      "key": "9d99d7daeb15b7ef751630d7071d90e6fc85a6bb",
+      "name": "Main Data Vis/Plum 3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5098039507865906,
+            "g": 0.05098039284348488,
+            "b": 0.3450980484485626
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5098039507865906,
+          "g": 0.05098039284348488,
+          "b": 0.3450980484485626,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:f10ab92b258b1aa3d3e3d0450015c61898b4307b,",
+      "key": "f10ab92b258b1aa3d3e3d0450015c61898b4307b",
+      "name": "Main Data Vis/Graphite 1",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7529411911964417,
+            "g": 0.7529411911964417,
+            "b": 0.772549033164978
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7529411911964417,
+          "g": 0.7529411911964417,
+          "b": 0.772549033164978,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:bb1e4eddab5a3bafaa9b4268ec7c39876839a542,",
+      "key": "bb1e4eddab5a3bafaa9b4268ec7c39876839a542",
+      "name": "Main Data Vis/Graphite 2",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.4588235318660736,
+            "g": 0.4588235318660736,
+            "b": 0.47843137383461
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.4588235318660736,
+          "g": 0.4588235318660736,
+          "b": 0.47843137383461,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:23fafe7608b1fc85048c543e23a892d8680bb7cd,",
+      "key": "23fafe7608b1fc85048c543e23a892d8680bb7cd",
+      "name": "Main Data Vis/Graphite 3",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.21176470816135406,
+            "g": 0.21176470816135406,
+            "b": 0.22745098173618317
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.21176470816135406,
+          "g": 0.21176470816135406,
+          "b": 0.22745098173618317,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7bebf5826cb2c03c658d472d2bedc751fc6b2165,",
+      "key": "7bebf5826cb2c03c658d472d2bedc751fc6b2165",
+      "name": "Sequential Data Vis/Foxy 10",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.8796992301940918,
+            "b": 0.7999999523162842
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.8796992301940918,
+          "b": 0.7999999523162842,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:43f85510826fc68ab27ddc09056789a1d0715cfd,",
+      "key": "43f85510826fc68ab27ddc09056789a1d0715cfd",
+      "name": "Sequential Data Vis/Foxy 20",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.7843137383460999,
+            "b": 0.6392157077789307
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.7843137383460999,
+          "b": 0.6392157077789307,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:139387fa61f2cafc68c4c511e4ba1054818a28e3,",
+      "key": "139387fa61f2cafc68c4c511e4ba1054818a28e3",
+      "name": "Sequential Data Vis/Foxy 30",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.686274528503418,
+            "b": 0.47843137383461
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.686274528503418,
+          "b": 0.47843137383461,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4a69372c4264281b385f1ff2c9da5193aa16e589,",
+      "key": "4a69372c4264281b385f1ff2c9da5193aa16e589",
+      "name": "Sequential Data Vis/Foxy 40",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9254902005195618,
+            "g": 0.5215686559677124,
+            "b": 0.3294117748737335
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9254902005195618,
+          "g": 0.5215686559677124,
+          "b": 0.3294117748737335,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:75503f62cd05c27bdc02b7e2f716a417a24197b3,",
+      "key": "75503f62cd05c27bdc02b7e2f716a417a24197b3",
+      "name": "Sequential Data Vis/Foxy 50",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8492549657821655,
+            "g": 0.35714513063430786,
+            "b": 0.17819607257843018
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8492549657821655,
+          "g": 0.35714513063430786,
+          "b": 0.17819607257843018,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0c18123530f0e0804ad76c085d2a99ad8e702675,",
+      "key": "0c18123530f0e0804ad76c085d2a99ad8e702675",
+      "name": "Sequential Data Vis/Foxy 60",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7176470756530762,
+            "g": 0.18039216101169586,
+            "b": 0.09019608050584793
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7176470756530762,
+          "g": 0.18039216101169586,
+          "b": 0.09019608050584793,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:094f9288d6548aa0f915f0361ca8514ae9f066c4,",
+      "key": "094f9288d6548aa0f915f0361ca8514ae9f066c4",
+      "name": "Sequential Data Vis/Foxy 70",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5803921818733215,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5803921818733215,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:83046e645be17c24fdc96f8a230940c6e1461d24,",
+      "key": "83046e645be17c24fdc96f8a230940c6e1461d24",
+      "name": "Sequential Data Vis/Foxy 80",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3921568691730499,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3921568691730499,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:28fd0f2e8fa5b6a3fcb6b97c2f800706ee7c1bd3,",
+      "key": "28fd0f2e8fa5b6a3fcb6b97c2f800706ee7c1bd3",
+      "name": "Sequential Data Vis/Foxy 90",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.20000000298023224,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.20000000298023224,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:efc4b685f97e71a83709e72002580111addc82b3,",
+      "key": "efc4b685f97e71a83709e72002580111addc82b3",
+      "name": "Sequential Data Vis/Canary 10",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.940963864326477,
+            "b": 0.7999999523162842
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.940963864326477,
+          "b": 0.7999999523162842,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:44d8978cc73fbd846119ad0e6b3e74c21cd7d9f9,",
+      "key": "44d8978cc73fbd846119ad0e6b3e74c21cd7d9f9",
+      "name": "Sequential Data Vis/Canary 20",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.8941176533699036,
+            "b": 0.6392157077789307
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.8941176533699036,
+          "b": 0.6392157077789307,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:8766886988b613a5eec3cf7c97581e6b1c456c3a,",
+      "key": "8766886988b613a5eec3cf7c97581e6b1c456c3a",
+      "name": "Sequential Data Vis/Canary 30",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 0.8465060591697693,
+            "b": 0.48000001907348633
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 0.8465060591697693,
+          "b": 0.48000001907348633,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:105fa5854fafed76af9292a301be341a3e4be7ed,",
+      "key": "105fa5854fafed76af9292a301be341a3e4be7ed",
+      "name": "Sequential Data Vis/Canary 40",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.929411768913269,
+            "g": 0.7568627595901489,
+            "b": 0.3450980484485626
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.929411768913269,
+          "g": 0.7568627595901489,
+          "b": 0.3450980484485626,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:fa3a38de68ccb55fdff6976a12aaec2e265614dc,",
+      "key": "fa3a38de68ccb55fdff6976a12aaec2e265614dc",
+      "name": "Sequential Data Vis/Canary 50",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8588235378265381,
+            "g": 0.6666666865348816,
+            "b": 0.2078431397676468
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8588235378265381,
+          "g": 0.6666666865348816,
+          "b": 0.2078431397676468,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:825d5ac665515d09e0687fb33f70920f49e3c679,",
+      "key": "825d5ac665515d09e0687fb33f70920f49e3c679",
+      "name": "Sequential Data Vis/Canary 60",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7098039388656616,
+            "g": 0.5372549295425415,
+            "b": 0.10588235408067703
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7098039388656616,
+          "g": 0.5372549295425415,
+          "b": 0.10588235408067703,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:3fec707b8a5c8f46a4db1be6276dae2b75c4f3be,",
+      "key": "3fec707b8a5c8f46a4db1be6276dae2b75c4f3be",
+      "name": "Sequential Data Vis/Canary 70",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5568627715110779,
+            "g": 0.40784314274787903,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5568627715110779,
+          "g": 0.40784314274787903,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:d18eaa18cad8add1d84a3c25c3c7ef843b96b792,",
+      "key": "d18eaa18cad8add1d84a3c25c3c7ef843b96b792",
+      "name": "Sequential Data Vis/Canary 80",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3803921639919281,
+            "g": 0.27843138575553894,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3803921639919281,
+          "g": 0.27843138575553894,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7325eca81ea396ef3a263bb4bc4c0fa5234b09a3,",
+      "key": "7325eca81ea396ef3a263bb4bc4c0fa5234b09a3",
+      "name": "Sequential Data Vis/Canary 90",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.20000000298023224,
+            "g": 0.14647887647151947,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.20000000298023224,
+          "g": 0.14647887647151947,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:96767253807177232be701c1aff7c62f060a46e0,",
+      "key": "96767253807177232be701c1aff7c62f060a46e0",
+      "name": "Sequential Data Vis/Sci-Fi 10",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8352941274642944,
+            "g": 0.9647058844566345,
+            "b": 0.9607843160629272
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8352941274642944,
+          "g": 0.9647058844566345,
+          "b": 0.9607843160629272,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:d3116375c475d8c1eccaacd309f862dced48ed9b,",
+      "key": "d3116375c475d8c1eccaacd309f862dced48ed9b",
+      "name": "Sequential Data Vis/Sci-Fi 20",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7176470756530762,
+            "g": 0.9372549057006836,
+            "b": 0.9333333373069763
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7176470756530762,
+          "g": 0.9372549057006836,
+          "b": 0.9333333373069763,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:bd9fedbe88d3ce2fe7d6c2594b28cb51d2fb75e5,",
+      "key": "bd9fedbe88d3ce2fe7d6c2594b28cb51d2fb75e5",
+      "name": "Sequential Data Vis/Sci-Fi 30",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5960784554481506,
+            "g": 0.9098039269447327,
+            "b": 0.9058823585510254
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5960784554481506,
+          "g": 0.9098039269447327,
+          "b": 0.9058823585510254,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:36687399f23b00d4b338690fab1ac0431c63103f,",
+      "key": "36687399f23b00d4b338690fab1ac0431c63103f",
+      "name": "Sequential Data Vis/Sci-Fi 40",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3529411852359772,
+            "g": 0.7960784435272217,
+            "b": 0.7921568751335144
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3529411852359772,
+          "g": 0.7960784435272217,
+          "b": 0.7921568751335144,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:f5908e827c8e95f4aff7c6ce4169951789cfdab9,",
+      "key": "f5908e827c8e95f4aff7c6ce4169951789cfdab9",
+      "name": "Sequential Data Vis/Sci-Fi 50",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.10980392247438431,
+            "g": 0.6784313917160034,
+            "b": 0.6745098233222961
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.10980392247438431,
+          "g": 0.6784313917160034,
+          "b": 0.6745098233222961,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:75402e5f5a865edf1c56cdaf2ae6f9379121f256,",
+      "key": "75402e5f5a865edf1c56cdaf2ae6f9379121f256",
+      "name": "Sequential Data Vis/Sci-Fi 60",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.054901961237192154,
+            "g": 0.5411764979362488,
+            "b": 0.5372549295425415
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.054901961237192154,
+          "g": 0.5411764979362488,
+          "b": 0.5372549295425415,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4ca42b41cb14ce2eea281f8e35cb1d7f2a1e0534,",
+      "key": "4ca42b41cb14ce2eea281f8e35cb1d7f2a1e0534",
+      "name": "Sequential Data Vis/Sci-Fi 70",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.4000000059604645,
+            "b": 0.4000000059604645
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.4000000059604645,
+          "b": 0.4000000059604645,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:04d8d820192229e9816e0d1917192b03d9c2db05,",
+      "key": "04d8d820192229e9816e0d1917192b03d9c2db05",
+      "name": "Sequential Data Vis/Sci-Fi 80",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.3019607961177826,
+            "b": 0.3019607961177826
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.3019607961177826,
+          "b": 0.3019607961177826,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:b2303901055a6592ce57d916c91e3fa91786626e,",
+      "key": "b2303901055a6592ce57d916c91e3fa91786626e",
+      "name": "Sequential Data Vis/Sci-Fi 90",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.20000003278255463,
+            "b": 0.20000000298023224
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.20000003278255463,
+          "b": 0.20000000298023224,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:df03e7b2152e249b40c1db0b196829b469169dc1,",
+      "key": "df03e7b2152e249b40c1db0b196829b469169dc1",
+      "name": "Sequential Data Vis/Sharkey 10",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8156862854957581,
+            "g": 0.886274516582489,
+            "b": 0.9843137264251709
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8156862854957581,
+          "g": 0.886274516582489,
+          "b": 0.9843137264251709,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:4c9618631176a617abaf037d5bf57e51a7f565d8,",
+      "key": "4c9618631176a617abaf037d5bf57e51a7f565d8",
+      "name": "Sequential Data Vis/Sharkey 20",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.686274528503418,
+            "g": 0.8078431487083435,
+            "b": 0.9764705896377563
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.686274528503418,
+          "g": 0.8078431487083435,
+          "b": 0.9764705896377563,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a22b446bdc9753fbf04102e98711ac7bb94ddce3,",
+      "key": "a22b446bdc9753fbf04102e98711ac7bb94ddce3",
+      "name": "Sequential Data Vis/Sharkey 30",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5529412031173706,
+            "g": 0.7254902124404907,
+            "b": 0.9647058844566345
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5529412031173706,
+          "g": 0.7254902124404907,
+          "b": 0.9647058844566345,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:8ebbdca53f27c6d94398cf5065e01118085480e2,",
+      "key": "8ebbdca53f27c6d94398cf5065e01118085480e2",
+      "name": "Sequential Data Vis/Sharkey 40",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.42352941632270813,
+            "g": 0.615686297416687,
+            "b": 0.9215686321258545
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.42352941632270813,
+          "g": 0.615686297416687,
+          "b": 0.9215686321258545,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:dc9869ff363959c27ce32dd0bacde48146aa42da,",
+      "key": "dc9869ff363959c27ce32dd0bacde48146aa42da",
+      "name": "Sequential Data Vis/Sharkey 50",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.28999996185302734,
+            "g": 0.5047224760055542,
+            "b": 0.8747059106826782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.28999996185302734,
+          "g": 0.5047224760055542,
+          "b": 0.8747059106826782,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:5419754772e0d7435a02700568996256a118c931,",
+      "key": "5419754772e0d7435a02700568996256a118c931",
+      "name": "Sequential Data Vis/Sharkey 60",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.14509804546833038,
+            "g": 0.3607843220233917,
+            "b": 0.7333333492279053
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.14509804546833038,
+          "g": 0.3607843220233917,
+          "b": 0.7333333492279053,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:cd861643ed163b59502d4bdc5f4e3e8d6a5e7b86,",
+      "key": "cd861643ed163b59502d4bdc5f4e3e8d6a5e7b86",
+      "name": "Sequential Data Vis/Sharkey 70",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.21176470816135406,
+            "b": 0.5921568870544434
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.21176470816135406,
+          "b": 0.5921568870544434,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:3efb16055af854ae091a688d1066bf651d4e534a,",
+      "key": "3efb16055af854ae091a688d1066bf651d4e534a",
+      "name": "Sequential Data Vis/Sharkey 80",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.1411764770746231,
+            "b": 0.3960784375667572
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.1411764770746231,
+          "b": 0.3960784375667572,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:333f526a495ba333c56134ffd40c9c9dd80a5417,",
+      "key": "333f526a495ba333c56134ffd40c9c9dd80a5417",
+      "name": "Sequential Data Vis/Sharkey 90",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.07152321934700012,
+            "b": 0.20000000298023224
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.07152321934700012,
+          "b": 0.20000000298023224,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a9cd776da4f4e9ef0e6a1c83d7c59462ca68106a,",
+      "key": "a9cd776da4f4e9ef0e6a1c83d7c59462ca68106a",
+      "name": "Sequential Data Vis/Plum 10",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9686274528503418,
+            "g": 0.8980392217636108,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9686274528503418,
+          "g": 0.8980392217636108,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:483eb6e2f41292359fec5a4a9d6dda3cdd7f6f67,",
+      "key": "483eb6e2f41292359fec5a4a9d6dda3cdd7f6f67",
+      "name": "Sequential Data Vis/Plum 20",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9372549057006836,
+            "g": 0.8117647171020508,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9372549057006836,
+          "g": 0.8117647171020508,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:f9d68c4b993d7bfa9e8484103bb36c206b754128,",
+      "key": "f9d68c4b993d7bfa9e8484103bb36c206b754128",
+      "name": "Sequential Data Vis/Plum 30",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9066667556762695,
+            "g": 0.7200000286102295,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9066667556762695,
+          "g": 0.7200000286102295,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9b75c10123939179121705f73875fb9d467e5f05,",
+      "key": "9b75c10123939179121705f73875fb9d467e5f05",
+      "name": "Sequential Data Vis/Plum 40",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8313725590705872,
+            "g": 0.5764706134796143,
+            "b": 0.8784313797950745
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8313725590705872,
+          "g": 0.5764706134796143,
+          "b": 0.8784313797950745,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:e5d59ebd9dd8875b7dbdb787a29aab1b2ba241c7,",
+      "key": "e5d59ebd9dd8875b7dbdb787a29aab1b2ba241c7",
+      "name": "Sequential Data Vis/Plum 50",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7529411911964417,
+            "g": 0.4313725531101227,
+            "b": 0.7529411911964417
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7529411911964417,
+          "g": 0.4313725531101227,
+          "b": 0.7529411911964417,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:2d42f8fe62f145b8465edde5e402c0f8fa2287bc,",
+      "key": "2d42f8fe62f145b8465edde5e402c0f8fa2287bc",
+      "name": "Sequential Data Vis/Plum 60",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6313725709915161,
+            "g": 0.24313725531101227,
+            "b": 0.5490196347236633
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6313725709915161,
+          "g": 0.24313725531101227,
+          "b": 0.5490196347236633,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:9d9b91e4d04e4a9a57e3f658f4709e8e7994e229,",
+      "key": "9d9b91e4d04e4a9a57e3f658f4709e8e7994e229",
+      "name": "Sequential Data Vis/Plum 70",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.5098039507865906,
+            "g": 0.05098039284348488,
+            "b": 0.3450980484485626
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.5098039507865906,
+          "g": 0.05098039284348488,
+          "b": 0.3450980484485626,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:72d9545b708e91f07a3417358ce55af29cfa2794,",
+      "key": "72d9545b708e91f07a3417358ce55af29cfa2794",
+      "name": "Sequential Data Vis/Plum 80",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3450980484485626,
+            "g": 0.03529411926865578,
+            "b": 0.23529411852359772
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3450980484485626,
+          "g": 0.03529411926865578,
+          "b": 0.23529411852359772,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:64fef5ee24852277a8daf7b9f01cae08321b7566,",
+      "key": "64fef5ee24852277a8daf7b9f01cae08321b7566",
+      "name": "Sequential Data Vis/Plum 90",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.18039216101169586,
+            "g": 0.019607843831181526,
+            "b": 0.12156862765550613
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.18039216101169586,
+          "g": 0.019607843831181526,
+          "b": 0.12156862765550613,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:885fe48cbbff78346504435133e1b7a45f4ed997,",
+      "key": "885fe48cbbff78346504435133e1b7a45f4ed997",
+      "name": "Sequential Data Vis/Graphite 10",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8941176533699036,
+            "g": 0.8941176533699036,
+            "b": 0.9058823585510254
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8941176533699036,
+          "g": 0.8941176533699036,
+          "b": 0.9058823585510254,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:18b062c366d7cb943d67fa867d92e6b0630dc6e3,",
+      "key": "18b062c366d7cb943d67fa867d92e6b0630dc6e3",
+      "name": "Sequential Data Vis/Graphite 20",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8235294222831726,
+            "g": 0.8235294222831726,
+            "b": 0.8392156958580017
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8235294222831726,
+          "g": 0.8235294222831726,
+          "b": 0.8392156958580017,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:330bd5912dfc883ddd9943f8488d3096b5c392ef,",
+      "key": "330bd5912dfc883ddd9943f8488d3096b5c392ef",
+      "name": "Sequential Data Vis/Graphite 30",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.7529411911964417,
+            "g": 0.7529411911964417,
+            "b": 0.772549033164978
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.7529411911964417,
+          "g": 0.7529411911964417,
+          "b": 0.772549033164978,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:adda7c5537222c9823192ecabfbe7719c11aac3c,",
+      "key": "adda7c5537222c9823192ecabfbe7719c11aac3c",
+      "name": "Sequential Data Vis/Graphite 40",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.6078431606292725,
+            "g": 0.6078431606292725,
+            "b": 0.6274510025978088
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.6078431606292725,
+          "g": 0.6078431606292725,
+          "b": 0.6274510025978088,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:6367f2fdc711b455a40b5ccb63f7f044a35893d7,",
+      "key": "6367f2fdc711b455a40b5ccb63f7f044a35893d7",
+      "name": "Sequential Data Vis/Graphite 50",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.4588235318660736,
+            "g": 0.4588235318660736,
+            "b": 0.47843137383461
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.4588235318660736,
+          "g": 0.4588235318660736,
+          "b": 0.47843137383461,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:c4e012f441c69515a61e544a9e29b4d03503416b,",
+      "key": "c4e012f441c69515a61e544a9e29b4d03503416b",
+      "name": "Sequential Data Vis/Graphite 60",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.33725491166114807,
+            "g": 0.33725491166114807,
+            "b": 0.3529411852359772
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.33725491166114807,
+          "g": 0.33725491166114807,
+          "b": 0.3529411852359772,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:ebf568c7746b9e1a677fd0b398cbf21b4f1f8acf,",
+      "key": "ebf568c7746b9e1a677fd0b398cbf21b4f1f8acf",
+      "name": "Sequential Data Vis/Graphite 70",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.21176470816135406,
+            "g": 0.21176470816135406,
+            "b": 0.22745098173618317
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.21176470816135406,
+          "g": 0.21176470816135406,
+          "b": 0.22745098173618317,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0fc44c289e447a3db14a3d301c3a6a4b41f591d0,",
+      "key": "0fc44c289e447a3db14a3d301c3a6a4b41f591d0",
+      "name": "Sequential Data Vis/Graphite 80",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.1568627506494522,
+            "g": 0.1568627506494522,
+            "b": 0.16470588743686676
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.1568627506494522,
+          "g": 0.1568627506494522,
+          "b": 0.16470588743686676,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:698da9cd13cb98b7bb454a3d48b4156ccda4d8a5,",
+      "key": "698da9cd13cb98b7bb454a3d48b4156ccda4d8a5",
+      "name": "Sequential Data Vis/Graphite 90",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.09803921729326248,
+            "g": 0.09803921729326248,
+            "b": 0.10196078568696976
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.09803921729326248,
+          "g": 0.09803921729326248,
+          "b": 0.10196078568696976,
+          "a": 1
+        }
+      ]
+    }
+  ],
+  "textStyles": [
+    {
+      "id": "S:80c957bf4253fef7a145292a859375b6029ef2a1,",
+      "name": "Login Title",
+      "fontFamily": "SF UI Text",
+      "fontSize": 30,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 38
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:1d69dd0be8dd0a80532df2f86b428da6ee80f770,",
+      "name": "H1 Header One",
+      "fontFamily": "SF UI Text",
+      "fontSize": 24,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 32
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:0c86c56671b626c88ff42e9ac91d3b86312d6fda,",
+      "name": "H2 Header Two",
+      "fontFamily": "SF UI Text",
+      "fontSize": 20,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 28
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:618a851ee6d2396b5634a505b5de5226fcd9c173,",
+      "name": "H3 Header Three",
+      "fontFamily": "SF UI Text",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:50730e853894e0d3564a88b3586e50fedcfe6981,",
+      "name": "H4 Header Four",
+      "fontFamily": "SF UI Text",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:fb22a2d393dd67e011dab0297dbdcc4e0a834f75,",
+      "name": "Subtitle",
+      "fontFamily": "SF UI Text",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:84524170bebfce149e020105eb9c38425b33d3dc,",
+      "name": "Body",
+      "fontFamily": "SF UI Text",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:9ddfae8ecf1935d2e8a667f294e9acabb61479e5,",
+      "name": "Input Label & Value",
+      "fontFamily": "SF UI Text",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:151a9d0c2f994af1f7be782d7b2e14e976557251,",
+      "name": "Input Placeholder",
+      "fontFamily": "SF UI Text",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:785f6ee5735b116ea520ce5425fdb7d1305d566f,",
+      "name": "Link",
+      "fontFamily": "SF UI Text",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:f71963f2707c26da81424b3f1ede2ace68a0a12f,",
+      "name": "Mono",
+      "fontFamily": "SF Mono",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:6aec5cc1d98de19adf5ef70486e176c7c5156873,",
+      "name": "Caption Title",
+      "fontFamily": "SF UI Text",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:abec9e38169f0b9e21e6a295bf8bd4d69cb2e02a,",
+      "name": "Caption Graph Values",
+      "fontFamily": "SF UI Text",
+      "fontSize": 10,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    }
+  ],
+  "effectStyles": [
+    {
+      "id": "S:dd235f9e83abb4ad78b600118dca967ed6a1321c,",
+      "name": "Bottomline Inner Shadow",
+      "effects": [
+        {
+          "type": "INNER_SHADOW",
+          "visible": true,
+          "radius": 0,
+          "boundVariables": {},
+          "color": {
+            "r": 0.8509804010391235,
+            "g": 0.8509804010391235,
+            "b": 0.8627451062202454,
+            "a": 1
+          },
+          "offset": {
+            "x": 0,
+            "y": -1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL"
+        }
+      ]
+    },
+    {
+      "id": "S:78f693983cd64eaf9c6809e3952e6356ea61bd8f,",
+      "name": "Panel Shadow",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 6,
+          "boundVariables": {},
+          "color": {
+            "r": 0.9098039269447327,
+            "g": 0.9098039269447327,
+            "b": 0.9215686321258545,
+            "a": 0.699999988079071
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ]
+    },
+    {
+      "id": "S:878cac7627ab0c93e72c9eefa3fd58454fa3f5ef,",
+      "name": "Droplist Dropshadow",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 8,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.15000000596046448
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ]
+    },
+    {
+      "id": "S:4d8686113d3dad77b732eac481d1ccd401b6784c,",
+      "name": "Segmented Button Shadow",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 8,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.05000000074505806
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": -2,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 4,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.07000000029802322
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": -1,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 1,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.07999999821186066
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    {
+      "id": "S:acb040f8137618f97011b206f5eef0d2d10cdf26,",
+      "name": "Pop Shadow",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 20,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.15000000596046448
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ]
+    },
+    {
+      "id": "S:ae7b8a9789f3a5708cbcf8b430154944e1ccac90,",
+      "name": "Tooltip Shadow",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 8,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.15000000596046448
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "collections": [
+      {
+        "id": "VariableCollectionId:9145:17608",
+        "name": "Base",
+        "modes": [
+          {
+            "modeId": "9145:0",
+            "name": "Mode 1"
+          }
+        ],
+        "variables": [
+          {
+            "id": "VariableID:19226:28810",
+            "name": "Spacing/spacing-100",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 8
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28811",
+            "name": "Spacing/spacing-25",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 2
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28812",
+            "name": "Spacing/spacing-50",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 4
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28813",
+            "name": "Spacing/spacing-75",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 6
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28814",
+            "name": "Spacing/spacing-150",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 12
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28815",
+            "name": "Spacing/spacing-200",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 16
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28816",
+            "name": "Spacing/spacing-250",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 20
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28817",
+            "name": "Spacing/spacing-300",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 24
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28818",
+            "name": "Spacing/spacing-400",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 32
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28819",
+            "name": "Spacing/spacing-500",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 40
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28820",
+            "name": "Spacing/spacing-600",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 48
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28821",
+            "name": "Spacing/spacing-800",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 64
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:19226:28822",
+            "name": "Spacing/spacing-1000",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 80
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:20672:3",
+            "name": "Spacing/spacing-0",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "9145:0": 0
+            },
+            "resolvedValues": {}
+          }
+        ]
+      },
+      {
+        "id": "VariableCollectionId:22519:7809",
+        "name": "Table",
+        "modes": [
+          {
+            "modeId": "22519:0",
+            "name": "Single Line Header / Grey bg"
+          },
+          {
+            "modeId": "22520:1",
+            "name": "Double Line header / Grey bg"
+          },
+          {
+            "modeId": "22520:2",
+            "name": "Single Line Header / White bg"
+          },
+          {
+            "modeId": "22520:3",
+            "name": "Double Line header / White bg"
+          }
+        ],
+        "variables": [
+          {
+            "id": "VariableID:22519:7810",
+            "name": "HeaderHeight",
+            "resolvedType": "FLOAT",
+            "valuesByMode": {
+              "22519:0": 40,
+              "22520:1": 62,
+              "22520:2": 40,
+              "22520:3": 62
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:22520:10754",
+            "name": "HeaderColorDefault",
+            "resolvedType": "COLOR",
+            "valuesByMode": {
+              "22519:0": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              },
+              "22520:1": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              },
+              "22520:2": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10756"
+              },
+              "22520:3": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10756"
+              }
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:22520:10755",
+            "name": "HeaderColorHover",
+            "resolvedType": "COLOR",
+            "valuesByMode": {
+              "22519:0": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10758"
+              },
+              "22520:1": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10758"
+              },
+              "22520:2": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              },
+              "22520:3": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              }
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:22520:10759",
+            "name": "HeaderColorSort",
+            "resolvedType": "COLOR",
+            "valuesByMode": {
+              "22519:0": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10758"
+              },
+              "22520:1": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10758"
+              },
+              "22520:2": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              },
+              "22520:3": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              }
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:22666:18666",
+            "name": "HeaderIconColorDefault",
+            "resolvedType": "COLOR",
+            "valuesByMode": {
+              "22519:0": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              },
+              "22520:1": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10757"
+              },
+              "22520:2": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10756"
+              },
+              "22520:3": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10756"
+              }
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:22666:18669",
+            "name": "HeaderIconColorHover",
+            "resolvedType": "COLOR",
+            "valuesByMode": {
+              "22519:0": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22666:18667"
+              },
+              "22520:1": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22666:18667"
+              },
+              "22520:2": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10758"
+              },
+              "22520:3": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:22520:10758"
+              }
+            },
+            "resolvedValues": {}
+          },
+          {
+            "id": "VariableID:22666:18686",
+            "name": "HeaderIconFlexi",
+            "resolvedType": "BOOLEAN",
+            "valuesByMode": {
+              "22519:0": true,
+              "22520:1": true,
+              "22520:2": true,
+              "22520:3": true
+            },
+            "resolvedValues": {}
+          }
+        ]
+      }
+    ]
+  }
+}
