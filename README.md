@@ -28,6 +28,10 @@ Load in Figma:
 4. Click "Run Scan"
 5. Review issues and apply fixes
 
+## Design System Palette Extraction
+
+To extract your design system palette for bundling with the plugin, see [HOW_TO_EXTRACT_PALETTE.md](HOW_TO_EXTRACT_PALETTE.md) for detailed instructions.
+
 ## Rules
 
 **Colors**: Fills/strokes should use design system variables or styles
