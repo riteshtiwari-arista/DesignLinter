@@ -1,0 +1,252 @@
+/* Arista Brand Colors */
+:root {
+  /* Arista Blue palette */
+  --arista-blue-primary: #2D4461;
+  --arista-blue-accent: #5B8FD6;
+  --arista-blue-light: #E8EFF8;
+  --arista-blue-hover: #4A7BC4;
+
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #F7F9FC;
+  --bg-tertiary: #EDF1F7;
+  --bg-hover: #E8EFF8;
+
+  /* Text colors */
+  --text-primary: #2C2C2C;
+  --text-secondary: #6B6B6B;
+  --text-tertiary: #9B9B9B;
+
+  /* Borders */
+  --border-color: #E0E5EB;
+  --border-focus: #5B8FD6;
+
+  /* Status colors */
+  --status-success: #34A853;
+  --status-warning: #F59E0B;
+  --status-error: #DC2626;
+  --status-info: #5B8FD6;
+
+  /* Badge colors */
+  --badge-info-bg: #E8EFF8;
+  --badge-info-text: #3B5F96;
+  --badge-warn-bg: #FEF3C7;
+  --badge-warn-text: #92400E;
+  --badge-block-bg: #FEE2E2;
+  --badge-block-text: #991B1B;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(59, 95, 150, 0.06);
+  --shadow-md: 0 2px 8px rgba(59, 95, 150, 0.1);
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+}
+
+[data-theme="dark"] {
+  /* Arista Blue palette - adjusted for dark mode */
+  --arista-blue-primary: #5B8FD6;
+  --arista-blue-accent: #7AAEF0;
+  --arista-blue-light: #1E3A5F;
+  --arista-blue-hover: #4A7BC4;
+
+  /* Backgrounds */
+  --bg-primary: #1A1D23;
+  --bg-secondary: #22262E;
+  --bg-tertiary: #2A2F39;
+  --bg-hover: #33384A;
+
+  /* Text colors */
+  --text-primary: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
+
+  /* Borders */
+  --border-color: #374151;
+  --border-focus: #5B8FD6;
+
+  /* Status colors */
+  --status-success: #10B981;
+  --status-warning: #F59E0B;
+  --status-error: #EF4444;
+  --status-info: #7AAEF0;
+
+  /* Badge colors */
+  --badge-info-bg: #1E3A5F;
+  --badge-info-text: #93C5FD;
+  --badge-warn-bg: #78350F;
+  --badge-warn-text: #FDE68A;
+  --badge-block-bg: #7F1D1D;
+  --badge-block-text: #FCA5A5;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF UI Text', 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 8px 12px;
+  transition: border-color 0.15s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.badge-info {
+  background: var(--badge-info-bg);
+  color: var(--badge-info-text);
+}
+
+.badge-warn {
+  background: var(--badge-warn-bg);
+  color: var(--badge-warn-text);
+}
+
+.badge-block {
+  background: var(--badge-block-bg);
+  color: var(--badge-block-text);
+}
+
+.btn {
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.15s;
+  border: none;
+}
+
+.btn-primary {
+  background: #5B8FD6;
+  color: white;
+  border-radius: 4px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #4A7BC4;
+}
+
+.btn-secondary {
+  background: #E8EFF8;
+  color: #5B8FD6;
+  border-radius: 4px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #D1E3F5;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
