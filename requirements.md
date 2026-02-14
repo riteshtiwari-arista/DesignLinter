@@ -1,293 +1,282 @@
-You are Codex. Build a production-quality Figma plugin called "Arista Principles Linter".
-Goal: one-click linting for Arista UX principles across CVaaS/CV-CUE/Velo/ETM/NDR files.
+# Figma Plugin --- Resolving Alias Variables in Design Systems
 
-Hard requirements
-1) No hardcoded design system component names. The plugin must auto-discover enabled Figma libraries (Team Library API) and let the user pick one as the "Design System Library".
-2) Linting must focus on objective checks:
-   - Token usage: colors + typography + effects must be bound to variables or DS styles where possible.
-   - DS component usage: instances should come from DS library (optional in v1 if reliably detectable).
-   - Required states presence: loading/empty/error/stale/permission via simple page-level tags (no DS component keys needed).
-   - Truth over polish: if a page contains charts/tables/insight cards, require a "data context" annotation using page-level tags (no DS component keys needed).
-3) Plugin UI must be polished: light/dark theme, clean spacing, good typography, badges, empty states. Not a blank page with ugly buttons.
-4) Provide autofix ONLY for safe, deterministic fixes:
-   - bind color variables by exact RGBA match against DS variable values
-   - apply paint styles by exact match if variables not available
-   Do NOT do fuzzy matching.
-5) Must be publishable: correct manifest, permissions, build pipeline, README.
+## Purpose
 
-Deliverables
-- A complete repo in the current folder with all files.
-- Commands to run: npm install, npm run build.
-- The built plugin should run in Figma Desktop.
+Many modern Design Systems use **semantic tokens** that are aliases
+instead of concrete values.
 
-Implementation plan (execute fully, do not ask questions)
-A) Scaffold repo with Vite + React + TypeScript
-B) Create Figma plugin manifest + controller (main.ts) + UI (React)
-C) Implement DS library discovery + caching
-D) Implement scanner + rules + UI rendering + zoom-to-node
-E) Implement Evidence block generator + copy to clipboard
-F) Add README with install/run/publish instructions.
+Example:
 
-Now execute the steps below exactly.
+    primary-color → {base.blue} (alias)
+    base.blue → rgba(91,143,214,1) (concrete)
 
-========================
-STEP 1: Create folder structure + package
-========================
-Create:
-- manifest.json
-- package.json
-- tsconfig.json
-- vite.config.ts
-- src/main.ts
-- src/core/types.ts
-- src/core/storage.ts
-- src/core/library.ts
-- src/core/scanner.ts
-- src/core/reporter.ts
-- src/core/rules/tokens.colors.ts
-- src/core/rules/tokens.typography.ts
-- src/core/rules/tokens.effects.ts
-- src/core/rules/requiredStates.ts
-- src/core/rules/truthMetadata.ts
-- src/ui/index.html
-- src/ui/ui.tsx
-- src/ui/App.tsx
-- src/ui/theme.css
-- src/ui/components/TopBar.tsx
-- src/ui/components/Tabs.tsx
-- src/ui/components/IssueList.tsx
-- src/ui/components/IssueRow.tsx
-- src/ui/components/SettingsPanel.tsx
-- src/ui/components/EvidencePanel.tsx
-- src/ui/components/EmptyState.tsx
-- README.md
+Your plugin currently skips aliases because it only indexes variables
+with direct RGB values.
 
-========================
-STEP 2: Write exact file contents
-========================
+This document describes how to correctly:
 
----- package.json ----
-{
-  "name": "arista-principles-linter",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -p tsconfig.json && vite build",
-    "lint": "echo \"(optional)\""
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.8"
+-   Resolve alias chains
+-   Support semantic tokens
+-   Build reliable DS matching
+-   Avoid false "Not DS" reports
+
+------------------------------------------------------------------------
+
+## Core Problem
+
+All Geiger Design System color variables are aliases.
+
+Your current logic:
+
+    if variable has RGB → index
+    else → skip
+
+Result:
+
+❌ Entire Design System ignored.
+
+Correct behavior:
+
+    Resolve aliases → find final concrete RGBA → index semantic token
+
+------------------------------------------------------------------------
+
+## Key Concept
+
+A variable value can be:
+
+### Concrete color
+
+    { r: number, g: number, b: number, a: number }
+
+### Alias
+
+    { type: "VARIABLE_ALIAS", id: "VariableID" }
+
+Aliases must be followed recursively until a real color is reached.
+
+------------------------------------------------------------------------
+
+## Required Architecture
+
+You must build:
+
+1.  Variable cache
+2.  Recursive alias resolver
+3.  Mode-aware resolution
+4.  RGBA indexing
+5.  Cycle protection
+
+------------------------------------------------------------------------
+
+## Step 1 --- Variable Cache
+
+Avoid repeated imports.
+
+``` ts
+const varCache = new Map<string, Variable>();
+
+async function getVar(idOrKey: string): Promise<Variable> {
+  if (varCache.has(idOrKey)) return varCache.get(idOrKey)!;
+
+  let v: Variable | null = null;
+
+  try {
+    v = await figma.variables.getVariableByIdAsync(idOrKey);
+  } catch {}
+
+  if (!v) {
+    v = await figma.variables.importVariableByKeyAsync(idOrKey);
+  }
+
+  varCache.set(v.id, v);
+  return v;
+}
+```
+
+------------------------------------------------------------------------
+
+## Step 2 --- Type Guards
+
+``` ts
+function isAlias(v: any) {
+  return v?.type === "VARIABLE_ALIAS";
+}
+
+function isRgba(v: any) {
+  return v &&
+    typeof v.r === "number" &&
+    typeof v.g === "number" &&
+    typeof v.b === "number" &&
+    typeof v.a === "number";
+}
+```
+
+------------------------------------------------------------------------
+
+## Step 3 --- Recursive Alias Resolver
+
+This is the critical part.
+
+``` ts
+export async function resolveColorVariableToRGBA(
+  variableIdOrKey: string,
+  modeId: string,
+  visited = new Set<string>()
+): Promise<RGBA | null> {
+
+  const variable = await getVar(variableIdOrKey);
+
+  if (visited.has(variable.id)) return null;
+  visited.add(variable.id);
+
+  const val = variable.valuesByMode[modeId];
+  if (!val) return null;
+
+  if (isRgba(val)) return val;
+
+  if (isAlias(val)) {
+    return resolveColorVariableToRGBA(val.id, modeId, visited);
+  }
+
+  return null;
+}
+```
+
+### Why visited set exists
+
+Prevents infinite loops if alias chains accidentally cycle.
+
+------------------------------------------------------------------------
+
+## Step 4 --- Mode Awareness
+
+Variables differ per mode (Light/Dark).
+
+Get modes from the collection:
+
+``` ts
+const collection =
+  await figma.variables.getVariableCollectionByIdAsync(
+    variable.variableCollectionId
+  );
+
+const modes = collection.modes;
+```
+
+Always resolve aliases per mode.
+
+------------------------------------------------------------------------
+
+## Step 5 --- RGBA Normalization
+
+Convert RGBA to stable comparison key.
+
+``` ts
+function rgbaToKey(c: RGBA) {
+  const r = Math.round(c.r * 255);
+  const g = Math.round(c.g * 255);
+  const b = Math.round(c.b * 255);
+  const a = Number(c.a.toFixed(3));
+  return `rgba(${r},${g},${b},${a})`;
+}
+```
+
+------------------------------------------------------------------------
+
+## Step 6 --- Index Semantic Tokens
+
+Even aliases must be indexed.
+
+``` ts
+for (const v of colorVariables) {
+
+  const imported =
+    await figma.variables.importVariableByKeyAsync(v.key);
+
+  for (const mode of modes) {
+
+    const rgba =
+      await resolveColorVariableToRGBA(imported.id, mode.modeId);
+
+    if (!rgba) continue;
+
+    const key = rgbaToKey(rgba);
+
+    const ref = {
+      variableKey: v.key,
+      variableName: v.name,
+      mode: mode.name
+    };
+
+    const arr = colorsByRgba.get(key) ?? [];
+    arr.push(ref);
+    colorsByRgba.set(key, arr);
   }
 }
+```
 
----- tsconfig.json ----
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
-    "module": "ES2022",
-    "moduleResolution": "Bundler",
-    "strict": true,
-    "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "types": ["@figma/plugin-typings"],
-    "outDir": "dist"
-  },
-  "include": ["src"]
-}
+Now semantic tokens correctly map to final colors.
 
----- vite.config.ts ----
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+------------------------------------------------------------------------
 
-export default defineConfig({
-  plugins: [react()],
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        ui: "src/ui/index.html"
-      },
-      output: {
-        entryFileNames: (chunk) => {
-          // main.ts is built by tsc; UI is bundled by vite
-          return "[name].js";
-        }
-      }
-    }
-  }
-});
+## Step 7 --- Scanner Logic (Final)
 
-IMPORTANT: also add @vitejs/plugin-react to devDependencies and deps resolution. If missing, add it.
+When scanning nodes:
 
----- manifest.json ----
-{
-  "name": "Arista Principles Linter",
-  "id": "com.arista.principles.linter",
-  "api": "1.0.0",
-  "main": "dist/main.js",
-  "ui": "dist/ui.html",
-  "editorType": ["figma"],
-  "permissions": ["teamlibrary"],
-  "networkAccess": { "allowedDomains": [] }
-}
+1.  Check `boundVariables`
+2.  Check style bindings
+3.  Else compute node RGBA
+4.  Lookup in `colorsByRgba`
 
----- src/ui/index.html ----
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arista Principles Linter</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/ui/ui.tsx"></script>
-  </body>
-</html>
+If match exists:
 
----- src/ui/theme.css ----
-Create a premium-looking theme using CSS variables:
-- supports light and dark via [data-theme="dark"]
-- base font: system-ui
-- subtle borders, rounded corners, spacing scale
-- badges for severity (info/warn/block)
-Do not use harsh colors; keep it enterprise-polished.
+✅ MATCHES_DS
 
----- src/ui/ui.tsx ----
-Mount React app. Also add message bridge:
-- listen to window.onmessage to receive results
-- send messages to main via parent.postMessage({ pluginMessage: ... }, "*")
+------------------------------------------------------------------------
 
----- src/core/types.ts ----
-Define:
-type Severity = "info" | "warn" | "block";
-type Principle = "Clarity" | "Predictability" | "Pressure" | "Function" | "Truth" | "Evolution";
-interface Finding { ... } include:
-id, principle, severity, ruleId, nodeId, nodeName, pageName, message, howToFix, canAutoFix, fixPayload?
-interface Evidence { type, links, summary, validationPlan? }
-interface Settings { theme, scanScope, strictness, dsLibraryKey?, requiredStateTags?, truthTag? }
+## Step 8 --- Performance Rules
 
----- src/core/storage.ts ----
-Implement get/set using figma.clientStorage with defaults.
+DO:
 
----- src/core/library.ts ----
-Implement:
-async function listEnabledLibraries(): Promise<Array<{ key: string; name: string }>>
-- use figma.teamLibrary.getAvailableLibrariesAsync()
-Cache the list for 10 minutes in clientStorage.
-If no libraries enabled, return empty.
+-   Cache imported variables
+-   Cache resolved RGBA per `(varId, modeId)`
+-   Resolve once per session
 
-Also implement:
-async function getLibraryPaintStyles(libraryKey): returns descriptors (name, key)
-async function getLibraryTextStyles(libraryKey)
-async function getLibraryEffectStyles(libraryKey)
-Use Team Library API calls for styles descriptors and then import styles as needed.
-(Where importing is required, use figma.importStyleByKeyAsync(key).)
+DO NOT:
 
-Implement:
-async function listLibraryVariableCollections(): Promise<...>
-Use figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync()
-Then import variables by collection using variables API:
-- For each collection, figma.variables.getVariableCollectionByIdAsync if available
-- If not, import variable by key where possible.
-If API limitations exist, gracefully degrade to style matching only.
+-   Import variables repeatedly
+-   Resolve aliases during every node scan
 
----- src/core/scanner.ts ----
-Implement:
-function getScanRoots(scope): selection or currentPage
-function walk(node): traverse all descendants (FRAME/GROUP/COMPONENT/INSTANCE/TEXT/RECT etc)
-Return flat list of nodes to check.
-Avoid scanning hidden nodes optionally.
+------------------------------------------------------------------------
 
----- Rules v1 (write these):
----- src/core/rules/tokens.colors.ts ----
-For nodes that support fills/strokes/effects:
-- If paint is SOLID and not bound to a variable AND not a paint style from DS library -> warn/block depending strictness
-- If DS variables are accessible: exact RGBA match -> canAutoFix: bind variable
-- Else if DS paint styles accessible: exact match -> canAutoFix: apply paint style
+## Step 9 --- Report States
 
----- src/core/rules/tokens.typography.ts ----
-For TEXT nodes:
-- If not using a text style AND no bound typography variables -> warn
-Autofix:
-- If DS text styles accessible and exact match (font family, style, size, line height, letter spacing) -> apply style
+  State        Meaning
+  ------------ -------------------------
+  CONFIRMED    Binding visible via API
+  MATCHES_DS   Alias resolved match
+  NOT_DS       No binding and no match
 
----- src/core/rules/tokens.effects.ts ----
-For nodes with effects:
-- If effect is not from effect style and not variable-bound -> info/warn
+------------------------------------------------------------------------
 
----- src/core/rules/requiredStates.ts ----
-Do NOT require DS components.
-Require page-level tags:
-- default required tags list: ["state:loading","state:empty","state:error","state:stale","state:denied"]
-Rule: If page contains tables/charts (heuristic: node names include "Table" or "Chart" or has > 20 rows/rects in a group), then require at least 3 of these tags somewhere on page (as text nodes) OR as a sticky note frame named "States".
-Provide autofix: create a small "States" frame in top-left with the missing tags as text.
+## Step 10 --- Definition of Done
 
----- src/core/rules/truthMetadata.ts ----
-Do NOT require DS components.
-If page contains "insight" / "anomaly" / "recommendation" / "ai" in node names OR chart/table heuristics triggered:
-Require presence of "truth:" tags:
-Default: ["truth:source","truth:freshness","truth:scope","truth:confidence"]
-Same detection: text nodes anywhere on page OR a frame named "Data Context".
-Autofix: create a "Data Context" frame with those labels.
+Implementation is correct when:
 
----- src/core/reporter.ts ----
-Group findings by principle, compute counts, generate:
-- a short summary string for Jira
-- JSON export object
+-   Alias-only Design Systems work
+-   Semantic tokens resolve properly
+-   DS borders/colors stop being falsely flagged
+-   Light/Dark modes resolve independently
 
----- src/main.ts ----
-Controller:
-- showUI({ width: 380, height: 560 })
-- handle messages:
-  - "INIT": send settings + libraries list
-  - "SETTINGS_SAVE": persist settings
-  - "REFRESH_LIBRARIES": refresh list
-  - "RUN_SCAN": run scanner + rules and send findings
-  - "ZOOM_TO": figma.viewport.scrollAndZoomIntoView([node])
-  - "APPLY_FIX": apply fix payload to node or create frames
+------------------------------------------------------------------------
 
-Make scan fast; show progress messages.
+## Mental Model
 
----- UI (App.tsx) ----
-Polished UI:
-- Top bar with title + Run button
-- Tabs: Issues, Evidence, Settings
-- Issues: grouped sections with counts and list rows
-- Each issue row: severity badge, message, node name, buttons: Zoom, Auto-fix (if available)
-- Evidence tab: form fields + "Copy Evidence Block"
-- Settings: theme toggle, scan scope, strictness, DS library select, refresh button
+Your plugin is not detecting bindings.
 
----- README.md ----
-Include:
-- install, build
-- how to load plugin in Figma (Development → Import plugin from manifest)
-- how to enable DS library in a file (Assets → Library)
-- what checks are performed
-- how tags work for States and Data Context
-- publishing notes
+Your plugin is validating:
 
-========================
-STEP 3: Ensure build works
-========================
-- Add @figma/plugin-typings and @vitejs/plugin-react as devDependencies
-- Ensure Vite outputs ui.html in dist as ui.html (rename if needed)
-- Ensure tsc outputs main.js in dist
-- Confirm manifest paths match dist outputs.
+> Does this visual value originate from the Design System?
 
-Finally, output:
-1) a short note confirming file tree created
-2) commands to run
-3) any Figma API limitations encountered + how you handled them (brief)
-
+Alias resolution makes semantic tokens first-class citizens.

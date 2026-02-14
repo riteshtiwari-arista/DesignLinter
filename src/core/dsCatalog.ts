@@ -23,6 +23,91 @@ export type DSCatalog = {
 
 let DS_CATALOG: DSCatalog | null = null;
 const importedVariables = new Map<string, Variable>();
+const variableCache = new Map<string, Variable>();
+
+// Type guards
+function isAlias(v: any): boolean {
+  return v?.type === "VARIABLE_ALIAS";
+}
+
+function isRgba(v: any): v is RGBA {
+  return v &&
+    typeof v.r === "number" &&
+    typeof v.g === "number" &&
+    typeof v.b === "number" &&
+    typeof v.a === "number";
+}
+
+// Get variable from cache or import
+async function getVar(idOrKey: string): Promise<Variable | null> {
+  if (variableCache.has(idOrKey)) {
+    return variableCache.get(idOrKey)!;
+  }
+
+  let v: Variable | null = null;
+
+  try {
+    v = await figma.variables.getVariableByIdAsync(idOrKey);
+  } catch {
+    // If getById fails, try import by key
+    try {
+      v = await figma.variables.importVariableByKeyAsync(idOrKey);
+    } catch {
+      return null;
+    }
+  }
+
+  if (v) {
+    variableCache.set(v.id, v);
+    if (idOrKey !== v.id) {
+      variableCache.set(idOrKey, v); // Cache by both id and key
+    }
+  }
+
+  return v;
+}
+
+// Recursive alias resolver with cycle protection
+async function resolveColorVariableToRGBA(
+  variableIdOrKey: string,
+  modeId: string,
+  visited = new Set<string>()
+): Promise<RGBA | null> {
+  const variable = await getVar(variableIdOrKey);
+  if (!variable) return null;
+
+  // Cycle protection
+  if (visited.has(variable.id)) {
+    console.warn(`Cycle detected resolving variable ${variable.name}`);
+    return null;
+  }
+  visited.add(variable.id);
+
+  let val = variable.valuesByMode[modeId];
+
+  // If the requested mode doesn't exist, use the first available mode
+  // This handles cross-collection aliases where mode IDs differ
+  if (!val) {
+    const availableModes = Object.keys(variable.valuesByMode);
+    if (availableModes.length > 0) {
+      val = variable.valuesByMode[availableModes[0]];
+    } else {
+      return null;
+    }
+  }
+
+  // If it's concrete RGBA, return it
+  if (isRgba(val)) {
+    return val as RGBA;
+  }
+
+  // If it's an alias, recursively resolve it
+  if (isAlias(val)) {
+    return resolveColorVariableToRGBA((val as any).id, modeId, visited);
+  }
+
+  return null;
+}
 
 // Normalize RGBA to string key: "rgba(r,g,b,a)"
 function normalizeRgba(color: RGBA): string {
@@ -87,124 +172,126 @@ export async function loadDSCatalog(
       console.warn("Make sure you have enabled a Design System library in Assets → Team Libraries");
     }
 
+    // PASS 1: Import all variables from all collections first
+    console.log("=== PASS 1: Importing all variables ===");
+    const allVariableMetadata: Array<{ varMeta: any, collection: any }> = [];
     let totalVarKeys = 0;
-    let collectionIndex = 0;
 
     for (const collection of collections) {
-      collectionIndex++;
       catalog.collectionsByKey.set(collection.key, collection);
-      console.log(`  Collection: ${collection.name} (${collection.key})`);
-      progressCallback?.(`Loading collection ${collectionIndex}/${collections.length}: ${collection.name}`);
 
-      // Get variables in this collection (metadata only - no values yet)
       try {
         const libraryVarMetadata = await figma.teamLibrary.getVariablesInLibraryCollectionAsync(collection.key);
-        console.log(`    Library variables: ${libraryVarMetadata.length}`);
+        console.log(`  Collection: ${collection.name} - ${libraryVarMetadata.length} variables`);
         totalVarKeys += libraryVarMetadata.length;
 
-        // Import variables to get their actual values
-        console.log(`    Importing variables to get values...`);
-        progressCallback?.(`Importing ${libraryVarMetadata.length} variables from ${collection.name}...`);
-        let importedCount = 0;
-        let colorCount = 0, numberCount = 0, stringCount = 0, boolCount = 0, aliasSkipped = 0;
-
-        for (let i = 0; i < libraryVarMetadata.length; i++) {
-          const varMeta = libraryVarMetadata[i];
-
-          // Show progress every 50 variables
-          if (i % 50 === 0 && i > 0) {
-            progressCallback?.(`Importing variables: ${i}/${libraryVarMetadata.length}...`);
-          }
-
+        // Import all variables to populate the cache
+        for (const varMeta of libraryVarMetadata) {
           try {
-            // Import the variable to get its full data including values
             const variable = await figma.variables.importVariableByKeyAsync(varMeta.key);
             importedVariables.set(varMeta.key, variable);
-            importedCount++;
-
+            variableCache.set(variable.id, variable);
+            variableCache.set(varMeta.key, variable);
             catalog.variablesByKey.set(varMeta.key, varMeta);
 
-            const varRef: DSVarRef = {
-              collectionKey: collection.key,
-              collectionName: collection.name,
-              variableKey: varMeta.key,
-              variableName: varMeta.name,
-              resolvedType: varMeta.resolvedType,
-              libraryName: (collection as any).libraryName || collection.name
-            };
-
-            // Now index by actual values from the imported variable
-            if (varMeta.resolvedType === "COLOR") {
-              let indexed = false;
-              for (const modeId in variable.valuesByMode) {
-                const value = variable.valuesByMode[modeId];
-                // Skip alias references, only index concrete values
-                if (typeof value === 'object' && 'r' in value && 'g' in value && 'b' in value) {
-                  const key = normalizeRgba(value as RGBA);
-
-                  if (!catalog.colorsByRgba.has(key)) {
-                    catalog.colorsByRgba.set(key, []);
-                  }
-                  catalog.colorsByRgba.get(key)!.push(varRef);
-                  indexed = true;
-                  colorCount++;
-
-                  // Log first few colors for debugging
-                  if (catalog.colorsByRgba.size <= 5) {
-                    console.log(`      Indexed color "${varMeta.name}": ${key}`);
-                  }
-                } else {
-                  // Value is an alias, not a concrete color
-                  if (!indexed) aliasSkipped++;
-                }
-              }
-            } else if (varMeta.resolvedType === "FLOAT") {
-              for (const modeId in variable.valuesByMode) {
-                const value = variable.valuesByMode[modeId];
-                if (typeof value === 'number') {
-                  const key = normalizeNumber(value);
-
-                  if (!catalog.numbersByValue.has(key)) {
-                    catalog.numbersByValue.set(key, []);
-                  }
-                  catalog.numbersByValue.get(key)!.push(varRef);
-                  numberCount++;
-                }
-              }
-            } else if (varMeta.resolvedType === "STRING") {
-              for (const modeId in variable.valuesByMode) {
-                const value = variable.valuesByMode[modeId];
-                if (typeof value === 'string') {
-                  if (!catalog.stringsByValue.has(value)) {
-                    catalog.stringsByValue.set(value, []);
-                  }
-                  catalog.stringsByValue.get(value)!.push(varRef);
-                  stringCount++;
-                }
-              }
-            } else if (varMeta.resolvedType === "BOOLEAN") {
-              for (const modeId in variable.valuesByMode) {
-                const value = String(variable.valuesByMode[modeId]);
-
-                if (!catalog.booleansByValue.has(value)) {
-                  catalog.booleansByValue.set(value, []);
-                }
-                catalog.booleansByValue.get(value)!.push(varRef);
-                boolCount++;
-              }
-            }
+            // Store for second pass
+            allVariableMetadata.push({ varMeta, collection });
           } catch (err) {
             console.warn(`    Could not import variable "${varMeta.name}":`, err);
           }
         }
-
-        console.log(`    Imported ${importedCount}/${libraryVarMetadata.length} variables`);
-        console.log(`    Variable breakdown: ${colorCount} colors, ${numberCount} numbers, ${stringCount} strings, ${boolCount} booleans`);
-        if (aliasSkipped > 0) {
-          console.warn(`    Skipped ${aliasSkipped} color aliases (variables that reference other variables)`);
-        }
       } catch (err) {
         console.warn(`Could not load variables for collection ${collection.name}:`, err);
+      }
+    }
+
+    console.log(`Imported ${variableCache.size} variables into cache`);
+
+    // PASS 2: Now resolve and index all variables
+    console.log("=== PASS 2: Resolving and indexing ===");
+    let collectionIndex = 0;
+    let currentCollectionName = "";
+
+    for (const { varMeta, collection } of allVariableMetadata) {
+      // Track which collection we're processing for progress updates
+      if (collection.name !== currentCollectionName) {
+        collectionIndex++;
+        currentCollectionName = collection.name;
+        console.log(`  Processing collection: ${collection.name}`);
+        progressCallback?.(`Processing collection ${collectionIndex}/${collections.length}: ${collection.name}`);
+      }
+
+      const variable = variableCache.get(varMeta.key);
+      if (!variable) continue;
+
+      const varRef: DSVarRef = {
+        collectionKey: collection.key,
+        collectionName: collection.name,
+        variableKey: varMeta.key,
+        variableName: varMeta.name,
+        resolvedType: varMeta.resolvedType,
+        libraryName: (collection as any).libraryName || collection.name
+      };
+
+      // Index by resolved values
+      if (varMeta.resolvedType === "COLOR") {
+        let indexed = false;
+
+        for (const modeId in variable.valuesByMode) {
+          // Use recursive resolver for both concrete and alias values
+          const rgba = await resolveColorVariableToRGBA(variable.id, modeId);
+
+          if (rgba) {
+            const key = normalizeRgba(rgba);
+
+            if (!catalog.colorsByRgba.has(key)) {
+              catalog.colorsByRgba.set(key, []);
+            }
+            catalog.colorsByRgba.get(key)!.push(varRef);
+            indexed = true;
+
+            // Log first few colors for debugging
+            if (catalog.colorsByRgba.size <= 5) {
+              const valueType = isAlias(variable.valuesByMode[modeId]) ? "alias" : "concrete";
+              console.log(`    Indexed ${valueType} color "${varMeta.name}": ${key}`);
+            }
+          }
+        }
+
+        if (!indexed) {
+          console.warn(`    Could not resolve color "${varMeta.name}"`);
+        }
+      } else if (varMeta.resolvedType === "FLOAT") {
+        for (const modeId in variable.valuesByMode) {
+          const value = variable.valuesByMode[modeId];
+          if (typeof value === 'number') {
+            const key = normalizeNumber(value);
+
+            if (!catalog.numbersByValue.has(key)) {
+              catalog.numbersByValue.set(key, []);
+            }
+            catalog.numbersByValue.get(key)!.push(varRef);
+          }
+        }
+      } else if (varMeta.resolvedType === "STRING") {
+        for (const modeId in variable.valuesByMode) {
+          const value = variable.valuesByMode[modeId];
+          if (typeof value === 'string') {
+            if (!catalog.stringsByValue.has(value)) {
+              catalog.stringsByValue.set(value, []);
+            }
+            catalog.stringsByValue.get(value)!.push(varRef);
+          }
+        }
+      } else if (varMeta.resolvedType === "BOOLEAN") {
+        for (const modeId in variable.valuesByMode) {
+          const value = String(variable.valuesByMode[modeId]);
+
+          if (!catalog.booleansByValue.has(value)) {
+            catalog.booleansByValue.set(value, []);
+          }
+          catalog.booleansByValue.get(value)!.push(varRef);
+        }
       }
     }
 
