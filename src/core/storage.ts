@@ -16,7 +16,10 @@ const DEFAULT_SETTINGS: Settings = {
     "truth:freshness",
     "truth:scope",
     "truth:confidence"
-  ]
+  ],
+  ignoreHiddenFills: true,
+  ignoreZeroOpacity: true,
+  ignoreTransparentColors: true
 };
 
 export async function getSettings(): Promise<Settings> {

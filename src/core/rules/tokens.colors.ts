@@ -1,4 +1,4 @@
-import type { Finding, Severity } from "../types";
+import type { Finding, Severity, Settings } from "../types";
 import { getPageName } from "../scanner";
 import { matchColor, importVariableByKey, type DSVarRef } from "../dsCatalog";
 
@@ -15,12 +15,27 @@ function hasFillOrStroke(node: SceneNode): node is SceneNode & MinimalFillsMixin
   return "fills" in node || "strokes" in node;
 }
 
+function isEffectiveVisiblePaint(paint: Paint, settings: Settings): boolean {
+  if (paint.type !== "SOLID") return false;
+
+  // Hidden via eye icon
+  if (settings.ignoreHiddenFills && paint.visible === false) return false;
+
+  // Opacity slider
+  if (settings.ignoreZeroOpacity && paint.opacity !== undefined && paint.opacity === 0) return false;
+
+  // Transparent color
+  if (settings.ignoreTransparentColors && "color" in paint && paint.color.a === 0) return false;
+
+  return true;
+}
+
 export async function checkColorTokens(
   nodes: SceneNode[],
-  strictness: "relaxed" | "strict"
+  settings: Settings
 ): Promise<Finding[]> {
   const findings: Finding[] = [];
-  const severity: Severity = strictness === "strict" ? "warn" : "info";
+  const severity: Severity = settings.strictness === "strict" ? "warn" : "info";
 
   // Reset lookup counter for debugging
   (globalThis as any).__colorLookupCount = 0;
@@ -40,6 +55,12 @@ export async function checkColorTokens(
     if ("fills" in node && node.fills !== figma.mixed && Array.isArray(node.fills)) {
       for (let i = 0; i < node.fills.length; i++) {
         const fill = node.fills[i];
+
+        // Skip if not effective/visible
+        if (!isEffectiveVisiblePaint(fill, settings)) {
+          continue;
+        }
+
         if (fill.type !== "SOLID") continue;
 
         // A) Check for explicit variable binding (CONFIRMED)
@@ -137,6 +158,12 @@ export async function checkColorTokens(
     if ("strokes" in node && Array.isArray(node.strokes)) {
       for (let i = 0; i < node.strokes.length; i++) {
         const stroke = node.strokes[i];
+
+        // Skip if not effective/visible
+        if (!isEffectiveVisiblePaint(stroke, settings)) {
+          continue;
+        }
+
         if (stroke.type !== "SOLID") continue;
 
         // A) Check for explicit variable binding (CONFIRMED)

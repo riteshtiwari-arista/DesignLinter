@@ -47,6 +47,9 @@ export interface Settings {
   dsLibraryKey?: string;
   requiredStateTags?: string[];
   truthTags?: string[];
+  ignoreHiddenFills?: boolean;
+  ignoreZeroOpacity?: boolean;
+  ignoreTransparentColors?: boolean;
 }
 
 export interface LibraryInfo {

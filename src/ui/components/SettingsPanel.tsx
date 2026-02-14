@@ -7,6 +7,9 @@ interface Settings {
   dsLibraryKey?: string;
   requiredStateTags?: string[];
   truthTags?: string[];
+  ignoreHiddenFills?: boolean;
+  ignoreZeroOpacity?: boolean;
+  ignoreTransparentColors?: boolean;
 }
 
 interface LibraryInfo {
@@ -67,6 +70,26 @@ export default function SettingsPanel({
               { value: "strict", label: "Strict (blocking)" }
             ]}
             onChange={(value) => onSettingsChange({ strictness: value as "relaxed" | "strict" })}
+          />
+        </Field>
+      </Section>
+
+      <Section title="Color Scanning Options">
+        <Field label="Ignore Invisible Paints">
+          <Checkbox
+            label="Ignore fills with visibility turned off (eye icon)"
+            checked={settings.ignoreHiddenFills ?? true}
+            onChange={(checked) => onSettingsChange({ ignoreHiddenFills: checked })}
+          />
+          <Checkbox
+            label="Ignore fills with 0% opacity"
+            checked={settings.ignoreZeroOpacity ?? true}
+            onChange={(checked) => onSettingsChange({ ignoreZeroOpacity: checked })}
+          />
+          <Checkbox
+            label="Ignore fully transparent colors (alpha = 0)"
+            checked={settings.ignoreTransparentColors ?? true}
+            onChange={(checked) => onSettingsChange({ ignoreTransparentColors: checked })}
           />
         </Field>
       </Section>
@@ -231,5 +254,42 @@ function RadioGroup({
         </label>
       ))}
     </div>
+  );
+}
+
+function Checkbox({
+  label,
+  checked,
+  onChange
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+}) {
+  return (
+    <label
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
+        cursor: "pointer",
+        fontSize: "13px",
+        color: "var(--text-primary)",
+        marginBottom: "8px"
+      }}
+    >
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        style={{
+          width: "16px",
+          height: "16px",
+          cursor: "pointer",
+          accentColor: "#5B8FD6"
+        }}
+      />
+      {label}
+    </label>
   );
 }

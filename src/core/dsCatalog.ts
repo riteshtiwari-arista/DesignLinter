@@ -236,24 +236,33 @@ export async function loadDSCatalog(
       // Index by resolved values
       if (varMeta.resolvedType === "COLOR") {
         let indexed = false;
+        const uniqueColors = new Set<string>();
 
+        // Collect all unique RGBA values across all modes
         for (const modeId in variable.valuesByMode) {
           // Use recursive resolver for both concrete and alias values
           const rgba = await resolveColorVariableToRGBA(variable.id, modeId);
 
           if (rgba) {
             const key = normalizeRgba(rgba);
+            uniqueColors.add(key);
+          }
+        }
 
-            if (!catalog.colorsByRgba.has(key)) {
-              catalog.colorsByRgba.set(key, []);
-            }
-            catalog.colorsByRgba.get(key)!.push(varRef);
-            indexed = true;
+        // Index each unique color only once
+        for (const key of uniqueColors) {
+          if (!catalog.colorsByRgba.has(key)) {
+            catalog.colorsByRgba.set(key, []);
+          }
+          catalog.colorsByRgba.get(key)!.push(varRef);
+          indexed = true;
 
-            // Log first few colors for debugging
-            if (catalog.colorsByRgba.size <= 5) {
-              const valueType = isAlias(variable.valuesByMode[modeId]) ? "alias" : "concrete";
-              console.log(`    Indexed ${valueType} color "${varMeta.name}": ${key}`);
+          // Log indexing for debugging (first few)
+          if (catalog.colorsByRgba.size <= 10) {
+            const parts = key.match(/rgba\((\d+),(\d+),(\d+),/);
+            if (parts) {
+              const valueType = isAlias(variable.valuesByMode[Object.keys(variable.valuesByMode)[0]]) ? "alias" : "concrete";
+              console.log(`    [INDEX] ${valueType} "${varMeta.name}" -> ${key}`);
             }
           }
         }

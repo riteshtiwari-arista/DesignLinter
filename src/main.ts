@@ -130,7 +130,7 @@ async function runScan() {
     });
     const colorFindings = await checkColorTokens(
       nodes,
-      settings.strictness
+      settings
     );
     allFindings.push(...colorFindings);
 
