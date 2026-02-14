@@ -46,6 +46,7 @@ export default function App() {
   const [scanSteps, setScanSteps] = useState<Array<{label: string, status: "pending" | "running" | "done"}>>([]);
   const [resolvedMap, setResolvedMap] = useState<Record<string, "resolved" | "auto-fixed">>({});
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+  const [initProgress, setInitProgress] = useState("Loading settings...");
 
   useEffect(() => {
     console.log("App mounted");
@@ -56,6 +57,10 @@ export default function App() {
       if (!msg) return;
 
       switch (msg.type) {
+        case "INIT_PROGRESS":
+          setInitProgress(msg.message);
+          break;
+
         case "INIT":
           console.log("INIT received", msg);
           setSettings(msg.settings);
@@ -251,8 +256,31 @@ export default function App() {
 
   if (!settings) {
     return (
-      <div style={{ padding: "24px", textAlign: "center", color: "#333" }}>
-        <div>Loading settings...</div>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        padding: "24px",
+        textAlign: "center"
+      }}>
+        <div style={{
+          width: "40px",
+          height: "40px",
+          border: "3px solid #E8EFF8",
+          borderTopColor: "#5B8FD6",
+          borderRadius: "50%",
+          animation: "spin 0.8s linear infinite",
+          marginBottom: "20px"
+        }} />
+        <div style={{
+          fontSize: "14px",
+          color: "#2D4461",
+          fontWeight: 500
+        }}>
+          {initProgress}
+        </div>
       </div>
     );
   }
@@ -274,164 +302,80 @@ export default function App() {
                 padding: "40px 24px"
               }}
             >
-              {/* Animated scanning layers */}
               <div style={{
-                position: "relative",
-                width: "120px",
-                height: "120px",
-                marginBottom: "32px"
-              }}>
-                {/* Background layers */}
-                <div style={{
-                  position: "absolute",
-                  top: "20px",
-                  left: "10px",
-                  width: "100px",
-                  height: "80px",
-                  background: "#F7F9FC",
-                  border: "2px solid #E0E5EB",
-                  borderRadius: "8px",
-                  opacity: 0.4
-                }} />
-                <div style={{
-                  position: "absolute",
-                  top: "10px",
-                  left: "5px",
-                  width: "100px",
-                  height: "80px",
-                  background: "#F7F9FC",
-                  border: "2px solid #E0E5EB",
-                  borderRadius: "8px",
-                  opacity: 0.6
-                }} />
-                <div style={{
-                  position: "absolute",
-                  top: "0px",
-                  left: "0px",
-                  width: "100px",
-                  height: "80px",
-                  background: "white",
-                  border: "2px solid #5B8FD6",
-                  borderRadius: "8px",
-                  overflow: "hidden"
-                }}>
-                  {/* Scanning beam */}
-                  <div style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "3px",
-                    background: "linear-gradient(90deg, transparent, #5B8FD6, transparent)",
-                    animation: "scan 2s ease-in-out infinite"
-                  }} />
-                  {/* Checkmark that appears */}
-                  <div style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    fontSize: "32px",
-                    color: "#5B8FD6",
-                    animation: "fadeInOut 2s ease-in-out infinite"
-                  }}>
-                    &#10003;
-                  </div>
-                </div>
-                {/* Magnifying glass */}
-                <div style={{
-                  position: "absolute",
-                  bottom: "10px",
-                  right: "10px",
-                  width: "40px",
-                  height: "40px",
-                  border: "3px solid #5B8FD6",
-                  borderRadius: "50%",
-                  background: "white",
-                  animation: "pulse 2s ease-in-out infinite"
-                }}>
-                  <div style={{
-                    position: "absolute",
-                    bottom: "-18px",
-                    right: "-8px",
-                    width: "3px",
-                    height: "20px",
-                    background: "#5B8FD6",
-                    transform: "rotate(45deg)",
-                    borderRadius: "2px"
-                  }} />
-                </div>
-              </div>
+                width: "48px",
+                height: "48px",
+                border: "4px solid #E8EFF8",
+                borderTopColor: "#5B8FD6",
+                borderRadius: "50%",
+                animation: "spin 0.8s linear infinite",
+                marginBottom: "24px"
+              }} />
               <div style={{
                 fontSize: "15px",
                 fontWeight: 600,
                 color: "#2D4461",
-                marginBottom: "24px"
+                marginBottom: "28px"
               }}>
                 Scanning your design...
               </div>
               <div style={{
                 width: "100%",
-                maxWidth: "320px",
+                maxWidth: "280px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "12px"
+                gap: "8px"
               }}>
-                {scanSteps.map((step, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "12px",
-                      padding: "10px 14px",
-                      background: step.status === "running" ? "#F0F5FA" : "white",
-                      border: `1px solid ${step.status === "running" ? "#5B8FD6" : "#E0E5EB"}`,
-                      borderRadius: "6px",
-                      transition: "all 0.3s ease"
-                    }}
-                  >
-                    <div style={{
-                      width: "20px",
-                      height: "20px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0
-                    }}>
-                      {step.status === "done" ? (
-                        <span style={{ color: "#34A853", fontSize: "16px" }}>&#10003;</span>
-                      ) : step.status === "running" ? (
-                        <div
-                          style={{
-                            width: "12px",
-                            height: "12px",
-                            border: "2px solid #E8EFF8",
-                            borderTopColor: "#5B8FD6",
-                            borderRadius: "50%",
-                            animation: "spin 0.6s linear infinite"
-                          }}
-                        />
-                      ) : (
-                        <div
-                          style={{
-                            width: "8px",
-                            height: "8px",
-                            borderRadius: "50%",
-                            background: "#E0E5EB"
-                          }}
-                        />
-                      )}
+                {scanSteps
+                  .filter(step => step.status !== "pending")
+                  .map((step, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        padding: "8px 0",
+                        animation: "fadeIn 0.3s ease-in"
+                      }}
+                    >
+                      <div style={{
+                        width: "16px",
+                        height: "16px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0
+                      }}>
+                        {step.status === "done" ? (
+                          <span style={{
+                            color: "#34A853",
+                            fontSize: "12px",
+                            fontWeight: 600,
+                            animation: "pulse 1.5s ease-in-out infinite"
+                          }}>...</span>
+                        ) : (
+                          <div
+                            style={{
+                              width: "10px",
+                              height: "10px",
+                              border: "2px solid #E8EFF8",
+                              borderTopColor: "#5B8FD6",
+                              borderRadius: "50%",
+                              animation: "spin 0.6s linear infinite"
+                            }}
+                          />
+                        )}
+                      </div>
+                      <span style={{
+                        fontSize: "13px",
+                        color: "#2D4461",
+                        fontWeight: step.status === "running" ? 500 : 400
+                      }}>
+                        {step.label}
+                      </span>
                     </div>
-                    <span style={{
-                      fontSize: "13px",
-                      color: step.status === "pending" ? "#9B9B9B" : "#2C2C2C",
-                      fontWeight: step.status === "running" ? 500 : 400
-                    }}>
-                      {step.label}
-                    </span>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           ) : findings.length === 0 ? (

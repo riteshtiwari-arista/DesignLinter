@@ -7,19 +7,11 @@ function hasEffects(node: SceneNode): node is SceneNode & BlendMixin {
 
 export async function checkEffectTokens(
   nodes: SceneNode[],
-  strictness: "relaxed" | "strict",
-  dsLibraryKey?: string
+  strictness: "relaxed" | "strict"
 ): Promise<Finding[]> {
   const findings: Finding[] = [];
 
-  let effectStyles: EffectStyle[] = figma.getLocalEffectStyles();
-
-  if (dsLibraryKey) {
-    effectStyles = effectStyles.filter(s => {
-      if (!s.key) return false;
-      return s.key.startsWith(dsLibraryKey) || s.name.includes(dsLibraryKey);
-    });
-  }
+  const effectStyles: EffectStyle[] = figma.getLocalEffectStyles();
 
   for (const node of nodes) {
     if (!hasEffects(node)) continue;

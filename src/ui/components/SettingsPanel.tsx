@@ -21,56 +21,12 @@ interface SettingsPanelProps {
   onRefreshLibraries: () => void;
 }
 
-interface LibraryValidation {
-  status: "unchecked" | "checking" | "valid" | "invalid";
-  matchCount: number;
-  message: string;
-}
-
 export default function SettingsPanel({
   settings,
   libraries,
   onSettingsChange,
   onRefreshLibraries
 }: SettingsPanelProps) {
-  const [libraryValidation, setLibraryValidation] = useState<LibraryValidation>({
-    status: "unchecked",
-    matchCount: 0,
-    message: ""
-  });
-
-  // Request validation from main thread
-  const validateLibrary = (libraryKey: string) => {
-    if (!libraryKey || libraryKey.trim() === "") {
-      setLibraryValidation({ status: "unchecked", matchCount: 0, message: "" });
-      return;
-    }
-
-    setLibraryValidation({ status: "checking", matchCount: 0, message: "Checking..." });
-
-    parent.postMessage(
-      { pluginMessage: { type: "VALIDATE_LIBRARY", libraryKey } },
-      "*"
-    );
-  };
-
-  // Listen for validation results
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      const msg = event.data.pluginMessage;
-      if (msg?.type === "LIBRARY_VALIDATION") {
-        setLibraryValidation(msg.validation);
-      }
-    };
-
-    window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, []);
-
-  // Validate when library key changes
-  useEffect(() => {
-    validateLibrary(settings.dsLibraryKey || "");
-  }, [settings.dsLibraryKey]);
 
   return (
     <div style={{ padding: "18px" }}>
@@ -130,36 +86,6 @@ export default function SettingsPanel({
                 </option>
               ))}
             </select>
-
-            {libraryValidation.status === "valid" && (
-              <div
-                style={{
-                  fontSize: "12px",
-                  color: "#0F7F3F",
-                  padding: "10px 12px",
-                  background: "#E6F7ED",
-                  borderRadius: "0",
-                  border: "1px solid #B8E6CF"
-                }}
-              >
-                {libraryValidation.message}
-              </div>
-            )}
-
-            {libraryValidation.status === "invalid" && settings.dsLibraryKey && (
-              <div
-                style={{
-                  fontSize: "12px",
-                  color: "#B91C1C",
-                  padding: "10px 12px",
-                  background: "#FEE2E2",
-                  borderRadius: "0",
-                  border: "1px solid #FECACA"
-                }}
-              >
-                No styles or variables found for this library
-              </div>
-            )}
 
             <button className="btn btn-secondary btn-sm" onClick={onRefreshLibraries}>
               Refresh Libraries

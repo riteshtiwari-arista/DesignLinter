@@ -17,20 +17,12 @@ function textPropertiesMatch(node: TextNode, style: TextStyle): boolean {
 
 export async function checkTypographyTokens(
   nodes: SceneNode[],
-  strictness: "relaxed" | "strict",
-  dsLibraryKey?: string
+  strictness: "relaxed" | "strict"
 ): Promise<Finding[]> {
   const findings: Finding[] = [];
   const severity: Severity = strictness === "strict" ? "warn" : "info";
 
-  let textStyles: TextStyle[] = figma.getLocalTextStyles();
-
-  if (dsLibraryKey) {
-    textStyles = textStyles.filter(s => {
-      if (!s.key) return false;
-      return s.key.startsWith(dsLibraryKey) || s.name.includes(dsLibraryKey);
-    });
-  }
+  const textStyles: TextStyle[] = figma.getLocalTextStyles();
 
   for (const node of nodes) {
     if (node.type !== "TEXT") continue;

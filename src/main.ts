@@ -1,6 +1,7 @@
 import { getSettings, setSettings } from "./core/storage";
 import { listEnabledLibraries } from "./core/library";
 import { getScanRoots, getAllNodesToScan } from "./core/scanner";
+import { loadDSCatalog, ensureDSCatalogLoaded } from "./core/dsCatalog";
 import { checkColorTokens } from "./core/rules/tokens.colors";
 import { checkTypographyTokens } from "./core/rules/tokens.typography";
 import { checkEffectTokens } from "./core/rules/tokens.effects";
@@ -19,6 +20,23 @@ figma.showUI(__html__, { width: 400, height: 600, themeColors: true });
 
   console.log("Initializing plugin...");
   console.log("Found libraries:", libraries);
+
+  // Show init progress
+  figma.ui.postMessage({
+    type: "INIT_PROGRESS",
+    message: "Initializing plugin..."
+  });
+
+  // Load DS catalog from team libraries with progress updates
+  await loadDSCatalog(
+    undefined,
+    (message) => {
+      figma.ui.postMessage({
+        type: "INIT_PROGRESS",
+        message
+      });
+    }
+  );
 
   figma.ui.postMessage({
     type: "INIT",
@@ -50,10 +68,6 @@ figma.ui.onmessage = async (msg) => {
 
       case "APPLY_FIX":
         await applyFix(msg.findingId, msg.nodeId, msg.fixPayload);
-        break;
-
-      case "VALIDATE_LIBRARY":
-        await validateLibrary(msg.libraryKey);
         break;
 
       case "NOTIFY":
@@ -90,6 +104,9 @@ async function runScan() {
 
     const nodes = getAllNodesToScan(roots, true);
 
+    // Ensure DS catalog is loaded
+    await ensureDSCatalogLoaded();
+
     const allFindings: Finding[] = [];
 
     figma.ui.postMessage({
@@ -104,8 +121,7 @@ async function runScan() {
     });
     const colorFindings = await checkColorTokens(
       nodes,
-      settings.strictness,
-      settings.dsLibraryKey
+      settings.strictness
     );
     allFindings.push(...colorFindings);
 
@@ -115,8 +131,7 @@ async function runScan() {
     });
     const typographyFindings = await checkTypographyTokens(
       nodes,
-      settings.strictness,
-      settings.dsLibraryKey
+      settings.strictness
     );
     allFindings.push(...typographyFindings);
 
@@ -126,8 +141,7 @@ async function runScan() {
     });
     const effectFindings = await checkEffectTokens(
       nodes,
-      settings.strictness,
-      settings.dsLibraryKey
+      settings.strictness
     );
     allFindings.push(...effectFindings);
 
@@ -310,50 +324,6 @@ async function createAnnotationFrame(referenceNode: SceneNode, payload: FixPaylo
   }
 
   page.appendChild(frame);
-}
-
-async function validateLibrary(libraryName: string) {
-  try {
-    // Get the library info with collection keys
-    const libraries = await listEnabledLibraries();
-    const library = libraries.find(lib => lib.name === libraryName);
-
-    if (!library) {
-      figma.ui.postMessage({
-        type: "LIBRARY_VALIDATION",
-        validation: {
-          status: "invalid",
-          matchCount: 0,
-          message: "Library not found"
-        }
-      });
-      return;
-    }
-
-    // Library was detected - it's valid!
-    const collectionCount = library.collectionKeys?.length || 0;
-
-    figma.ui.postMessage({
-      type: "LIBRARY_VALIDATION",
-      validation: {
-        status: "valid",
-        matchCount: collectionCount,
-        message: collectionCount > 0
-          ? `Library found with ${collectionCount} variable collection${collectionCount > 1 ? 's' : ''}`
-          : "Library found (enabled in this file)"
-      }
-    });
-  } catch (error) {
-    console.error("Validation error:", error);
-    figma.ui.postMessage({
-      type: "LIBRARY_VALIDATION",
-      validation: {
-        status: "invalid",
-        matchCount: 0,
-        message: "Error checking library"
-      }
-    });
-  }
 }
 
 async function updateSpacing(node: FrameNode, payload: FixPayload) {
