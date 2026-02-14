@@ -4,9 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arista Principles Linter</title>
+    <style>
+      #resize-handle {
+        position: fixed;
+        right: 8px;
+        bottom: 8px;
+        width: 14px;
+        height: 14px;
+        cursor: nwse-resize;
+        opacity: 0.35;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        user-select: none;
+        z-index: 9999;
+      }
+      #resize-handle:hover {
+        opacity: 0.6;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <div id="resize-handle"></div>
     <script type="module" src="./ui.tsx"></script>
+    <script>
+      const handle = document.getElementById('resize-handle');
+
+      let startX, startY, startW, startH, dragging = false;
+
+      function parentSize() {
+        return { w: window.innerWidth, h: window.innerHeight };
+      }
+
+      handle.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        dragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const s = parentSize();
+        startW = s.w;
+        startH = s.h;
+
+        window.addEventListener('mousemove', onMove);
+        window.addEventListener('mouseup', onUp);
+      });
+
+      function onMove(e) {
+        if (!dragging) return;
+        const dw = e.clientX - startX;
+        const dh = e.clientY - startY;
+
+        const width = Math.max(300, startW + dw);
+        const height = Math.max(400, startH + dh);
+
+        parent.postMessage({ pluginMessage: { type: 'RESIZE_UI', width, height } }, '*');
+      }
+
+      function onUp() {
+        dragging = false;
+        window.removeEventListener('mousemove', onMove);
+        window.removeEventListener('mouseup', onUp);
+      }
+    </script>
   </body>
 </html>

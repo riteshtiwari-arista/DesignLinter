@@ -63,9 +63,20 @@ export async function loadDSCatalog(
     // Get all library variable collections
     const allCollections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
 
+    // Debug: Show all library names
+    console.log("All available libraries:");
+    const uniqueLibraries = new Set(allCollections.map(col => col.libraryName));
+    uniqueLibraries.forEach(lib => console.log(`  - "${lib}"`));
+
     // Filter collections based on selected library (if any)
     const collections = selectedLibraryKey
-      ? allCollections.filter(col => col.libraryName === selectedLibraryKey)
+      ? allCollections.filter(col => {
+          const matches = col.libraryName === selectedLibraryKey;
+          if (!matches) {
+            console.log(`Skipping collection "${col.name}" from library "${col.libraryName}" (looking for "${selectedLibraryKey}")`);
+          }
+          return matches;
+        })
       : allCollections;
 
     console.log(`Found ${allCollections.length} total collections, using ${collections.length} based on selection`);
@@ -95,6 +106,7 @@ export async function loadDSCatalog(
         console.log(`    Importing variables to get values...`);
         progressCallback?.(`Importing ${libraryVarMetadata.length} variables from ${collection.name}...`);
         let importedCount = 0;
+        let colorCount = 0, numberCount = 0, stringCount = 0, boolCount = 0, aliasSkipped = 0;
 
         for (let i = 0; i < libraryVarMetadata.length; i++) {
           const varMeta = libraryVarMetadata[i];
@@ -123,6 +135,7 @@ export async function loadDSCatalog(
 
             // Now index by actual values from the imported variable
             if (varMeta.resolvedType === "COLOR") {
+              let indexed = false;
               for (const modeId in variable.valuesByMode) {
                 const value = variable.valuesByMode[modeId];
                 // Skip alias references, only index concrete values
@@ -133,11 +146,16 @@ export async function loadDSCatalog(
                     catalog.colorsByRgba.set(key, []);
                   }
                   catalog.colorsByRgba.get(key)!.push(varRef);
+                  indexed = true;
+                  colorCount++;
 
                   // Log first few colors for debugging
                   if (catalog.colorsByRgba.size <= 5) {
                     console.log(`      Indexed color "${varMeta.name}": ${key}`);
                   }
+                } else {
+                  // Value is an alias, not a concrete color
+                  if (!indexed) aliasSkipped++;
                 }
               }
             } else if (varMeta.resolvedType === "FLOAT") {
@@ -150,6 +168,7 @@ export async function loadDSCatalog(
                     catalog.numbersByValue.set(key, []);
                   }
                   catalog.numbersByValue.get(key)!.push(varRef);
+                  numberCount++;
                 }
               }
             } else if (varMeta.resolvedType === "STRING") {
@@ -160,6 +179,7 @@ export async function loadDSCatalog(
                     catalog.stringsByValue.set(value, []);
                   }
                   catalog.stringsByValue.get(value)!.push(varRef);
+                  stringCount++;
                 }
               }
             } else if (varMeta.resolvedType === "BOOLEAN") {
@@ -170,6 +190,7 @@ export async function loadDSCatalog(
                   catalog.booleansByValue.set(value, []);
                 }
                 catalog.booleansByValue.get(value)!.push(varRef);
+                boolCount++;
               }
             }
           } catch (err) {
@@ -178,6 +199,10 @@ export async function loadDSCatalog(
         }
 
         console.log(`    Imported ${importedCount}/${libraryVarMetadata.length} variables`);
+        console.log(`    Variable breakdown: ${colorCount} colors, ${numberCount} numbers, ${stringCount} strings, ${boolCount} booleans`);
+        if (aliasSkipped > 0) {
+          console.warn(`    Skipped ${aliasSkipped} color aliases (variables that reference other variables)`);
+        }
       } catch (err) {
         console.warn(`Could not load variables for collection ${collection.name}:`, err);
       }

@@ -13,7 +13,7 @@ interface Finding {
 
 interface IssueRowProps {
   finding: Finding;
-  onZoom: (nodeId: string) => void;
+  onZoom: (findingId: string, nodeId: string) => void;
   onFix: (findingId: string, nodeId: string, fixPayload: any) => void;
   resolvedType?: "resolved" | "auto-fixed";
   onToggleResolved: () => void;
@@ -24,7 +24,7 @@ export default function IssueRow({ finding, onZoom, onFix, resolvedType, onToggl
 
   return (
     <div
-      onClick={() => onZoom(finding.nodeId)}
+      onClick={() => onZoom(finding.id, finding.nodeId)}
       style={{
         padding: "14px",
         background: isSelected ? "#E8F0FE" : "white",
@@ -62,72 +62,92 @@ export default function IssueRow({ finding, onZoom, onFix, resolvedType, onToggl
         {finding.howToFix}
       </div>
 
-      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-        {/* Show label pill if resolved */}
-        {resolvedType ? (
-          <span
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              padding: "4px 10px",
-              borderRadius: "12px",
-              fontSize: "11px",
-              fontWeight: 600,
-              background: resolvedType === "auto-fixed" ? "#D1ECEC" : "#E3F2FD",
-              color: resolvedType === "auto-fixed" ? "#2D5555" : "#1976D2",
-              border: resolvedType === "auto-fixed" ? "1px solid #A8D5D5" : "1px solid #BBDEFB"
-            }}
-          >
-            {resolvedType === "auto-fixed" ? "auto-fixed" : "resolved"}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onToggleResolved();
-              }}
+      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
+          {/* Show label pill if resolved */}
+          {resolvedType ? (
+            <span
               style={{
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                padding: "0",
-                display: "flex",
+                display: "inline-flex",
                 alignItems: "center",
-                color: "inherit",
-                fontSize: "14px",
-                fontWeight: "bold"
+                gap: "6px",
+                padding: "4px 10px",
+                borderRadius: "12px",
+                fontSize: "11px",
+                fontWeight: 600,
+                background: resolvedType === "auto-fixed" ? "#D1ECEC" : "#E3F2FD",
+                color: resolvedType === "auto-fixed" ? "#2D5555" : "#1976D2",
+                border: resolvedType === "auto-fixed" ? "1px solid #A8D5D5" : "1px solid #BBDEFB"
               }}
             >
-              ×
-            </button>
-          </span>
-        ) : (
-          <>
-            {finding.canAutoFix && finding.fixPayload && (
+              {resolvedType === "auto-fixed" ? "auto-fixed" : "resolved"}
               <button
-                className="btn btn-primary btn-sm"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onFix(finding.id, finding.nodeId, finding.fixPayload);
+                  onToggleResolved();
+                }}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "0",
+                  display: "flex",
+                  alignItems: "center",
+                  color: "inherit",
+                  fontSize: "14px",
+                  fontWeight: "bold"
                 }}
               >
-                Auto-fix
+                ×
               </button>
-            )}
+            </span>
+          ) : (
+            <>
+              {finding.canAutoFix && finding.fixPayload && (
+                <button
+                  className="btn btn-primary btn-sm"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onFix(finding.id, finding.nodeId, finding.fixPayload);
+                  }}
+                >
+                  Auto-fix
+                </button>
+              )}
 
-            <button
-              className="btn btn-sm"
-              onClick={(e) => {
-                e.stopPropagation();
-                onToggleResolved();
-              }}
-              style={{
-                background: "#E6F7ED",
-                color: "#0F7F3F"
-              }}
-            >
-              Mark Resolved
-            </button>
-          </>
+              <button
+                className="btn btn-sm"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleResolved();
+                }}
+                style={{
+                  background: "#E6F7ED",
+                  color: "#0F7F3F"
+                }}
+              >
+                Mark Resolved
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Library name label (bottom-right) */}
+        {finding.fixPayload?.libraryName && (
+          <span
+            style={{
+              padding: "4px 8px",
+              borderRadius: "12px",
+              fontSize: "10px",
+              fontWeight: 600,
+              background: "#F0F5FA",
+              color: "#5B8FD6",
+              border: "1px solid #D1E3F5",
+              whiteSpace: "nowrap"
+            }}
+          >
+            {finding.fixPayload.libraryName}
+          </span>
         )}
       </div>
     </div>

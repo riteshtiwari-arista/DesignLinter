@@ -11,7 +11,12 @@ import { checkSpacingConsistency } from "./core/rules/consistency.spacing";
 import { checkBorderRadiusConsistency } from "./core/rules/consistency.borderRadius";
 import type { Finding, FixPayload } from "./core/types";
 
-figma.showUI(__html__, { width: 400, height: 600, themeColors: true });
+figma.showUI(__html__, {
+  width: 400,
+  height: 600,
+  themeColors: true,
+  title: "Design Linter"
+});
 
 // Initialize
 (async () => {
@@ -48,6 +53,10 @@ figma.showUI(__html__, { width: 400, height: 600, themeColors: true });
 figma.ui.onmessage = async (msg) => {
   try {
     switch (msg.type) {
+      case "RESIZE_UI":
+        figma.ui.resize(msg.width, msg.height);
+        break;
+
       case "SETTINGS_SAVE":
         await setSettings(msg.settings);
         figma.ui.postMessage({ type: "SETTINGS_SAVED" });

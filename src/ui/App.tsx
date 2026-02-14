@@ -45,7 +45,7 @@ export default function App() {
   const [scanProgress, setScanProgress] = useState("");
   const [scanSteps, setScanSteps] = useState<Array<{label: string, status: "pending" | "running" | "done"}>>([]);
   const [resolvedMap, setResolvedMap] = useState<Record<string, "resolved" | "auto-fixed">>({});
-  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+  const [selectedFindingId, setSelectedFindingId] = useState<string | null>(null);
   const [initProgress, setInitProgress] = useState("Loading settings...");
 
   useEffect(() => {
@@ -169,8 +169,8 @@ export default function App() {
     parent.postMessage({ pluginMessage: { type: "REFRESH_LIBRARIES" } }, "*");
   };
 
-  const handleZoomTo = (nodeId: string) => {
-    setSelectedNodeId(nodeId);
+  const handleZoomTo = (findingId: string, nodeId: string) => {
+    setSelectedFindingId(findingId);
     parent.postMessage({ pluginMessage: { type: "ZOOM_TO", nodeId } }, "*");
   };
 
@@ -402,7 +402,7 @@ export default function App() {
                   onFix={handleApplyFix}
                   resolvedMap={resolvedMap}
                   onToggleResolved={handleToggleResolved}
-                  selectedNodeId={selectedNodeId}
+                  selectedFindingId={selectedFindingId}
                 />
               </div>
               <div style={{ padding: "18px", borderTop: "1px solid var(--border-color)", background: "white", display: "flex", gap: "8px" }}>

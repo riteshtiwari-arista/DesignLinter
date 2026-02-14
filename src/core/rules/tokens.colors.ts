@@ -83,8 +83,6 @@ export async function checkColorTokens(
               console.log(`  ✓ Successfully imported variable: ${variable.name} (ID: ${variable.id})`);
             }
 
-            const libraryInfo = varRef.libraryName ? ` (${varRef.libraryName})` : '';
-
             findings.push({
               id: `${node.id}-fill-color`,
               principle: "Clarity",
@@ -94,16 +92,14 @@ export async function checkColorTokens(
               nodeName: node.name,
               pageName: getPageName(node),
               message: "Fill color not bound to design system token",
-              howToFix: `Bind to variable: ${varRef.variableName}${libraryInfo}`,
+              howToFix: `Bind to variable: ${varRef.variableName}`,
               canAutoFix: true,
-              fixPayload: { type: "bind-variable", variableId: variable.id, property: "fills" }
+              fixPayload: { type: "bind-variable", variableId: variable.id, property: "fills", libraryName: varRef.libraryName }
             });
           } else {
             if (checkedFills <= 3) {
               console.log(`  ✗ Failed to import variable: ${varRef.variableName}`);
             }
-
-            const libraryInfo = varRef.libraryName ? ` (${varRef.libraryName})` : '';
 
             findings.push({
               id: `${node.id}-fill-color`,
@@ -114,8 +110,9 @@ export async function checkColorTokens(
               nodeName: node.name,
               pageName: getPageName(node),
               message: "Fill color matches DS variable but not bound",
-              howToFix: `Bind to variable: ${varRef.variableName}${libraryInfo}`,
-              canAutoFix: false
+              howToFix: `Bind to variable: ${varRef.variableName}`,
+              canAutoFix: false,
+              fixPayload: { libraryName: varRef.libraryName }
             });
           }
         } else {
@@ -174,8 +171,6 @@ export async function checkColorTokens(
           if (variable) {
             successfulImports++;
 
-            const libraryInfo = varRef.libraryName ? ` (${varRef.libraryName})` : '';
-
             findings.push({
               id: `${node.id}-stroke-color`,
               principle: "Clarity",
@@ -185,13 +180,11 @@ export async function checkColorTokens(
               nodeName: node.name,
               pageName: getPageName(node),
               message: "Stroke color not bound to design system token",
-              howToFix: `Bind to variable: ${varRef.variableName}${libraryInfo}`,
+              howToFix: `Bind to variable: ${varRef.variableName}`,
               canAutoFix: true,
-              fixPayload: { type: "bind-variable", variableId: variable.id, property: "strokes" }
+              fixPayload: { type: "bind-variable", variableId: variable.id, property: "strokes", libraryName: varRef.libraryName }
             });
           } else {
-            const libraryInfo = varRef.libraryName ? ` (${varRef.libraryName})` : '';
-
             findings.push({
               id: `${node.id}-stroke-color`,
               principle: "Clarity",
@@ -201,8 +194,9 @@ export async function checkColorTokens(
               nodeName: node.name,
               pageName: getPageName(node),
               message: "Stroke color matches DS variable but not bound",
-              howToFix: `Bind to variable: ${varRef.variableName}${libraryInfo}`,
-              canAutoFix: false
+              howToFix: `Bind to variable: ${varRef.variableName}`,
+              canAutoFix: false,
+              fixPayload: { libraryName: varRef.libraryName }
             });
           }
         } else {

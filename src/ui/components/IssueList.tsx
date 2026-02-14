@@ -17,14 +17,14 @@ interface Finding {
 
 interface IssueListProps {
   findings: Finding[];
-  onZoom: (nodeId: string) => void;
+  onZoom: (findingId: string, nodeId: string) => void;
   onFix: (findingId: string, nodeId: string, fixPayload: any) => void;
   resolvedMap: Record<string, "resolved" | "auto-fixed">;
   onToggleResolved: (findingId: string) => void;
-  selectedNodeId: string | null;
+  selectedFindingId: string | null;
 }
 
-export default function IssueList({ findings, onZoom, onFix, resolvedMap, onToggleResolved, selectedNodeId }: IssueListProps) {
+export default function IssueList({ findings, onZoom, onFix, resolvedMap, onToggleResolved, selectedFindingId }: IssueListProps) {
   // Map rule IDs to friendly category names
   const categoryNames: Record<string, string> = {
     "tokens.colors": "Colors",
@@ -225,7 +225,7 @@ export default function IssueList({ findings, onZoom, onFix, resolvedMap, onTogg
                     onFix={onFix}
                     resolvedType={resolvedMap[finding.id]}
                     onToggleResolved={() => onToggleResolved(finding.id)}
-                    isSelected={selectedNodeId === finding.nodeId}
+                    isSelected={selectedFindingId === finding.id}
                   />
                 ))}
               </div>
