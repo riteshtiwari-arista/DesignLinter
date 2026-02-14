@@ -29,7 +29,7 @@ figma.showUI(__html__, { width: 400, height: 600, themeColors: true });
 
   // Load DS catalog from team libraries with progress updates
   await loadDSCatalog(
-    undefined,
+    settings.dsLibraryKey,
     (message) => {
       figma.ui.postMessage({
         type: "INIT_PROGRESS",
@@ -104,8 +104,8 @@ async function runScan() {
 
     const nodes = getAllNodesToScan(roots, true);
 
-    // Ensure DS catalog is loaded
-    await ensureDSCatalogLoaded();
+    // Ensure DS catalog is loaded with the selected library
+    await ensureDSCatalogLoaded(settings.dsLibraryKey);
 
     const allFindings: Finding[] = [];
 

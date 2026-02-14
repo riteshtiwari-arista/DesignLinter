@@ -12,6 +12,7 @@ export type DSVarRef = {
 
 export type DSCatalog = {
   loadedAt: number;
+  selectedLibraryKey?: string;
   collectionsByKey: Map<string, any>;
   variablesByKey: Map<string, any>;
   colorsByRgba: Map<string, DSVarRef[]>;
@@ -38,14 +39,18 @@ function normalizeNumber(value: number): string {
 }
 
 export async function loadDSCatalog(
-  selectedLibraryKeys?: string[],
+  selectedLibraryKey?: string,
   progressCallback?: (message: string) => void
 ): Promise<DSCatalog> {
   console.log("=== Loading DS Catalog ===");
+  if (selectedLibraryKey) {
+    console.log(`Filtering to library: ${selectedLibraryKey}`);
+  }
   progressCallback?.("Loading design system catalog...");
 
   const catalog: DSCatalog = {
     loadedAt: Date.now(),
+    selectedLibraryKey: selectedLibraryKey,
     collectionsByKey: new Map(),
     variablesByKey: new Map(),
     colorsByRgba: new Map(),
@@ -56,9 +61,14 @@ export async function loadDSCatalog(
 
   try {
     // Get all library variable collections
-    const collections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
+    const allCollections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
 
-    console.log(`Found ${collections.length} library variable collections`);
+    // Filter collections based on selected library (if any)
+    const collections = selectedLibraryKey
+      ? allCollections.filter(col => col.libraryName === selectedLibraryKey)
+      : allCollections;
+
+    console.log(`Found ${allCollections.length} total collections, using ${collections.length} based on selection`);
     progressCallback?.(`Found ${collections.length} library collections`);
 
     if (collections.length === 0) {
@@ -199,9 +209,14 @@ export async function loadDSCatalog(
   return catalog;
 }
 
-export async function ensureDSCatalogLoaded(progressCallback?: (message: string) => void): Promise<DSCatalog> {
-  if (!DS_CATALOG) {
-    return await loadDSCatalog(undefined, progressCallback);
+export async function ensureDSCatalogLoaded(
+  selectedLibraryKey?: string,
+  progressCallback?: (message: string) => void
+): Promise<DSCatalog> {
+  // Reload if catalog doesn't exist or if the selected library has changed
+  if (!DS_CATALOG || DS_CATALOG.selectedLibraryKey !== selectedLibraryKey) {
+    console.log(`Reloading catalog (library changed from "${DS_CATALOG?.selectedLibraryKey}" to "${selectedLibraryKey}")`);
+    return await loadDSCatalog(selectedLibraryKey, progressCallback);
   }
   return DS_CATALOG;
 }
