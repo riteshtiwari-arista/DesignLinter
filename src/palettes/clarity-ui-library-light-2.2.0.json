@@ -1,0 +1,5399 @@
+{
+  "metadata": {
+    "extractedAt": "2026-02-26T05:40:32.893Z",
+    "version": "1.0.0",
+    "fileName": "Clarity-UI-Library-light 2.2.0 - Management Center Resources (Copy)",
+    "libraryName": "All Libraries"
+  },
+  "paintStyles": [
+    {
+      "id": "S:1ab2507c9d328dd78aa502fd13ee090a6418132a,",
+      "key": "1ab2507c9d328dd78aa502fd13ee090a6418132a",
+      "name": "Input Value",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:ba58818a66ff3bc9a9fece4c0bce1ee4c4418dce,",
+      "key": "ba58818a66ff3bc9a9fece4c0bce1ee4c4418dce",
+      "name": "Text",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.33725491166114807,
+            "g": 0.33725491166114807,
+            "b": 0.33725491166114807
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.33725491166114807,
+          "g": 0.33725491166114807,
+          "b": 0.33725491166114807,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:eee4753e1205ae21683ee7bdbb99273624ee76ec,",
+      "key": "eee4753e1205ae21683ee7bdbb99273624ee76ec",
+      "name": "Icon",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.45098039507865906,
+            "g": 0.45098039507865906,
+            "b": 0.45098039507865906
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.45098039507865906,
+          "g": 0.45098039507865906,
+          "b": 0.45098039507865906,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:bcb06647f9c575c457b623f1b80381bb9714817d,",
+      "key": "bcb06647f9c575c457b623f1b80381bb9714817d",
+      "name": "Border",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.800000011920929,
+            "g": 0.800000011920929,
+            "b": 0.800000011920929
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.800000011920929,
+          "g": 0.800000011920929,
+          "b": 0.800000011920929,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:7aee788dbb4fef06a37029ee8ba55a6a1fb2eb39,",
+      "key": "7aee788dbb4fef06a37029ee8ba55a6a1fb2eb39",
+      "name": "Action",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0.4745098054409027,
+            "b": 0.7215686440467834
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0,
+          "g": 0.4745098054409027,
+          "b": 0.7215686440467834,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:315cb420b022416cc57639cdf73bbeefcd61e02b,",
+      "key": "315cb420b022416cc57639cdf73bbeefcd61e02b",
+      "name": "Success",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.3843137323856354,
+            "g": 0.6431372761726379,
+            "b": 0.125490203499794
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.3843137323856354,
+          "g": 0.6431372761726379,
+          "b": 0.125490203499794,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:836c7217f505fd224b11cca08898641723ffb90c,",
+      "key": "836c7217f505fd224b11cca08898641723ffb90c",
+      "name": "Warning",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9019607901573181,
+            "g": 0.15294118225574493,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9019607901573181,
+          "g": 0.15294118225574493,
+          "b": 0,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:0b8a0e3a480177243c412f5934d1f9251209ce2e,",
+      "key": "0b8a0e3a480177243c412f5934d1f9251209ce2e",
+      "name": "Active Background",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8509804010391235,
+            "g": 0.8941176533699036,
+            "b": 0.9176470637321472
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.8509804010391235,
+          "g": 0.8941176533699036,
+          "b": 0.9176470637321472,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:aea5c5e555f771556249d0943393159c8d2ed4c0,",
+      "key": "aea5c5e555f771556249d0943393159c8d2ed4c0",
+      "name": "Component Background",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:a40880b6fd4b212eac3a58469413dbe5cd388fd1,",
+      "key": "a40880b6fd4b212eac3a58469413dbe5cd388fd1",
+      "name": "Page Background",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9803921580314636,
+            "g": 0.9803921580314636,
+            "b": 0.9803921580314636
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 0.9803921580314636,
+          "g": 0.9803921580314636,
+          "b": 0.9803921580314636,
+          "a": 1
+        }
+      ]
+    },
+    {
+      "id": "S:b8e25fbec44b754dbf5ce18a5ef655a3bcdf027c,",
+      "key": "b8e25fbec44b754dbf5ce18a5ef655a3bcdf027c",
+      "name": "Text Inverse",
+      "paints": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "resolvedColors": [
+        {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      ]
+    }
+  ],
+  "textStyles": [
+    {
+      "id": "S:550d5cd7e4b2013fb2726fe7b4e9448c84a7b424,",
+      "name": "H1 Login Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 32,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 36
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:c95061b54e2ba0cafc17adba22c2e12defeee180,",
+      "name": "H2 Page Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 28,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 36
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:cbb3c337ade6a90a4952561214fcac81cfc38651,",
+      "name": "H3 Modal, Wizard Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 22,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:46891760495cb8977b9ba3a849732692e2af1beb,",
+      "name": "H4 Card, Signpost Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:7358606467cfdd7bb212501cfac452fa7f26b5de,",
+      "name": "H5 Stack View Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:ec225205eed726841b393b70f9f353d7ad7f0e09,",
+      "name": "H6 Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:051d22386f67feb2269b48cc077342a169046a61,",
+      "name": "P1 Body Text",
+      "fontFamily": "Metropolis",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:70a38e988a2a31a3ecf1582638182882178449b6,",
+      "name": "P2 Section Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:95c566af493ab8c97f6626efe6c50e14a9e587cf,",
+      "name": "P3 Form Label",
+      "fontFamily": "Metropolis",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:d10ca3c65e19db4f4547fb7bd5692f8a4396d84d,",
+      "name": "P3 Grid, Form Text",
+      "fontFamily": "Metropolis",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:934e503864d88b9d5380ea4f910da428c079d12f,",
+      "name": "P4 Grid Column Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 16
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:d1fa53f87b64bf5b5d9f9238eddddb626786f5ad,",
+      "name": "P5 Grid Footer Text",
+      "fontFamily": "Metropolis",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 16
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:e3e3a3cd15f2c791dc8d6680afd352787c011672,",
+      "name": "P6 Section Header",
+      "fontFamily": "Metropolis",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 16
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:6ab2ab356625bc2038c7d30f36837c32fc95f4da,",
+      "name": "P7 Tag Label Text",
+      "fontFamily": "Metropolis",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 16
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:0ec79c23a9005d2fdf05832956b4d5ed85a9a8bf,",
+      "name": "P8 Badge Text",
+      "fontFamily": "Metropolis",
+      "fontSize": 10,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 16
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:47474445b5ba8da09128d1da7e5c9541bcf8b968,",
+      "name": "Link Text",
+      "fontFamily": "Metropolis",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    },
+    {
+      "id": "S:5d5338fb2467cfa44136ef66bbec5b5743042ea6,",
+      "name": "Link Text Inverse",
+      "fontFamily": "Metropolis",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      }
+    }
+  ],
+  "effectStyles": [],
+  "variables": {
+    "collections": []
+  },
+  "components": [
+    {
+      "name": "Accordion / Content",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Accordion / Bottom Inactive",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Accordion / Bottom Active",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Accordion / Middle Inactive",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Accordion / Middle Active",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Accordion / Top Inactive",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Accordion / Top Active",
+      "pageName": "Accordion",
+      "type": "COMPONENT",
+      "width": 102,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Paginate / Error",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 144,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(163,33,1,1.00)"
+      ]
+    },
+    {
+      "name": "Paginate / Warning",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 144,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(158,65,0,1.00)"
+      ]
+    },
+    {
+      "name": "Paginate / Info",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 144,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(2,74,112,1.00)"
+      ]
+    },
+    {
+      "name": "App / Error",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 260,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(201,33,0,1.00)"
+      ]
+    },
+    {
+      "name": "App / Warning",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 260,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(194,84,0,1.00)"
+      ]
+    },
+    {
+      "name": "App / Info",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 260,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(0,121,184,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Error",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Warning",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Info",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Error",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Warning",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Info",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success",
+      "pageName": "Alerts",
+      "type": "COMPONENT",
+      "width": 200,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Disabled-small",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Danger-small",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Success-small",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Primary-small",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Disabled-dropdown",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 70,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(217,228,234,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Success-dropdown",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 70,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(217,228,234,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Danger-dropdown",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 70,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(217,228,234,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Primary-dropdown",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 70,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Disabled",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 54,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Danger",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 54,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Success",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 54,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Flat / Primary",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 54,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Overflow-outline",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 73,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Overflow",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 73,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Outline-inverse",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Disabled-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 90,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Disabled / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Disabled / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Disabled / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Disabled / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Disabled / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Danger / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Danger / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Success / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Success / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Small / Primary / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Small / Primary / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 74,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Block",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 160,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon-text / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon-text / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon-text / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Success-icon-text / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Success-icon-text / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Success-icon-text / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Success-icon-text / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon-text / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon-text / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon-text / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon-text / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 99,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-dropdown / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 94,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled-icon / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger-icon / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Success-icon / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success-icon / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Outine-overflow",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Overflow",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary-icon / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 42,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Disabled / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Danger / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Outline-midle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Success / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Inverse-disabled",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Inverse",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Normal / Primary / Outline-overflow",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 72,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Overflow",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 72,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Outline-middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Outline-right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Outline-left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Outline-round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Middle",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Right",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Left",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Normal / Primary / Round",
+      "pageName": "Buttons",
+      "type": "COMPONENT",
+      "width": 78,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Card-background-with-divider",
+      "pageName": "Cards",
+      "type": "COMPONENT",
+      "width": 89,
+      "height": 90,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Card-background",
+      "pageName": "Cards",
+      "type": "COMPONENT",
+      "width": 89,
+      "height": 90,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Card-with-divider",
+      "pageName": "Cards",
+      "type": "COMPONENT",
+      "width": 370,
+      "height": 274,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Default",
+      "pageName": "Cards",
+      "type": "COMPONENT",
+      "width": 370,
+      "height": 274,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Table / Compact Col-Right",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 186,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Table / Compact Col-Middle",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 186,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Table / Compact Col-Left",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 186,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Table / Col-Right",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Table / Col-Middle",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Table / Col-Left",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer / Pagination",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 151,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer / Obj count",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 63,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer / Obj per page",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 138,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer / Show Hide Columns",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 26,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer / Rows Selected",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 38,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer / Rows & Columns",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 66,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Footer",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 37,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Empty State",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 115,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Ellipsis",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Caret-expanded",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Caret",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Radio-selected",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(217,228,234,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Radio",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Checkbox-selected",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(217,228,234,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Actions / Checkbox",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Cell / Icon + Link",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Cell / Icon + Text",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Cell / Link",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Cell / Text",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Col-Right",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Col-Middle",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Col-Left",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Dual Action",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 72,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Datagrid / Single Action",
+      "pageName": "Datagrid & Table",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 282,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Date Picker",
+      "pageName": "Date Picker",
+      "type": "COMPONENT",
+      "width": 276,
+      "height": 312,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Dropdown / Divider",
+      "pageName": "Dropdown",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Dropdown / Header",
+      "pageName": "Dropdown",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Dropdown / Active",
+      "pageName": "Dropdown",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Dropdown / Inactive",
+      "pageName": "Dropdown",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Dropdown",
+      "pageName": "Dropdown",
+      "type": "COMPONENT",
+      "width": 120,
+      "height": 230,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Toggle / Disabled Off",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 33,
+      "height": 18,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Toggle / Disabled On",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 33,
+      "height": 18,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Toggle / Off",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 33,
+      "height": 18,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Toggle / On",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 33,
+      "height": 18,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Textarea / Error",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 337,
+      "height": 168,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Textarea / Disabled",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 337,
+      "height": 168,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Textarea / Normal",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 337,
+      "height": 168,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Radio / Error",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 91,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Radio / Disabled-selected",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 91,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Radio / Selected",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 91,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Radio / Disabled",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 91,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Radio / Normal",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 91,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Checkbox / Error",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Checkbox / Disabled-selected",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Checkbox / Disabled",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Checkbox / Selected",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Checkbox / Normal",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 118,
+      "height": 24,
+      "cornerRadius": 0
+    },
+    {
+      "name": " Password / Active-shown",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Helper-shown",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Error-shown",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Normal-shown",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Active-hidden",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Helper-hidden",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Error-hidden",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Password / Normal-hidden",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Select / Active",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Select / Disabled",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Select / Helper",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Select / Error",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Select / Normal",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Input / Active",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Input / Disabled",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Input / Helper",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Input / Error",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": " Input / Normal",
+      "pageName": "Form Controls",
+      "type": "COMPONENT",
+      "width": 136,
+      "height": 54,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Label & Badge / Blue-light",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 77,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label & Badge / Orange",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 77,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label & Badge / Blue",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 77,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label & Badge / Purple",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 77,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label & Badge / Grey",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 77,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Error",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Warning",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Info",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Success",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Blue-light",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Orange",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Blue",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Purple",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Badge / Grey",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 27,
+      "height": 15,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Error",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Warning",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Info",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Success",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Blue-light",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Orange",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Blue",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Purple",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Label / Grey",
+      "pageName": "Labels & Badges",
+      "type": "COMPONENT",
+      "width": 49,
+      "height": 21,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Login",
+      "pageName": "Login",
+      "type": "COMPONENT",
+      "width": 1440,
+      "height": 900,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Shadowbox",
+      "pageName": "Modal & Wizard",
+      "type": "COMPONENT",
+      "width": 34,
+      "height": 33,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Wizard / Incomplete",
+      "pageName": "Modal & Wizard",
+      "type": "COMPONENT",
+      "width": 192,
+      "height": 48,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Wizard / Active",
+      "pageName": "Modal & Wizard",
+      "type": "COMPONENT",
+      "width": 192,
+      "height": 48,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Wizard / Complete",
+      "pageName": "Modal & Wizard",
+      "type": "COMPONENT",
+      "width": 192,
+      "height": 48,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Wizard",
+      "pageName": "Modal & Wizard",
+      "type": "COMPONENT",
+      "width": 576,
+      "height": 390,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Modal",
+      "pageName": "Modal & Wizard",
+      "type": "COMPONENT",
+      "width": 576,
+      "height": 249,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-expanded-header",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-collapsed-header",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 48,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon-collapsed / Hierarchy-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 48,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon-collapsed / Hierarchy",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 48,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon-collapsed / Active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 48,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon-collapsed / Normal",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 48,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon-collapsed",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 48,
+      "height": 252,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Divider",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Header",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Link",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Link-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Hierarchy-link",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Hierarchy-closed-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Hierarchy-open",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon / Hierarchy-closed",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 239,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical-icon",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 252,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Header",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Divider",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Link-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Link",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Hierarchy-link",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Hierarchy-closed-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Hierarchy-open",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical / Hierarchy-closed",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 238,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Vertical",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 252,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(238,238,238,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Sub / Background",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 31,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Sub / Active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Sub / Normal",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 80,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Navigation / Header / Icon-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 60,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,0.15)"
+      ]
+    },
+    {
+      "name": "Navigation / Header / Icon",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 60,
+      "height": 60,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Navigation / Header / Link-active",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 76,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,0.15)"
+      ]
+    },
+    {
+      "name": "Navigation / Header / Link",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 76,
+      "height": 60,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Navigation / Header",
+      "pageName": "Navigation",
+      "type": "COMPONENT",
+      "width": 800,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Progress / Small GIF",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 100,
+      "height": 5,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Progress / Large-label",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 100,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Progress / Large",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 100,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Progress / Small",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 100,
+      "height": 5,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Spinner / Large",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 72,
+      "height": 72,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Spinner / Large-GIF",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 100,
+      "height": 100,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Spinner / Medium",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Spinner / Small",
+      "pageName": "Progress & Spinner",
+      "type": "COMPONENT",
+      "width": 18,
+      "height": 18,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Search",
+      "pageName": "Search",
+      "type": "COMPONENT",
+      "width": 324,
+      "height": 300,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Error / Top-left",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Error / Bottom-right",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Error / Bottom-left",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Error / Top-right",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Normal / Bottom-right",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Normal / Bottom-left",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Normal / Top-left",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tooltip / Normal / Top-right",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 240,
+      "height": 45,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Signpost / Bottom",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 211,
+      "height": 199,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Signpost / Top",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 211,
+      "height": 199,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Signpost / Left",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 223,
+      "height": 187,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Signpost / Right",
+      "pageName": "Signpost & Tooltips",
+      "type": "COMPONENT",
+      "width": 224,
+      "height": 187,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Stack-View",
+      "pageName": "Stack View",
+      "type": "COMPONENT",
+      "width": 528,
+      "height": 212,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Stepper / Content",
+      "pageName": "Stepper",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Stepper / Error",
+      "pageName": "Stepper",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Stepper / Incomplete",
+      "pageName": "Stepper",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Stepper / Complete",
+      "pageName": "Stepper",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 60,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Stepper / Active",
+      "pageName": "Stepper",
+      "type": "COMPONENT",
+      "width": 600,
+      "height": 60,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Tabs / Vertical-with-header",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 198,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Vertical / Active",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Vertical / Inactive",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 24,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Vertical",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 168,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Horizontal / Overflow-active",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 22,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Horizontal / Overflow",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 22,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Horizontal / Active",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 56,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tabs / Horizontal / Inactive",
+      "pageName": "Tabs",
+      "type": "COMPONENT",
+      "width": 56,
+      "height": 36,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Timeline / Loading",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline / Disabled",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline / Error",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline / Incomplete",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline / Active",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline / Complete",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 36,
+      "height": 36,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline-horizontal",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 120,
+      "height": 88,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Timeline-vertical",
+      "pageName": "Timeline",
+      "type": "COMPONENT",
+      "width": 228,
+      "height": 122,
+      "cornerRadius": 0
+    },
+    {
+      "name": "Tree / Checkbox / Indeterminate",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 30,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkbox / Checked",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 30,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkbox / Unchecked",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 30,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L3-active",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L3-normal",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L2-normal",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L2-open",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L2-closed",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L1-open",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes / L1-closed",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 167,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Checkboxes",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 210,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L3-active",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L3-normal",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L2-normal",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L2-active",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L2-open",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L2-closed",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L1-open",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons / L1-closed",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 159,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Icons",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 210,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L3-active",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L3-normal",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L2-normal",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L2-active",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L2-open",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L2-closed",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L1-closed",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic / L1-open",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 137,
+      "height": 30,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Tree / Basic",
+      "pageName": "Tree View",
+      "type": "COMPONENT",
+      "width": 180,
+      "height": 210,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Indeterminate",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Normal",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Error",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Checked",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Checked-datagrid",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Caret / Paginate-left",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Caret / Paginate-right",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Filter",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 10,
+      "height": 10,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Sort / Down",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 10,
+      "height": 10,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Sort / Up",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 10,
+      "height": 10,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Radio / Selected",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Disabled-checked",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Radio / Disabled-checked",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Checkbox / Disabled",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Radio / Normal",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Radio / Error",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / Radio / Disabled",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    },
+    {
+      "name": "Icon / View-columns-line",
+      "pageName": "Logos & Icons",
+      "type": "COMPONENT",
+      "width": 16,
+      "height": 16,
+      "cornerRadius": 0,
+      "fills": [
+        "rgba(255,255,255,1.00)"
+      ]
+    }
+  ]
+}

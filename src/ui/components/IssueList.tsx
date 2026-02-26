@@ -36,6 +36,20 @@ export default function IssueList({ findings, onZoom, onFix, resolvedMap, onTogg
     "consistency.spacing": "Spacing",
     "consistency.padding": "Spacing",
     "consistency.borderRadius": "Border Radius",
+    "component.detached": "Components",
+    "component.overrides": "Components",
+    "icon.aspect-ratio": "Icons",
+    "icon.size": "Icons",
+    "text.placeholder": "Text Content",
+    "text.token": "Text Content",
+    "text.url": "Text Content",
+    "text.length": "Text Content",
+    "frame.nesting": "Frame Structure",
+    "frame.redundant": "Frame Structure",
+    "frame.auto-layout": "Frame Structure",
+    "a11y.text-size": "Accessibility",
+    "a11y.contrast": "Accessibility",
+    "a11y.touch-target": "Accessibility",
     "requiredStates": "Required States",
     "truthMetadata": "Truth Metadata"
   };
@@ -68,6 +82,11 @@ export default function IssueList({ findings, onZoom, onFix, resolvedMap, onTogg
     "Effects",
     "Spacing",
     "Border Radius",
+    "Components",
+    "Icons",
+    "Text Content",
+    "Frame Structure",
+    "Accessibility",
     "Required States",
     "Truth Metadata"
   ];

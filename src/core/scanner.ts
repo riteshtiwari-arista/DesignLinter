@@ -10,7 +10,30 @@ export function getScanRoots(scope: Settings["scanScope"]): readonly SceneNode[]
   return [figma.currentPage];
 }
 
-export function* walkNodes(node: BaseNode): Generator<SceneNode> {
+function isNodeOrAncestorInvisible(node: BaseNode): boolean {
+  let current: BaseNode | null = node;
+
+  while (current) {
+    // Check if this node has visibility property and is invisible
+    if ("visible" in current && current.visible === false) {
+      return true;
+    }
+    // Move up to parent (stop at PAGE or DOCUMENT level)
+    if (current.type === "PAGE" || current.type === "DOCUMENT") {
+      break;
+    }
+    current = current.parent;
+  }
+
+  return false;
+}
+
+export function* walkNodes(node: BaseNode, skipHidden = false): Generator<SceneNode> {
+  // Skip this node and all its children if it or any ancestor is invisible
+  if (skipHidden && isNodeOrAncestorInvisible(node)) {
+    return;
+  }
+
   if (!("children" in node)) {
     if ("type" in node) {
       yield node as SceneNode;
@@ -23,7 +46,7 @@ export function* walkNodes(node: BaseNode): Generator<SceneNode> {
   }
 
   for (const child of node.children) {
-    yield* walkNodes(child);
+    yield* walkNodes(child, skipHidden);
   }
 }
 
@@ -31,10 +54,7 @@ export function getAllNodesToScan(roots: readonly SceneNode[] | PageNode[], skip
   const nodes: SceneNode[] = [];
 
   for (const root of roots) {
-    for (const node of walkNodes(root)) {
-      if (skipHidden && "visible" in node && node.visible === false) {
-        continue;
-      }
+    for (const node of walkNodes(root, skipHidden)) {
       nodes.push(node);
     }
   }

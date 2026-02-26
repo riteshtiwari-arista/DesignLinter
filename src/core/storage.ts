@@ -19,7 +19,8 @@ const DEFAULT_SETTINGS: Settings = {
   ],
   ignoreHiddenFills: true,
   ignoreZeroOpacity: true,
-  ignoreTransparentColors: true
+  ignoreTransparentColors: true,
+  ignoreInvisibleLayers: true
 };
 
 export async function getSettings(): Promise<Settings> {

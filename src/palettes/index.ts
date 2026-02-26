@@ -2,6 +2,9 @@
 // Maps library keys to extracted palette JSON files
 
 import geigerDS from './geiger-design-system.json';
+import clarityDS from './clarity-components.json';
+import clarity220 from './clarity-ui-library-light-2.2.0.json';
+import saseDS from './sase-library-1.1.0.json';
 
 export interface DSPalette {
   metadata: {
@@ -37,6 +40,7 @@ export interface DSPalette {
       modes: Array<{ modeId: string; name: string }>;
       variables: Array<{
         id: string;
+        key?: string;
         name: string;
         resolvedType: string;
         valuesByMode: Record<string, any>;
@@ -49,8 +53,9 @@ export interface DSPalette {
 // Map library keys to their extracted palettes
 export const PALETTES: Record<string, DSPalette> = {
   'Geiger Design System': geigerDS as DSPalette,
-  // Add more palettes here as you extract them
-  // 'Clarity Components': clarityDS,
+  'Clarity Components': clarityDS as DSPalette,
+  'Clarity-UI-Library-light 2.2.0 - Management Center Resources (Copy)': clarity220 as DSPalette,
+  'SASE-Library-1.1.0': saseDS as DSPalette,
 };
 
 export function getPaletteForLibrary(libraryKey?: string): DSPalette | null {

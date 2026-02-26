@@ -50,6 +50,8 @@ export interface Settings {
   ignoreHiddenFills?: boolean;
   ignoreZeroOpacity?: boolean;
   ignoreTransparentColors?: boolean;
+  ignoreInvisibleLayers?: boolean;
+  helpUrl?: string;
 }
 
 export interface LibraryInfo {

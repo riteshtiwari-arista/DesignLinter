@@ -110,7 +110,7 @@ export async function checkColorTokens(
           if (variable) {
             successfulImports++;
             if (checkedFills <= 3) {
-              console.log(`  ✓ Successfully imported variable: ${variable.name} (ID: ${variable.id})`);
+              console.log(`  Successfully imported variable: ${variable.name} (ID: ${variable.id})`);
             }
 
             findings.push({
@@ -128,7 +128,7 @@ export async function checkColorTokens(
             });
           } else {
             if (checkedFills <= 3) {
-              console.log(`  ✗ Failed to import variable: ${varRef.variableName}`);
+              console.log(`  Failed to import variable: ${varRef.variableName}`);
             }
 
             findings.push({
@@ -173,17 +173,17 @@ export async function checkColorTokens(
             }
           });
         } else {
-          // NOT_DS - no match found
+          // NOT_DS - no match found - FLAG AS ERROR (block)
           findings.push({
             id: `${node.id}-fill-color`,
             principle: "Clarity",
-            severity,
+            severity: "block",
             ruleId: "tokens.colors.fill",
             nodeId: node.id,
             nodeName: node.name,
             pageName: getPageName(node),
-            message: "Fill color not bound to design system token",
-            howToFix: `Add this color (R:${Math.round(fillColor.r*255)} G:${Math.round(fillColor.g*255)} B:${Math.round(fillColor.b*255)}) to your design system or use an existing variable.`,
+            message: "Color not in design system",
+            howToFix: `This color (R:${Math.round(fillColor.r*255)} G:${Math.round(fillColor.g*255)} B:${Math.round(fillColor.b*255)}) is not defined in the design system. Use an existing DS variable or add it to the design system.`,
             canAutoFix: false
           });
         }
@@ -283,17 +283,17 @@ export async function checkColorTokens(
             }
           });
         } else {
-          // NOT_DS - no match found
+          // NOT_DS - no match found - FLAG AS ERROR (block)
           findings.push({
             id: `${node.id}-stroke-color`,
             principle: "Clarity",
-            severity,
+            severity: "block",
             ruleId: "tokens.colors.stroke",
             nodeId: node.id,
             nodeName: node.name,
             pageName: getPageName(node),
-            message: "Stroke color not bound to design system token",
-            howToFix: `Add this color (R:${Math.round(strokeColor.r*255)} G:${Math.round(strokeColor.g*255)} B:${Math.round(strokeColor.b*255)}) to your design system or use an existing variable.`,
+            message: "Color not in design system",
+            howToFix: `This stroke color (R:${Math.round(strokeColor.r*255)} G:${Math.round(strokeColor.g*255)} B:${Math.round(strokeColor.b*255)}) is not defined in the design system. Use an existing DS variable or add it to the design system.`,
             canAutoFix: false
           });
         }

@@ -3,6 +3,7 @@ import Tabs from "./components/Tabs";
 import IssueList from "./components/IssueList";
 import EvidencePanel from "./components/EvidencePanel";
 import SettingsPanel from "./components/SettingsPanel";
+import ComparisonPanel from "./components/ComparisonPanel";
 import EmptyState from "./components/EmptyState";
 
 interface Settings {
@@ -12,6 +13,7 @@ interface Settings {
   dsLibraryKey?: string;
   requiredStateTags?: string[];
   truthTags?: string[];
+  helpUrl?: string;
 }
 
 interface Finding {
@@ -33,7 +35,23 @@ interface LibraryInfo {
   name: string;
 }
 
-type Tab = "issues" | "evidence" | "settings";
+interface ComparisonDiff {
+  type: "CHANGED" | "NEW" | "REMOVED";
+  category: "variable" | "paintStyle" | "textStyle" | "effectStyle";
+  name: string;
+  fromValue?: string;
+  toValue?: string;
+  collectionName?: string;
+}
+
+interface ComparisonResult {
+  baseline: string;
+  target: string;
+  differences: ComparisonDiff[];
+  timestamp: number;
+}
+
+type Tab = "issues" | "evidence" | "comparison" | "settings";
 
 export default function App() {
   const [tab, setTab] = useState<Tab>("issues");
@@ -47,6 +65,13 @@ export default function App() {
   const [resolvedMap, setResolvedMap] = useState<Record<string, "resolved" | "auto-fixed">>({});
   const [selectedFindingId, setSelectedFindingId] = useState<string | null>(null);
   const [initProgress, setInitProgress] = useState("Loading settings...");
+  const [libraryUsage, setLibraryUsage] = useState<{
+    librariesInUse: string[];
+    remoteStylesCount: number;
+    remoteComponentsCount: number;
+  } | null>(null);
+  const [comparisonResult, setComparisonResult] = useState<ComparisonResult | null>(null);
+  const [comparing, setComparing] = useState(false);
 
   useEffect(() => {
     console.log("App mounted");
@@ -113,6 +138,11 @@ export default function App() {
           });
           break;
 
+        case "LIBRARY_USAGE_DETECTED":
+          console.log("Library usage detected:", msg.usage);
+          setLibraryUsage(msg.usage);
+          break;
+
         case "SCAN_COMPLETE":
           setScanning(false);
           setScanProgress("");
@@ -139,28 +169,57 @@ export default function App() {
           alert("Extracting design system palette...");
           break;
 
-        case "EXTRACTION_COMPLETE":
+        case "EXTRACTION_COMPLETE": {
+          const filename = `${msg.libraryName.toLowerCase().replace(/\s+/g, '-')}.json`;
+          const filepath = `src/palettes/${filename}`;
+
           // Always log to console
           console.log("========================================");
-          console.log("DESIGN SYSTEM PALETTE JSON");
+          console.log(`DESIGN SYSTEM PALETTE JSON - ${msg.libraryName}`);
           console.log("========================================");
           console.log(msg.data);
           console.log("========================================");
           console.log("Copy the JSON above and save it as:");
-          console.log("src/palettes/geiger-design-system.json");
+          console.log(filepath);
           console.log("========================================");
 
           // Try to copy to clipboard (may not work in plugin context)
-          navigator.clipboard.writeText(msg.data).then(() => {
-            alert(`Palette extracted successfully!\n\nPaint Styles: ${msg.summary.paintStyles}\nText Styles: ${msg.summary.textStyles}\nEffect Styles: ${msg.summary.effectStyles}\nVariables: ${msg.summary.variables}\n\nJSON copied to clipboard AND logged to console.\n\nSave it as:\nsrc/palettes/geiger-design-system.json`);
-          }).catch(() => {
-            alert(`Palette extracted successfully!\n\nPaint Styles: ${msg.summary.paintStyles}\nText Styles: ${msg.summary.textStyles}\nEffect Styles: ${msg.summary.effectStyles}\nVariables: ${msg.summary.variables}\n\nJSON logged to console (clipboard failed).\n\nOpen console (Cmd+Option+I) and copy the JSON.\nSave it as:\nsrc/palettes/geiger-design-system.json`);
-          });
+          const summary = `Paint Styles: ${msg.summary.paintStyles}\nText Styles: ${msg.summary.textStyles}\nEffect Styles: ${msg.summary.effectStyles}\nVariable Collections: ${msg.summary.collections}\nTotal Variables: ${msg.summary.variables}`;
+
+          // Try clipboard, but handle if it doesn't exist
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(msg.data).then(() => {
+              alert(`Palette extracted successfully for "${msg.libraryName}"!\n\n${summary}\n\nJSON copied to clipboard AND logged to console.\n\nSave it as:\n${filepath}`);
+            }).catch(() => {
+              alert(`Palette extracted successfully for "${msg.libraryName}"!\n\n${summary}\n\nJSON logged to console (clipboard failed).\n\nOpen console (Cmd+Option+I) and copy the JSON.\nSave it as:\n${filepath}`);
+            });
+          } else {
+            // Clipboard not available, just show alert
+            alert(`Palette extracted successfully for "${msg.libraryName}"!\n\n${summary}\n\nJSON logged to console.\n\nOpen console (Cmd+Option+I) and copy the JSON.\nSave it as:\n${filepath}`);
+          }
+          break;
+        }
+
+        case "COMPARISON_STARTED":
+          setComparing(true);
+          break;
+
+        case "COMPARISON_COMPLETE":
+          setComparing(false);
+          setComparisonResult(msg.result);
+          break;
+
+        case "PALETTE_EXTRACTED":
+          console.log("=== PALETTE JSON START ===");
+          console.log(msg.palette);
+          console.log("=== PALETTE JSON END ===");
+          alert("Palette extracted! Check the console for the JSON output. Copy everything between the START and END markers.");
           break;
 
         case "ERROR":
           alert(`Error: ${msg.message}`);
           setScanning(false);
+          setComparing(false);
           break;
       }
     };
@@ -190,6 +249,11 @@ export default function App() {
 
   const handleRefreshLibraries = () => {
     parent.postMessage({ pluginMessage: { type: "REFRESH_LIBRARIES" } }, "*");
+  };
+
+  const handleRunComparison = (baselineKey: string) => {
+    setComparing(true);
+    parent.postMessage({ pluginMessage: { type: "RUN_COMPARISON", baselineKey } }, "*");
   };
 
   const handleZoomTo = (findingId: string, nodeId: string) => {
@@ -319,7 +383,12 @@ export default function App() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <Tabs activeTab={tab} onTabChange={setTab} findingsCount={findings.length} />
+      <Tabs
+        activeTab={tab}
+        onTabChange={setTab}
+        findingsCount={findings.length}
+        comparisonCount={comparisonResult?.differences.length}
+      />
 
       <div style={{ flex: 1, overflow: "auto", position: "relative", background: "var(--bg-secondary)" }}>
         {tab === "issues" && (
@@ -462,10 +531,25 @@ export default function App() {
           <EvidencePanel findings={findings} />
         )}
 
+        {tab === "comparison" && (
+          <ComparisonPanel
+            result={comparisonResult}
+            comparing={comparing}
+            onRunComparison={handleRunComparison}
+            availableBaselines={[
+              { key: 'Geiger Design System', name: 'Geiger Design System' },
+              { key: 'Clarity Components', name: 'Clarity Components' },
+              { key: 'Clarity-UI-Library-light 2.2.0 - Management Center Resources (Copy)', name: 'Clarity 2.2.0' },
+              { key: 'SASE-Library-1.1.0', name: 'SASE Library 1.1.0' }
+            ]}
+          />
+        )}
+
         {tab === "settings" && (
           <SettingsPanel
             settings={settings}
             libraries={libraries}
+            libraryUsage={libraryUsage}
             onSettingsChange={handleSettingsChange}
             onRefreshLibraries={handleRefreshLibraries}
           />

@@ -4,12 +4,14 @@ interface TabsProps {
   activeTab: string;
   onTabChange: (tab: any) => void;
   findingsCount: number;
+  comparisonCount?: number;
 }
 
-export default function Tabs({ activeTab, onTabChange, findingsCount }: TabsProps) {
+export default function Tabs({ activeTab, onTabChange, findingsCount, comparisonCount }: TabsProps) {
   const tabs = [
     { id: "issues", label: "Issues", count: findingsCount },
     { id: "evidence", label: "Evidence" },
+    { id: "comparison", label: "Comparison", count: comparisonCount },
     { id: "settings", label: "Settings" }
   ];
 

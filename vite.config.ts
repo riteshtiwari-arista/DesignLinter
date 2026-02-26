@@ -41,7 +41,13 @@ function moveHtmlPlugin(): Plugin {
 export default defineConfig({
   plugins: [react(), moveHtmlPlugin()],
   base: "./",
+  esbuild: {
+    target: "es2018" // Transpile to es2018 for Figma
+  },
   build: {
+    target: "es2018", // Force older target for Figma compatibility
+    minify: "terser", // Use terser instead of esbuild minifier (safer for Figma)
+    sourcemap: false,
     outDir: "dist",
     emptyOutDir: false,
     rollupOptions: {

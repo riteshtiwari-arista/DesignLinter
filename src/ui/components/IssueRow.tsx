@@ -43,8 +43,11 @@ export default function IssueRow({ finding, onZoom, onFix, resolvedType, onToggl
           <div style={{ fontWeight: 500, fontSize: "13px", marginBottom: "4px", color: "var(--text-primary)" }}>
             {finding.message}
           </div>
-          <div style={{ fontSize: "12px", color: "var(--text-secondary)" }}>
-            {finding.nodeName}
+          <div
+            style={{ fontSize: "12px", color: "var(--text-secondary)", wordBreak: "break-word" }}
+            title={finding.nodeName}
+          >
+            {finding.nodeName.length > 100 ? finding.nodeName.substring(0, 100) + '...' : finding.nodeName}
           </div>
         </div>
       </div>

@@ -242,27 +242,43 @@ export async function loadDSCatalog(
 
       for (const variable of collection.variables) {
         totalVars++;
-        catalog.variablesByKey.set(variable.id, variable);
+        // Index by key (used for importing)
+        if (variable.key) {
+          catalog.variablesByKey.set(variable.key, variable);
+        }
 
         const varRef: DSVarRef = {
           collectionKey: collection.id,
           collectionName: collection.name,
-          variableKey: variable.id,
+          variableKey: variable.key || variable.id, // Prefer key, fallback to id
           variableName: variable.name,
           resolvedType: variable.resolvedType as any,
           libraryName: selectedLibraryKey
         };
 
         // Index by resolved values
-        if (variable.resolvedType === "COLOR" && variable.resolvedValues) {
+        if (variable.resolvedType === "COLOR") {
           const uniqueColors = new Set<string>();
 
-          // Collect all unique resolved RGBA values
-          for (const modeId in variable.resolvedValues) {
-            const rgba = variable.resolvedValues[modeId];
-            if (rgba && typeof rgba === 'object' && 'r' in rgba) {
-              const key = normalizeRgba(rgba);
-              uniqueColors.add(key);
+          // Collect all unique resolved RGBA values from resolvedValues
+          if (variable.resolvedValues) {
+            for (const modeId in variable.resolvedValues) {
+              const rgba = variable.resolvedValues[modeId];
+              if (rgba && typeof rgba === 'object' && 'r' in rgba) {
+                const key = normalizeRgba(rgba);
+                uniqueColors.add(key);
+              }
+            }
+          }
+
+          // Fallback: If no resolvedValues, try valuesByMode directly
+          if (uniqueColors.size === 0 && variable.valuesByMode) {
+            for (const modeId in variable.valuesByMode) {
+              const value = variable.valuesByMode[modeId];
+              if (value && typeof value === 'object' && 'r' in value && 'g' in value && 'b' in value) {
+                const key = normalizeRgba(value);
+                uniqueColors.add(key);
+              }
             }
           }
 
@@ -397,18 +413,59 @@ export async function importVariableByKey(varKey: string): Promise<Variable | nu
   // Check cache first
   if (importedVariables.has(varKey)) {
     const cached = importedVariables.get(varKey)!;
-    console.log(`Using cached variable: ${cached.name}`);
     return cached;
   }
 
   try {
-    console.log(`Importing variable by key: ${varKey}`);
-    const variable = await figma.variables.importVariableByKeyAsync(varKey);
-    console.log(`Successfully imported: ${variable.name} (ID: ${variable.id})`);
-    importedVariables.set(varKey, variable);
-    return variable;
+    // First, check if variable already exists in the file (might have been imported previously)
+    const localVariables = figma.variables.getLocalVariables();
+    const existingVar = localVariables.find(v => v.key === varKey);
+
+    if (existingVar) {
+      importedVariables.set(varKey, existingVar);
+      return existingVar;
+    }
+
+    // Try importing directly by key
+    try {
+      const variable = await figma.variables.importVariableByKeyAsync(varKey);
+      importedVariables.set(varKey, variable);
+      return variable;
+    } catch (importErr) {
+      // Import by key failed - this is common for library variables
+      // Fallback: Try finding and importing from library collections
+      const catalog = getCatalog();
+      if (!catalog.selectedLibraryKey) {
+        throw new Error("No library selected");
+      }
+
+      // Get library variable collections
+      const availableCollections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
+
+      // Find the collection that contains this variable
+      for (const collection of availableCollections) {
+        if (collection.libraryName === catalog.selectedLibraryKey) {
+          try {
+            const variables = await figma.teamLibrary.getVariablesInLibraryCollectionAsync(collection.key);
+            const libVar = variables.find(v => v.key === varKey);
+
+            if (libVar) {
+              // Found it! Import using the collection method
+              const imported = await figma.variables.importVariableByKeyAsync(libVar.key);
+              importedVariables.set(varKey, imported);
+              return imported;
+            }
+          } catch (collErr) {
+            // Continue to next collection
+            continue;
+          }
+        }
+      }
+
+      throw importErr; // Re-throw original error if all fallbacks fail
+    }
   } catch (err) {
-    console.error(`FAILED to import variable ${varKey}:`, err);
+    // All import methods failed
     return null;
   }
 }

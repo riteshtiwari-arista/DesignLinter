@@ -1,5 +1,6 @@
 import type { LibraryInfo } from "./types";
 import { getCachedLibraries, setCachedLibraries } from "./storage";
+import { PALETTES } from "../palettes";
 
 const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
 
@@ -15,7 +16,20 @@ export async function listEnabledLibraries(forceRefresh = false): Promise<Librar
     // Map: libraryName -> { name, collectionKeys[] }
     const libraryMap = new Map<string, { name: string; collectionKeys: string[] }>();
 
-    // Use getAvailableLibraryVariableCollectionsAsync
+    // First, add all bundled palettes (so they're always available)
+    const bundledLibraryNames = Object.keys(PALETTES);
+    console.log(`Found ${bundledLibraryNames.length} bundled palettes:`, bundledLibraryNames);
+
+    for (const libraryName of bundledLibraryNames) {
+      libraryMap.set(libraryName, {
+        name: libraryName,
+        collectionKeys: [] // Bundled palettes don't need collection keys
+      });
+    }
+
+    // Then, add enabled libraries from Figma (may override bundled ones)
+    // Figma only provides API for variable collections, not for all enabled libraries
+    // Libraries without variables won't appear in this list
     try {
       const variableCollections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
 
@@ -32,6 +46,8 @@ export async function listEnabledLibraries(forceRefresh = false): Promise<Librar
           }
         }
       }
+
+      console.log(`Found ${variableCollections.length} enabled library variable collections`);
     } catch (e) {
       console.log("Team Library Variable Collections API not available:", e);
     }
@@ -45,6 +61,8 @@ export async function listEnabledLibraries(forceRefresh = false): Promise<Librar
 
     // Sort alphabetically
     libraryInfos.sort((a, b) => a.name.localeCompare(b.name));
+
+    console.log(`Total libraries available: ${libraryInfos.length}`);
 
     await setCachedLibraries(libraryInfos);
     return libraryInfos;
